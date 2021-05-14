@@ -1,3 +1,5 @@
+$ cat .gitignore
+
 # Prerequisites
 *.d
 

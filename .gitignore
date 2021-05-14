@@ -1,5 +1,8 @@
 $ cat .gitignore
 
+# Exclude debug folder
+**/Debug/**
+
 # Prerequisites
 *.d
 

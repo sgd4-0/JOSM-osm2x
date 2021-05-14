@@ -6,7 +6,7 @@
  *
  * Dieses Programm liest eine .osm-Datei ein und filtert diese. Die Datei wird zuerst nach dem Tag "SharedGuideDog" durchsucht und schreibt die gefilterten Inhalte
  * in eine zweite .osm-Datei. Nachfolgend werden in den Nodes und Ways mit dem Tag "SharedGuideDog" die Referenzen zu anderen Nodes rausgefiltert und ebenfalls in die
- * Zieldatei geschrieben. Nachdem nun vollständig gefiltert wurde muss die Datei navigierbar gemacht werden und wird dafür umgeschrieben. Folgend muss die erstellte 
+ * Zieldatei geschrieben. Nachdem nun vollstï¿½ndig gefiltert wurde muss die Datei navigierbar gemacht werden und wird dafï¿½r umgeschrieben. Folgend muss die erstellte 
  * Datei in eine A*-Funktion eingelesen werden und ein Pfad mit der niedrigsten Gesamtsumme erstellt werden, welcher wieder in einer Datei festgehalten wird.
 */
 
@@ -16,71 +16,15 @@
 #include <iostream>
 #include <vector>
 
-#include "include/navigation/rapidxml-1.13/rapidxml.hpp"
+#include "include/rapidxml-1.13/rapidxml.hpp"
 
 // Einbinden von erzeugten Header-Dateien
-#include "Filtern.hpp"
-#include "way.h"
-#include "aStern.h"
+#include "include/Filtern.hpp"
+#include "include/way.hpp"
+#include "include/aStern.hpp"
 
 namespace sgd_nav
 {
-
-// Hauptprogramm
-int main() {
-    /*
-        1. Nutzen der API zum Download von Daten -> später
-        2. prefilter mit C++ -> später
-        3. JOSM starten -> Daten augmentieren -> Datei speichern -> später
-        4. Warten, bis JOSM geschlossen wird -> nochmal filtern
-        5. Augmentierte Datei zu nav file
-        5.1 for all nodes
-            if action='delete' then continue
-            import node
-        5.2 for all way
-            if action='delete' then continue
-            add nd to node, copy tags
-    */
-
-    // Einbinden von benötigten Variablen
-
-    int s = 0;
-    float StartZielKoords[4] = { 0.0, 0.0, 0.0, 0.0 };
-
-    // Einbinden der Dateipfade der Quell-, Ziel- und Navigationsdatei
-    string ursprungsDatei = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\01_Lohmuehlenpark_augmentiert_way.osm";
-    string gefiltertDatei = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\10_FilterErgebnis.osm";
-    string navigationsfaehigeDatei = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\20_NavigationsFaehigeDaten.osm";
-    string endDateiOSM = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\30_EndNavigationOSM.osm";
-    string endDateiNavigation = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\31_EndNavigation.osm";
-
-    // Abfrage welche Programmteile aufgerufen werden sollen
-    cout << "Bitte geben Sie fuer das komplette Ausfuehren der Datei eine 0 ein oder 1, um nur die Navigationsdatei zu erstellen:" << "\n";
-    cin >> s;
-
-    // Erstellen neuer Filterdatei und erster navigationsfähiger Datei
-    if (s == 0) {
-        filtern(ursprungsDatei, gefiltertDatei);
-        navigationDatWay(gefiltertDatei, navigationsfaehigeDatei);
-        s = 1;
-    }
-
-    // Durchlaufen der ersten navigationsfähigen Datei mit dem A*-Algorithmus und erstellen der geforderten Dateien
-    if (s == 1) {
-
-        // Abfrage der Start- und Zielkoordinaten
-        cout << "Bitte geben Sie die Start und Ziel Koordinaten ein. Benutzen Sie bitte die folgende Reihenfolge: Startlaenge, Startbreite, Ziellaenge, Zielbreite" << "\n";
-        for (int i = 0; i < 4; i++) {
-            cin >> StartZielKoords[i];
-        }
-
-        aStern(navigationsfaehigeDatei, StartZielKoords, gefiltertDatei, endDateiNavigation, endDateiOSM);
-    }
-
-    osm_to_nav("..\\Karten\\2_augmentiert.osm");
-
-    return 0;
-}
 
 int osm_to_nav(std::string osm_file)
 {
@@ -119,4 +63,60 @@ int osm_to_nav(std::string osm_file)
     return 0;
 }
 
+}
+
+// Hauptprogramm
+int main(int argc, char *argv[]) {
+    /*
+        1. Nutzen der API zum Download von Daten -> spï¿½ter
+        2. prefilter mit C++ -> spï¿½ter
+        3. JOSM starten -> Daten augmentieren -> Datei speichern -> spï¿½ter
+        4. Warten, bis JOSM geschlossen wird -> nochmal filtern
+        5. Augmentierte Datei zu nav file
+        5.1 for all nodes
+            if action='delete' then continue
+            import node
+        5.2 for all way
+            if action='delete' then continue
+            add nd to node, copy tags
+    */
+
+    // Einbinden von benï¿½tigten Variablen
+
+    int s = 0;
+    float StartZielKoords[4] = { 0.0, 0.0, 0.0, 0.0 };
+
+    // Einbinden der Dateipfade der Quell-, Ziel- und Navigationsdatei
+    string ursprungsDatei = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\01_Lohmuehlenpark_augmentiert_way.osm";
+    string gefiltertDatei = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\10_FilterErgebnis.osm";
+    string navigationsfaehigeDatei = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\20_NavigationsFaehigeDaten.osm";
+    string endDateiOSM = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\30_EndNavigationOSM.osm";
+    string endDateiNavigation = "C:\\Users\\Aike\\Desktop\\Uni\\Semester 7\\VSCodeProjekte\\SharedGuideDog\\31_EndNavigation.osm";
+
+    // Abfrage welche Programmteile aufgerufen werden sollen
+    cout << "Bitte geben Sie fuer das komplette Ausfuehren der Datei eine 0 ein oder 1, um nur die Navigationsdatei zu erstellen:" << "\n";
+    cin >> s;
+
+    // Erstellen neuer Filterdatei und erster navigationsfï¿½higer Datei
+    if (s == 0) {
+        //filtern(ursprungsDatei, gefiltertDatei);
+        //navigationDatWay(gefiltertDatei, navigationsfaehigeDatei);
+        s = 1;
+    }
+
+    // Durchlaufen der ersten navigationsfï¿½higen Datei mit dem A*-Algorithmus und erstellen der geforderten Dateien
+    if (s == 1) {
+
+        // Abfrage der Start- und Zielkoordinaten
+        cout << "Bitte geben Sie die Start und Ziel Koordinaten ein. Benutzen Sie bitte die folgende Reihenfolge: Startlaenge, Startbreite, Ziellaenge, Zielbreite" << "\n";
+        for (int i = 0; i < 4; i++) {
+            cin >> StartZielKoords[i];
+        }
+
+        //aStern(navigationsfaehigeDatei, StartZielKoords, gefiltertDatei, endDateiNavigation, endDateiOSM);
+    }
+
+    sgd_nav::osm_to_nav("..\\Karten\\2_augmentiert.osm");
+
+    return 0;
 }

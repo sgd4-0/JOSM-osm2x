@@ -12,7 +12,7 @@
 
 using namespace std;
 
-	// Initialisierung für Funktionen
+	// Initialisierung fï¿½r Funktionen
 	void SGDrahmenFinden(string herkunftDat, int rahmen[][2]);
 	void SGDSchreiben(string herkunftDat, string zielDat, int rahmen[][2]);
 	void referenzSuchen(string zielDat, string* refs);

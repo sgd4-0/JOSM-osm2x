@@ -4,7 +4,7 @@
  *
  * Created on January 28, 2021, 11:07 AM
  * 
- * Erstellt eine navigationsfähige Datei in der Nodes mit den nächstliegenden verbundenen Nodes und deren Tags aufgelistet werden und prüft ob Referenzen doppelt sind.
+ * Erstellt eine navigationsfï¿½hige Datei in der Nodes mit den nï¿½chstliegenden verbundenen Nodes und deren Tags aufgelistet werden und prï¿½ft ob Referenzen doppelt sind.
  */
 
 #include <fstream>
@@ -19,7 +19,7 @@ void navigationDatWay(string zielDat, string navigationDat) {
 	
 	fstream f;
 
-	// Deklarieren und initialisieren von für das Programm wichtiger Variablen
+	// Deklarieren und initialisieren von fï¿½r das Programm wichtiger Variablen
 	string nodeArray[100]	= {};
 	string docAnfang		= "<nodelist id='1'>";
 	string docEnde			= "</nodelist>";
@@ -50,7 +50,7 @@ void nodesSuchen(string zielDat, string nodeArray[]) {
 
 	ifstream sourceDat(zielDat);
 
-	// Deklarieren und initialisieren von für das Programm wichtiger Variablen
+	// Deklarieren und initialisieren von fï¿½r das Programm wichtiger Variablen
 	int nodenr		= 0;
 	int idAnfang	= 12;
 	int idEnde		= 0;
@@ -59,30 +59,30 @@ void nodesSuchen(string zielDat, string nodeArray[]) {
 	string ID			= "";
 	string idBegrenzung = "'";
 
-	while (getline(sourceDat, zeile)) {				// Wird ausgeführt solange Zeilen in der gefilterten Datei sind
+	while (getline(sourceDat, zeile)) {				// Wird ausgefï¿½hrt solange Zeilen in der gefilterten Datei sind
 		if (zeile.find("<node") != string::npos) {		// Trifft zu wenn in der aktuellen Zeile "<node" steht
 			idEnde = idAnfang;								// Speichert den Wert von "idAnfang" in "idEnde"
-			while (zeile[idEnde] != idBegrenzung[0]) {		// Wird ausgeführt solange er nicht die begrenzung der ID findet
-				idEnde++;										// Zählt "idEnde" hoch
+			while (zeile[idEnde] != idBegrenzung[0]) {		// Wird ausgefï¿½hrt solange er nicht die begrenzung der ID findet
+				idEnde++;										// Zï¿½hlt "idEnde" hoch
 			}
-			ID.resize(idEnde - idAnfang);					// Verändert die Größe von ID auf die Größe der aktuellen ID
-			for (int i = 0; i < idEnde - idAnfang; i++) {	// Läuft solange i der ID-Länge entspricht
+			ID.resize(idEnde - idAnfang);					// Verï¿½ndert die Grï¿½ï¿½e von ID auf die Grï¿½ï¿½e der aktuellen ID
+			for (int i = 0; i < idEnde - idAnfang; i++) {	// Lï¿½uft solange i der ID-Lï¿½nge entspricht
 				ID[i] = zeile[i + idAnfang];					// Speichert jede Stelle der ID in den ID-String
 			}
 			nodeArray[nodenr] = ID;							// Speichert die ID im Nodearray
-			nodenr++;										// Zählt die gefundenen ID´s hoch
+			nodenr++;										// Zï¿½hlt die gefundenen IDï¿½s hoch
 		}
 	}
 }
 
-// schreibt die Nodes in die Zieldatei, sucht die damit verknüpften Nodes und schreibt diese in die Zieldatei
+// schreibt die Nodes in die Zieldatei, sucht die damit verknï¿½pften Nodes und schreibt diese in die Zieldatei
 void nodesSchreiben(string zielDat, string navigationDat, string nodeArray[], int k) {
 
 	fstream f;
 	
 	ifstream sourceDat(zielDat);
 	
-	// Deklarieren und initialisieren von für das Programm wichtiger Variablen
+	// Deklarieren und initialisieren von fï¿½r das Programm wichtiger Variablen
 	int nodenr = 0;
 
 	string zeile;
@@ -94,19 +94,19 @@ void nodesSchreiben(string zielDat, string navigationDat, string nodeArray[], in
 	const char nodeEnde		= '>';
 
 	
-	while (getline(sourceDat, zeile)) {									// Durchläuft die Datei Zeile für Zeile
+	while (getline(sourceDat, zeile)) {									// Durchlï¿½uft die Datei Zeile fï¿½r Zeile
 		if (zeile.find("<node") != string::npos) {							// wenn in der Zeile "<node" gefunden wird
 			if (zeile.find(nodeArray[k]) != string::npos) {						// wenn in der Zeile die aktuelle die in nodearray stehende ID gefunden wird
 				for (int i = 0; i <= zeile.length(); i++) {							// solange i kleiner ist als die Anzahl der chars in der Zeile
 					if (zeile[i] == koordsAnfang[0] && zeile[i + 1] == koordsAnfang[1] && zeile[i + 2] == koordsAnfang[2] && zeile[i + 3] == koordsAnfang[3] && zeile[i + 4] == koordsAnfang[4]) {
 						int b = 22;
-						for (int s = b; 1 == 1; s++) {									// sucht die Anfänge in der zeile von der lat- und lon-Werte
+						for (int s = b; 1 == 1; s++) {									// sucht die Anfï¿½nge in der zeile von der lat- und lon-Werte
 							if (zeile[i + s] == koordsEnde || zeile[i + s] == nodeEnde) {
 								b = s;
 								break;
 							}
 						}
-						koords.resize(b);												// passt die Größe des strings koords an
+						koords.resize(b);												// passt die Grï¿½ï¿½e des strings koords an
 						for (int a = 0; a <= b; a++) {									// schreibt die lat und lon-Werte in den koords String
 							koords[a] = zeile[i];
 							i++;
@@ -125,13 +125,13 @@ void nodesSchreiben(string zielDat, string navigationDat, string nodeArray[], in
 					b++;
 				}
 				getline(sourceDat, zeile);											// geht eine Zeile weiter
-				while (zeile.find("<tag") != string::npos) {						// überträgt gefundene Tags in die Zieldatei
+				while (zeile.find("<tag") != string::npos) {						// ï¿½bertrï¿½gt gefundene Tags in die Zieldatei
 					f.open(navigationDat, f.app);
 					f << zeile << "\n";
 					f.close();
 					getline(sourceDat, zeile);
 				}
-				f.open(navigationDat, f.app);										// Schließt den aktuellen Node aufruf in der Zieldatei
+				f.open(navigationDat, f.app);										// Schlieï¿½t den aktuellen Node aufruf in der Zieldatei
 				f << "  </node>" << "\n";
 				f.close();
 			}
@@ -139,12 +139,12 @@ void nodesSchreiben(string zielDat, string navigationDat, string nodeArray[], in
 	}
 }
 
-// findet die mit dem aktuell behandelten Node verknüpften Nodes
+// findet die mit dem aktuell behandelten Node verknï¿½pften Nodes
 void nodeRefFinden(string zielDat, string nodeRefs[], string aktuelleNode) {
 
 	ifstream sourceDat1(zielDat);
 
-	// Deklarieren und initialisieren von für das Programm wichtiger Variablen
+	// Deklarieren und initialisieren von fï¿½r das Programm wichtiger Variablen
 	int refnr = 0;
 	int doppelt = 0;
 
@@ -162,7 +162,7 @@ void nodeRefFinden(string zielDat, string nodeRefs[], string aktuelleNode) {
 					ref[0] = aktuellezeile;
 					break;
 				}
-				else if (aktuellezeile.find(aktuelleNode) != string::npos) {// sonst wenn die aktuelle Zeile der aktuellen Node entspricht, speicher die letzte Zeile und die nächste Zeile als Referenz
+				else if (aktuellezeile.find(aktuelleNode) != string::npos) {// sonst wenn die aktuelle Zeile der aktuellen Node entspricht, speicher die letzte Zeile und die nï¿½chste Zeile als Referenz
 					ref[0] = letzteZeile;
 					getline(sourceDat1, aktuellezeile);
 					if (aktuellezeile.find("<nd ref='") != string::npos) {
@@ -172,7 +172,7 @@ void nodeRefFinden(string zielDat, string nodeRefs[], string aktuelleNode) {
 				}
 			}
 		}
-		for (int o = 0; o < 2; o++) {								// prüft ob die gefundenen Referenzen doppelt vorkommen
+		for (int o = 0; o < 2; o++) {								// prï¿½ft ob die gefundenen Referenzen doppelt vorkommen
 			doppelt = 0;
 			if (ref[o] != "") {
 				for (int i = 0; i < 10; i++) {

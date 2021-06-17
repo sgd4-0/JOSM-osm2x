@@ -61,9 +61,10 @@ Address::to_string()
     std::string s;
     for (size_t i = 0; i < size_array; i++)
     {
-        s.append(address[i] + " ");
+        if (s.size() > 1) s.append(" ");
+        s.append(address[i]);
     }
-    s.append(": " + std::to_string(id_) + "\n");
+    s.append(":" + std::to_string(sgd_id_) + "\n");
     return s;
 }
 

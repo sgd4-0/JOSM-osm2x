@@ -44,6 +44,11 @@ Way::add_tag(std::string key, std::string value)
 {
     if (valid_keys.count(key) > 0)
     {
+        if (tags.count(key))
+        {
+            tags.erase(key);
+        }
+        
         tags.insert(std::make_pair(key, value));
         return true;
     }

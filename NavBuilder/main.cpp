@@ -29,259 +29,11 @@
 #include <cstring>
 #define PORT 8080
 
-#include "include/rapidxml-1.13/rapidxml.hpp"
-
-// Einbinden von erzeugten Header-Dateien
-#include "include/node.hpp"
-#include "include/way.hpp"
-#include "include/address.hpp"
-//#include "include/nav_start_args.hpp"
-
+#include "include/nav_params.hpp"
+#include "include/osm_to_nav.hpp"
 #include "include/a_star.hpp"
 
 using namespace std::chrono_literals;
-
-namespace nav_sgd
-{
-
-std::string INPUT_FILENAME;
-std::string OUTPUT_FILENAME;
-std::string USERS_FILENAME;
-std::string PROPERTIES_FILENAME;
-
-std::unordered_map<long, Node> nodes;
-
-int osm_to_nav(std::string osm_filename)
-{
-    // read osm file
-    rapidxml::xml_document<> doc;
-    std::cout << "Parse osm file " << osm_filename << std::endl;
-    std::ifstream file(osm_filename);
-    std::vector<char> buffer((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-    buffer.push_back('\0');
-    doc.parse<0>(&buffer[0]);
-    rapidxml::xml_node<> *root_node = doc.first_node("osm");
-
-    long sgd_id = 100000000;
-    std::unordered_map<long, long> id_mapping;
-    std::vector<Address> addresses;
-
-    for (rapidxml::xml_node<>* node = root_node->first_node("node");
-        node; node = node->next_sibling("node"))
-    {
-        rapidxml::xml_attribute<>* attr;
-        if (attr = node->first_attribute("action"))
-        {
-            std::string v(attr->value());
-            if (!v.compare("delete")) continue;
-        }
-        // parse and save node
-        // Every node has attribute id, lat, lon
-        long id;
-        double lat, lon;
-        try
-        {
-            id = std::stol(node->first_attribute("id")->value());
-            lat = std::stod(node->first_attribute("lat")->value());
-            lon = std::stod(node->first_attribute("lon")->value());
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << "Error parsing node\n";
-            std::cerr << e.what() << '\n';
-            continue;
-        }
-
-        // Initialize new node and address
-        bool has_adress_tag = false;
-        sgd_id += 100;
-        Address addr(id);
-        addr.add_sgd_id(sgd_id);
-        Node n(id, lat, lon);
-        n.add_sgd_id(sgd_id);
-        id_mapping.insert(std::make_pair(id, sgd_id));
-
-        for (rapidxml::xml_node<>* tag = node->first_node("tag");
-            tag; tag = tag->next_sibling("tag"))
-        {
-            std::string key = tag->first_attribute("k")->value();
-            if (key.rfind("addr",0) == 0)
-            {
-                has_adress_tag = true;
-                addr.add_tag(key, tag->first_attribute("v")->value());
-
-            } else {
-                n.add_tag(key, tag->first_attribute("v")->value());
-            }
-        }
-
-        if (has_adress_tag)
-        {
-            addresses.push_back(addr);
-        }
-
-        nodes.insert(std::make_pair(n.get_id(), n));
-    }
-
-    std::cout << nodes.size() << " nodes found.\n";
-
-    for (rapidxml::xml_node<>* way = root_node->first_node("way");
-        way; way = way->next_sibling("way"))
-    {
-        rapidxml::xml_attribute<>* attr;
-        if (attr = way->first_attribute("action"))
-        {
-            std::string v(attr->value());
-            if (!v.compare("delete")) continue;
-        }
-        // parse and save way
-        // get all tags
-        Way w;
-        for (rapidxml::xml_node<>* tag = way->first_node("tag");
-           tag; tag = tag->next_sibling("tag"))
-        {
-            w.add_tag(tag->first_attribute("k")->value(), tag->first_attribute("v")->value());
-        }
-
-        Node *n1, *n2 = nullptr;
-        for (rapidxml::xml_node<>* nd = way->first_node("nd");
-           nd; nd = nd->next_sibling("nd"))
-        {
-            // get node and add way
-            long first = std::stol(nd->first_attribute("ref")->value());
-            long sid = id_mapping.find(first)->second;
-            n1 = &nodes.find(sid)->second;
-
-            if (n2 != nullptr)    // skip first round to get two nodes
-            {
-                n1->add_way(n2, w);
-                n2->add_way(n1, w);
-            }
-            n2 = n1;
-        }
-    }
-    std::cout << "\nWrite addresses to file\n";
-    std::ofstream addr_file("../Karten/3_lohmuehlenpark.adr", std::ios::out | std::ios::trunc);
-    addr_file << "# Address list\n";
-    for (auto a : addresses)
-    {
-        addr_file << a.to_string();
-    }
-    addr_file.close();
-
-    std::cout << "Done!\n";
-    return 0;
-}
-
-int mesh_nodes()
-{
-    // Mesh nodes
-    // 1. calculate positions of new nodes
-    // 2. connect new nodes to old nodes
-
-    for (auto it = nodes.begin(); it != nodes.end(); it++)
-    {
-        it->second.calc_child_nodes();
-    }
-
-    for (auto nds : nodes)
-    {
-        Node* pNode = &nodes.at(nds.first);
-        for (auto i : pNode->get_neighbor_ids())
-        {
-            if (nodes.count(i) < 1)
-            {
-                continue;
-            }
-            auto rNode = &nodes.at(i);
-            auto pNode_cn = pNode->get_child_nodes(i);
-            auto rNode_cn = rNode->get_child_nodes(pNode->get_id());
-
-            Way w = pNode->get_way(rNode);
-            for (uint8_t k = 0; k < pNode_cn.size(); k++)
-            {
-                pNode_cn[k]->add_way(rNode, w);
-                rNode->add_way(pNode_cn[k], w);
-            }
-
-            if (rNode_cn.size() < 1 || pNode_cn.size() < 1) continue;
-            // calculate distance to other child nodes
-            // connect to nearest child node
-            double d1 = pNode_cn[0]->distance_to_node(rNode_cn[0]) + pNode_cn[1]->distance_to_node(rNode_cn[1]);
-            double d2 = pNode_cn[0]->distance_to_node(rNode_cn[1]) + pNode_cn[1]->distance_to_node(rNode_cn[0]);
-
-            if (d1 < d2)
-            {
-                pNode_cn[0]->add_way(rNode_cn[0], w);
-                pNode_cn[1]->add_way(rNode_cn[1], w);
-            }
-            else
-            {
-                pNode_cn[0]->add_way(rNode_cn[1], w);
-                pNode_cn[1]->add_way(rNode_cn[0], w);
-            }
-        }
-    }
-    return 0;
-}
-
-//! \brief Write nodes to file.
-//! \param filename
-//! \param file_format one of osm, nav. Defaults to nav
-//! \return number of written nodes
-int write_to_file(std::string filename, std::string file_format = "nav")
-{
-    if (nodes.empty())
-    {
-        std::cout << "Nodelist is empty. No nodes to write.\n";
-        return 0;
-    }
-    std::cout << "Write nodes to file\n";
-    std::ofstream out_file(filename + "." + file_format, std::ios::out | std::ios::trunc);
-    bool to_nav = (file_format == "nav");
-
-    out_file << "<?xml version='1.0' encoding='utf-8'?>\n";
-    out_file << (to_nav ? "<nodelist name='lohmuehlenpark' version='0.1'>\n" : "<osm version='0.6'>\n");
-
-    int i = 0;
-    for (auto p : nodes)
-    {
-        std::cout << "Write node " << ++i << "/" << nodes.size() << "\r";
-        out_file << p.second.to_string(to_nav);
-        //osm_file << p.second.to_osm();
-
-        int k = 0;
-        for (auto cn : p.second.get_child_nodes())
-        {
-            out_file << cn->to_string(to_nav);
-            //osm_file << cn->to_osm();
-        }
-    }
-
-    // Write ways
-    if (!to_nav)
-    {
-        long id = 1000000;
-        for (auto p : nodes)
-        {
-            id += 10;
-            out_file << p.second.to_osm_way(id);
-
-            int k = 0;
-            for (auto cn : p.second.get_child_nodes())
-            {
-                id += 10;
-                out_file << cn->to_osm_way(id);
-            }
-        }
-    }
-
-    out_file << (to_nav ? "</nodelist>" : "</osm>");
-    out_file.close();
-    return i;
-}
-
-}
 
 void args_from_msg(std::string msg, nav_sgd::A_Star& a_stern)
 {
@@ -350,11 +102,35 @@ void args_from_msg(std::string msg, nav_sgd::A_Star& a_stern)
 
 int main(int argc, char *argv[])
 {
-    nav_sgd::osm_to_nav("../Karten/2_augmentiert.osm");
-    nav_sgd::mesh_nodes();
-    nav_sgd::write_to_file("../Karten/3_lohmuehlenpark", "nav");
-    nav_sgd::write_to_file("../Karten/3_lohmuehlenpark", "osm");
+    nav_sgd::Nav_Params *params = new nav_sgd::Nav_Params("parameters.cfg");
 
+    // interpolation
+
+    // osm to nav:
+    // - input : osm file
+    // - Unterscheidung, was durchgeführt werden soll:
+    //      - parse
+    //      - interpolation
+    //      - mesh
+    // - output: nav/osm/adr file
+    nav_sgd::Osm2Nav osm2nav(*params);
+    int ret = osm2nav.osm_to_nav();
+    osm2nav.interpolate_nodes();
+
+    if (params->param_as_bool("mesh_nodes"))
+    {
+        osm2nav.mesh_nodes();
+    }
+
+    if (params->param_as_string("out_file").find("nav") != std::string::npos)
+    {
+        osm2nav.write_to_file("../Karten/3_lohmuehlenpark", "nav");
+    }
+    if (params->param_as_string("out_file").find("osm") != std::string::npos)
+    {
+        osm2nav.write_to_file("../Karten/3_lohmuehlenpark", "osm");
+    }
+    
     nav_sgd::A_Star *astern = new nav_sgd::A_Star("../Karten/3_lohmuehlenpark.nav", "../Karten/0_users.xml");
 
     // create server

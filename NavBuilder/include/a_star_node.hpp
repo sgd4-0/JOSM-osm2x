@@ -1,14 +1,14 @@
 #ifndef NAV_SGD_A_STAR_NODE_HPP_
 #define NAV_SGD_A_STAR_NODE_HPP_
 
-namespace nav_sgd
-{
-
 #include <vector>
 #include <map>
 #include <string>
 #include <typeinfo>
 #include <cmath>
+
+namespace nav_sgd
+{
 
 class A_Star_Node
 {
@@ -20,8 +20,8 @@ private:
 	std::string to_string(double d) {
         std::ostringstream stm ;
         stm << std::setprecision(10) << d ;
-        return stm.str() ;
-    }
+        return stm.str();
+    };
     
 protected:
 	friend bool operator==(const A_Star_Node& A, const A_Star_Node& B);
@@ -31,7 +31,6 @@ public:
     A_Star_Node(long, double, double);
     ~A_Star_Node();
     
-
     //! \brief 
     //! \param parent_node
     //! \param dest_node
@@ -42,6 +41,7 @@ public:
     double lat, lon;
     
     std::map<long, double> cost_map;  // cost to node with id
+    bool is_blocked = false;
 
     double f();
     double g();
@@ -84,7 +84,7 @@ A_Star_Node::set_parent(A_Star_Node parent_node, A_Star_Node dest_node, double a
 {
     parent_id_ = parent_node.id;
     // calculate g_ from distance and cost factor
-    g_ = parent_node.g_ + parent_node.cost_to_node(id) * add_cost *
+    g_ = parent_node.g_ + parent_node.cost_to_node(id) * add_cost +
                     sqrt(pow(parent_node.lat - lat, 2) + pow(parent_node.lon - lon, 2));
     std::string out(" g: " + to_string(g_));
 

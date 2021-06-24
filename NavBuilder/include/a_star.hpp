@@ -209,15 +209,21 @@ A_Star::compute_path(A_Star_Node start_node, A_Star_Node dest_node)
             // destination found
             foundDest = true;
             trace_path(pos.id);
-
             break;
+        }
+
+        if (pos.is_blocked)
+        {
+            out_file << "Node is blocked.\n";
+            continue;
         }
 
         // expand node
         out_file << "Expand ids:\n";
         //std::set<long> n;
         long last_id_ = 0;
-        double phi_transf_ = 0.0, y_abst_ = 0.0;
+        double phi_transf_ = 0.0, lo_tr = 0.0, la_tr = 0.0;
+        double y_abst_;
         for (auto entry : pos.cost_map)
         {
             long next_id = entry.first;
@@ -236,6 +242,9 @@ A_Star::compute_path(A_Star_Node start_node, A_Star_Node dest_node)
                 // calc transform
                 last_id_ = next_id;
                 phi_transf_ = atan2(next_pos.lat - pos.lat, next_pos.lon - pos.lon);
+                lo_tr = pos.lon * cos(phi_transf_) + pos.lat * sin(phi_transf_);
+                la_tr = pos.lat * cos(phi_transf_) - pos.lon * sin(phi_transf_);
+
                 y_abst_ = next_pos.lat * cos(phi_transf_) - next_pos.lon * sin(phi_transf_);
                 out_file << "phi:" << phi_transf_ << ",";
             }
@@ -243,12 +252,21 @@ A_Star::compute_path(A_Star_Node start_node, A_Star_Node dest_node)
             {
                 // transform coordinates
                 double abstand = y_abst_ - (next_pos.lat * cos(phi_transf_) - next_pos.lon * sin(phi_transf_));
-                add_cost = (abstand > 0 ? 0.8 : 1.4);
-                if (abstand > 0) {
-                    out_file << "r";
-                } else {
-                    out_file << "l";
-                }
+                add_cost = (abstand > 0 ? 0.8 : 1.4);   // atan / Funktion
+
+                // transform coordinates
+                //double lo = next_pos.lon * cos(phi_transf_) + next_pos.lat * sin(phi_transf_);
+                //double la = next_pos.lat * cos(phi_transf_) - next_pos.lon * sin(phi_transf_);
+
+                //add_cost = atan2(la - la_tr, lo - lo_tr);
+                //add_cost = exp(pow(-add_cost,2))*add_cost+1;
+                out_file << "ac: " << add_cost << ",";
+                
+                //if (abstand > 0) {
+                //    out_file << "r";
+                //} else {
+                //    out_file << "l";
+                //}
             }
 
             // update node
@@ -308,6 +326,12 @@ A_Star::import_nav_file()
         double lon = std::stod(node->first_attribute("lon")->value());
         
         A_Star_Node n(id, lat, lon);
+
+        // search for barrier attribute
+        if (node->first_node("barrier") != nullptr)
+        {
+            n.is_blocked = true;
+        }
 
         for (rapidxml::xml_node<> *nd = node->first_node("nd"); nd; nd = nd->next_sibling("nd"))
         {

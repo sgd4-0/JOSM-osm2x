@@ -17,7 +17,6 @@ private:
     //const std::vector<std::string> valid_keys;
     std::unordered_map<std::string, std::string> tags;
     std::set<std::string> valid_keys{"highway", "surface", "width", "slope", "hazard"};
-
 public:
     Way();
     ~Way();

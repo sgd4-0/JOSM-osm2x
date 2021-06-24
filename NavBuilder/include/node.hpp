@@ -14,7 +14,7 @@
 #include "way.hpp"
 
 #define PI 3.14159265
-#define LAT_DEG 9.009E-6
+//#define LAT_DEG 1/111000
 #define LON_DEG 1.5166E-5
 
 namespace nav_sgd
@@ -24,7 +24,7 @@ class Node
 
 struct ref
 {
-    Node* start_node;
+    //Node* start_node;
 	Node* end_node;
     double angle;
     ref(Node* end_node_, double angle_) : end_node(end_node_), angle(angle_) {};
@@ -44,30 +44,38 @@ public:
 	Node(long id, double lat, double lon);
 	~Node();
 
+	long get_id();
 	void add_sgd_id(long sgd_id);
 	bool add_tag(std::string key, std::string value);
+
+	// manage ways
 	void add_way(Node* ziel, Way way);
-	long get_id();
+	void remove_way(long id);
 	Way get_way(Node* ziel);
+	std::vector<Way> get_ways();
 
 	std::vector<long> get_neighbor_ids();
+
+	// geometric functions
 	double distance_to_node(Node* ziel);
+	double distance_to_node_m(Node* ziel);
+	double angle_to_node(Node* ziel);
+	std::pair<double, double> generate_position(double distance, double angle);
 
 	//! \brief Calculate new nodes for this node based on previously added ways. The created nodes
 	//! are connected to the corresponding reference nodes and to each other if more than 2 references
 	//! are available.
-	//! \returns A vector containing the new nodes
 	void calc_child_nodes();
 	std::vector<Node*> get_child_nodes();
 
-	//! \brief Returns the child nodes belonging to the specified reference node.
+	//! \brief Returns the child nodes that belong to the specified reference node.
 	//! \param ref_id id of reference node
 	//! \return Vector containing nodes.
 	std::vector<Node*> get_child_nodes(long ref_id);
 	std::string to_string(bool to_nav = true);
 	std::string to_osm_way(long id);
 
-	std::vector<std::string> tags;
+	std::unordered_map<std::string, std::string> tags;
 	std::set<std::string> node_tags{"curb", "barrier"};
 	std::set<std::string> addr_tags{"addr:street", "addr:housenumber"};
 protected:
@@ -99,6 +107,7 @@ bool operator==(const Node& A, const Node& B)
 Node::Node(long id, double lat, double lon)
         : id_(id), lat_(lat), lon_(lon)
 {
+	sgd_id_ = id;
 }
 
 Node::~Node()
@@ -125,11 +134,7 @@ Node::add_tag(std::string key, std::string value)
 	// if tag is for node -> save in node
     if (node_tags.count(key) > 0)
     {
-        std::string s("<" + key + ">");
-        s.append(value);
-        s.append("</" + key + ">\n");
-
-        tags.push_back(s);
+        tags.insert(std::make_pair(key, value));
         return true;
     }
 	
@@ -144,30 +149,53 @@ Node::add_way(Node* ziel, Way way)
 		std::cout << "Could not add way. End node is nullptr.\n";
 		return;
 	}
-	if (ways.count(ziel->sgd_id_))
-	{
-		// way already in ways
-		ways.erase(ziel->sgd_id_);
-	}
+	remove_way(ziel->get_id());
 	
-	ways.insert(std::make_pair(ziel->sgd_id_, way));
+	ways.insert(std::make_pair(ziel->get_id(), way));
 
 	// angle to node
-	double angle = atan2(ziel->lat_ - lat_,(ziel->lon_ - lon_) * cos(ziel->lat_/180*PI));
-    refs.insert(ref(ziel, angle));
+    refs.insert(ref(ziel, angle_to_node(ziel)));
+}
+
+void
+Node::remove_way(long id)
+{
+	if (ways.count(id))
+	{
+		ways.erase(id);
+	}
+	for (auto r : refs)
+	{
+		if (r.end_node->get_id() == id)
+		{
+			refs.erase(r);
+			break;
+		}
+	}
 }
 
 Way
 Node::get_way(Node* ziel)
 {
-	if (ways.count(ziel->sgd_id_) < 1)
+	if (ways.count(ziel->get_id()) < 1)
 	{
 		return Way();
 	}
 	else
 	{
-		return ways.find(ziel->sgd_id_)->second;
+		return ways.find(ziel->get_id())->second;
 	}
+}
+
+std::vector<Way>
+Node::get_ways()
+{
+	std::vector<Way> w;
+	for (auto w_ : ways)
+	{
+		w.push_back(w_.second);
+	}
+	return w;
 }
 
 std::vector<long>
@@ -185,6 +213,30 @@ double
 Node::distance_to_node(Node* ziel)
 {
 	return sqrt(pow(ziel->lat_ - lat_, 2) + pow(ziel->lon_ - lon_, 2));
+}
+
+double
+Node::distance_to_node_m(Node* ziel)
+{
+	// m -> lat => 1/111000*m
+	// m -> lon => 1/(111000*cos(lon))*m
+	double diff_lat = (ziel->lat_ - lat_) * 111000;
+	double diff_lon = (ziel->lon_ - lon_) * 1/LON_DEG;
+
+	return sqrt(pow(diff_lat, 2) + pow(diff_lon, 2));
+}
+
+double
+Node::angle_to_node(Node* ziel)
+{
+	return atan2(ziel->lat_ - lat_,(ziel->lon_ - lon_) * cos(ziel->lat_/180*PI));
+}
+
+std::pair<double, double>
+Node::generate_position(double distance, double angle)
+{
+	return std::make_pair(lat_ + sin(angle) * 1/111000 * distance,
+					lon_ + cos(angle) * LON_DEG * distance);
 }
 
 std::vector<Node*>
@@ -221,22 +273,7 @@ Node::get_child_nodes(long ref_id)
 void
 Node::calc_child_nodes()
 {
-	bool has_wide_ways_ = false;
-	for (auto w : ways)
-	{
-		try
-		{
-			double width = stod(w.second.get_tag("width"));
-			if (width > 2)
-			{
-				has_wide_ways_ = true;
-				break;
-			}
-		}
-		catch(const std::exception& e) { }
-	}
-
-	if (refs.size() < 2 || !has_wide_ways_)
+	if (refs.size() < 2)
     {
         refs.clear();
     }
@@ -280,13 +317,10 @@ Node::calc_child_nodes()
 			double dist_to_node = (width1 + width2) / 6;
 
 			new_id++;
-            Node n(new_id, lat_ + sin(a) * LAT_DEG * dist_to_node,
-					lon_ + cos(a) * LON_DEG * dist_to_node);
-			n.add_sgd_id(new_id);
+			auto latlon = generate_position(dist_to_node, a);
+            Node n(new_id, latlon.first, latlon.second);
             
 			// add references to new node, only id is required
-            //n.add_way(r.id, 0.0, 0.0, w1);
-            //n.add_way(last_ref.id, 0.0, 0.0, w2);
 			if (refs.size() > 3 && child_nodes.size() > 0)
 			{
 				Node* last_node = &child_nodes.back();
@@ -320,7 +354,7 @@ Node::to_string(bool to_nav)
 	if (!to_nav) out.append("version='1' ");
 	out.append("lat='" + to_string(lat_) + "' ");
 	out.append("lon='" + to_string(lon_) + "' ");
-	if (tags.size() > 0 || (ways.size() > 0 && to_nav))
+	if (tags.size() > 0 || (ways.size() > 0))
 	{
 		out.append(">\n");
 	}
@@ -332,7 +366,14 @@ Node::to_string(bool to_nav)
 
 	for (auto t : tags)
 	{
-		out.append("    " + t);
+		if (to_nav)
+		{
+			out.append("    <" + t.first + ">" + t.second + "</" + t.first + ">\n");
+		}
+		else
+		{
+			out.append("    <tag k='" + t.first + "' v='" + t.second + "' />\n");
+		}
 	}
 
 	if (ways.size() > 0 && to_nav)
@@ -356,13 +397,11 @@ Node::to_osm_way(long id)
 
 	for (auto w : ways)
 	{
-		out.append("  <way ");
-		out.append("id='" + std::to_string(id++) + "' ");
-		out.append("version='1'>\n");
-		out.append("    <nd ");
-		out.append("ref='" + std::to_string(sgd_id_) + "' />\n");
-		out.append("    <nd ");
-		out.append("ref='" + std::to_string(w.first) + "' />\n");
+		out.append("  <way id='" + std::to_string(id++) + "' version='1'>\n");
+		out.append("    <nd ref='" + std::to_string(sgd_id_) + "' />\n");
+		out.append("    <nd ref='" + std::to_string(w.first) + "' />\n");
+		out.append("    <tag k='highway' v='" + w.second.get_tag("highway") + "' />\n");
+		out.append("    <tag k='surface' v='" + w.second.get_tag("surface") + "' />\n");
 		out.append("  </way>\n");
 		//out.append(w.second.to_string("    "));
 	}

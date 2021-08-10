@@ -22,10 +22,17 @@
         <default>10</default>
     </user>
     <user name="jung_und_fit">
+        <highway>
+            <footway>1</footway>
+            <service>2.5</service>
+            <living_street>2.0</living_street>
+            <residential>5.0</residential>
+            <steps>1e6</steps>
+        </highway>
         <surface>
             <asphalt>1</asphalt>
             <paving_stones>1</paving_stones>
-            <compacted>1</compacted>
+            <compacted>5.0</compacted>
             <gravel>1.5</gravel>
             <cobblestone>3.0</cobblestone>
             <sand>5.0</sand>

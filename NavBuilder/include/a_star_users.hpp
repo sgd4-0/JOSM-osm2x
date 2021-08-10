@@ -26,6 +26,7 @@ struct USER
         {
             double d = std::stod(value);
             factors.insert(std::pair<std::string, double>(key, d));
+            std::cout << "Key: " << key << ", value: " << value << std::endl;
         }
         catch(const std::invalid_argument& e)
         {
@@ -37,11 +38,11 @@ struct USER
     double get_factor(std::string key)
     {
         if (factors.count(key) > 0) {
-            return factors[key];
+            return factors.at(key);
         } else if (factors.count("default") > 0) {
-            return factors["default"];
+            return factors.at("default");
         } else {
-            return -1.0;
+            return -1;
         }
     }
 };

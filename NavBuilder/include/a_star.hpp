@@ -20,6 +20,7 @@
 #include "rapidxml-1.13/rapidxml.hpp"
 #include "a_star_users.hpp"
 #include "a_star_node.hpp"
+#include "nav_params.hpp"
 
 namespace nav_sgd
 {
@@ -28,6 +29,8 @@ class A_Star
 {
 
 private:
+    Nav_Params *parameters;
+
     const std::string map_file_;
     std::string adr_filename_;
     std::unordered_map<long, A_Star_Node> nodelist;
@@ -53,7 +56,7 @@ private:
 
     bool compare_strings(std::string s1, std::string s2);
 
-    // Helper function
+    //! \brief Double to string with 10 digit precision
 	std::string to_string( double d ) {
         std::ostringstream stm ;
         stm << std::setprecision(10) << d ;
@@ -61,7 +64,7 @@ private:
     }
 
 public:
-    A_Star(std::string osm_map_file, std::string users_file);
+    A_Star(Nav_Params& params, std::string osm_map_file, std::string users_file);
     ~A_Star();
 
     // Store waypoints from start to destination
@@ -75,9 +78,10 @@ public:
     int compute_path();
 };
 
-A_Star::A_Star(std::string osm_map_file, std::string users_file)
+A_Star::A_Star(Nav_Params& params, std::string osm_map_file, std::string users_file)
     : map_file_(osm_map_file)
 {
+    parameters = &params;
     users = new A_Star_Users(users_file);
     adr_filename_ = map_file_.substr(0,map_file_.rfind('.')) + ".adr";
 }
@@ -120,9 +124,17 @@ A_Star::set_destination(std::string address)
 int
 A_Star::compute_path()
 {
+    // reload params
+    parameters->reload();
+
     // import nav file and get start node
     import_nav_file();
     A_Star_Node start_node = get_node_from_lat_lon(st_lat_, st_lon_);
+    if (start_node.id < 0)
+    {
+        std::cerr << "Could not find startnode near " << to_string(st_lat_) << ", " << to_string(st_lon_) << "\n";
+        return -1;
+    }
 
     // try to find address in addresslist
     if (!address_.empty())
@@ -190,6 +202,15 @@ A_Star::compute_path(A_Star_Node start_node, A_Star_Node dest_node)
     std::set<A_Star_Node> openList;
     closedList.clear();
 
+    // get parameters
+    double factor_a = parameters->param_as_double("factor_a");
+    double factor_b = parameters->param_as_double("factor_b");
+    double factor_c = parameters->param_as_double("factor_c");
+
+    std::cout << "Faktor a: " << factor_a << "\n";
+    std::cout << "Faktor b: " << factor_b << "\n";
+    std::cout << "Faktor c: " << factor_c << "\n";
+
     // Initialise parameters of starting node
     openList.insert(start_node);
     
@@ -252,15 +273,17 @@ A_Star::compute_path(A_Star_Node start_node, A_Star_Node dest_node)
             {
                 // transform coordinates
                 double abstand = y_abst_ - (next_pos.lat * cos(phi_transf_) - next_pos.lon * sin(phi_transf_));
-                add_cost = (abstand > 0 ? 0.8 : 1.4);   // atan / Funktion
+                //add_cost = (abstand > 0 ? 0.8 : 1.4);   // atan / Funktion
 
                 // transform coordinates
-                //double lo = next_pos.lon * cos(phi_transf_) + next_pos.lat * sin(phi_transf_);
-                //double la = next_pos.lat * cos(phi_transf_) - next_pos.lon * sin(phi_transf_);
+                double lo = next_pos.lon * cos(phi_transf_) + next_pos.lat * sin(phi_transf_);
+                double la = next_pos.lat * cos(phi_transf_) - next_pos.lon * sin(phi_transf_);
 
-                //add_cost = atan2(la - la_tr, lo - lo_tr);
-                //add_cost = exp(pow(-add_cost,2))*add_cost+1;
-                out_file << "ac: " << add_cost << ",";
+                //double angle = atan2(next_pos.lat - pos.lat, next_pos.lon - pos.lon);
+                double angle = atan2(la - la_tr, lo - lo_tr);
+                out_file << "ang: " << angle << ",";
+                add_cost =  factor_a * exp(-pow(angle*factor_b,2)) * angle
+                            + 1 + factor_c * tanh(5*angle);
                 
                 //if (abstand > 0) {
                 //    out_file << "r";
@@ -351,14 +374,15 @@ A_Star::get_node_from_lat_lon(const double lat, const double lon)
     for (auto node : nodelist)
     {
         double lastDist_;
-        if((lastDist_ = std::sqrt(std::pow(node.second.lat - lat, 2) + std::pow(node.second.lon - lon, 2))) < lastDist )
+        if((lastDist_ = 111319*std::sqrt(std::pow(node.second.lat - lat, 2) 
+                + std::pow((node.second.lon - lon) * cos(lat*180/PI), 2))) < lastDist )
         {
             lastDist = lastDist_;
             nnode = node.first;
         }
     }
 
-    if (nnode < 0)
+    if (nnode < 0 || lastDist > parameters->param_as_double("max_dist_from_node"))
     {
         return A_Star_Node(-1,0,0);
     }
@@ -413,7 +437,7 @@ A_Star::trace_path(long dest_id)
 
         waypoints.push_back(p);
         out_file << "    <nd ref='" << p.id << "'/>\n";
-        std::cout << "Waypoint id: " << p.id << std::endl;
+        //std::cout << "Waypoint id: " << p.id << std::endl;
     }
     out_file << "  </way>\n";
     out_file << "</osm>";

@@ -40,60 +40,84 @@ int main(int argc, char const *argv[])
     // ROS liefert aktuelle Position und Zielposition
     // weitere Daten: username, 
 
-    std::vector<std::string> prompt = {
-        "Enter username: ",
-        "Enter start position (lat)      : ",
-        "Enter start position (lon)      : ",
-        "Enter destination position (lat): ",
-        "Enter destination position (lon): ",
-        "Enter address: "
+    // prompt, json id, standard value
+    std::string prompt[4][3] = {
+        "Enter username             \t\"string\": ", "username", "\"default\"",
+        "Enter start position       \t[lat, lon]: ", "start", "",
+        "Enter destination position \t[lat, lon]: ", "dest", "[0.000,0.000]",
+        "Enter address              \t\"string\": ", "address", "\"\""
     };
 
-    std::vector<std::string> hindernis = {
-        "Enter node lat: ",
-        "Enter node lon: "
+    std::string hindernis[2][3] = {
+        "Enter username\t\"string\" : ", "username", "\"default\"",
+        "Enter position\t[lat, lon]: ", "position", ""
     };
-    
+
     while (true)
     {
         std::string nav;
         std::cout << "Type 0 for navigation or 1 for obstacle: ";
         std::getline(std::cin, nav);
 
-        std::string msg = "{0:" + nav;
+        if (nav.length() < 1)
+        {
+            std::cerr << "Input is not valid! Try again.\n";
+            continue;
+        }
+
+        std::string msg = "{\n\t\"mode\": " + nav;
         if (std::stoi(nav) > 0)
         {
             // obstacle
-            for (uint8_t i = 0; i < hindernis.size(); i++)
+            for (uint8_t i = 0; i < 1; i++)
             {
                 std::string in;
-                std::cout << hindernis[i];
+                std::cout << hindernis[i][0];
                 std::getline(std::cin, in);
 
-                if (in.size() < 1)  continue;
-
-                if (msg.size() > 3) msg.append(",");
-                msg.append(std::to_string(i+2) + ":" + in);
+                if (in.size() < 1 && hindernis[i][2].length() < 1)
+                {
+                    std::cerr << "Mandatory field can not be empty!\n";
+                    i -= 1;
+                    continue;
+                }
+                else if (in.size() < 1)
+                {
+                    in = hindernis[i][2];
+                }
+                if (msg.size() > 3) msg.append(",\n");
+                msg.append("\t\"" + hindernis[i][1] + "\": " + in);
             }
         }
         else
         {
-            for (uint8_t i = 0; i < prompt.size(); i++)
+            // navigation
+            for (uint8_t i = 0; i < 4; i++)
             {
                 std::string in;
-                std::cout << prompt[i];
+                std::cout << prompt[i][0];
                 std::getline(std::cin, in);
 
-                if (in.size() < 1)  continue;
 
-                if (msg.size() > 3) msg.append(",");
-                msg.append(std::to_string(i+1) + ":" + in);
+                if (in.size() < 1 && prompt[i][2].length() < 1)
+                {
+                    std::cerr << "Mandatory field can not be empty!\n";
+                    i -= 1;
+                    continue;
+                }
+                else if (in.size() < 1)
+                {
+                    in = prompt[i][2];
+                }
+
+                if (msg.size() > 3) msg.append(",\n");
+                msg.append("\t\"" + prompt[i][1] + "\": " + in);
             }
         }
         
-        msg.append("}");
+        msg.append("\n}");
 
-        std::cout << "Send message " << msg << "\n";
+        std::cout << "Send message :\n" << msg << "\n";
         std::cout << "\n-------------------------------------------------\n\n";
 
         send(sock , msg.c_str() , msg.length() , 0 );

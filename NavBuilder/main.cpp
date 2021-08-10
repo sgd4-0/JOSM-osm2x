@@ -32,72 +32,69 @@
 #include "include/nav_params.hpp"
 #include "include/osm_to_nav.hpp"
 #include "include/a_star.hpp"
+#include "include/obstacle.hpp"
+
+#include "include/simdjson.h"
+#include "include/simdjson.cpp" // TODO nicht so gut
 
 using namespace std::chrono_literals;
 
-void args_from_msg(std::string msg, nav_sgd::A_Star& a_stern)
+void parse_json(std::string buffer, nav_sgd::A_Star& a_stern)
 {
-    double slat = 0.0, slon = 0.0, dlat = 0.0, dlon = 0.0;
+    simdjson::ondemand::parser parser;
+    
+    simdjson::dom::parser prser;
+    simdjson::padded_string json(buffer);
+    simdjson::dom::element doc = prser.parse(json);
 
-    std::cout << "Parse message: -" << msg << "-\n";
-    std::string token;
-    std::istringstream tokenStream(msg);
-    bool is_nav_request_;
-    while (std::getline(tokenStream, token, ','))
+    // first: parse mode
+    int64_t mode = doc["mode"];
+
+    if (mode == 0)
     {
-        //k_v.push_back(token);
-        int del_pos = token.find(':');
-        int key = stoi(token.substr(0,del_pos));
+        // parse json for a star
+        std::vector<double> start;
+        for (double val : doc["start"])     start.push_back(val);
 
-        switch (key)
+        std::vector<double> dest;
+        for (double val : doc["dest"])  dest.push_back(val);
+
+        auto username = simdjson::minify(doc["username"]);
+        auto address = simdjson::minify(doc["address"]);
+
+        // remove leading and trailing "
+        address = address.substr(1, address.length() - 2);
+        username = username.substr(1, username.length() - 2);
+        
+        a_stern.set_user(username);
+        a_stern.set_start(start[0], start[1]);
+        if (address.length() > 1)
         {
-        case 0:     // obstacle or nav
-            is_nav_request_ = stoi(token.substr(del_pos+1)) < 1;
-            break;
-        case 1: // username
-            {
-                auto uname = token.substr(del_pos+1);
-                if (uname.size() > 2)
-                {
-                    a_stern.set_user(uname);
-                }
-            }
-            break;
-        case 2: // start lat
-            slat = stod(token.substr(del_pos+1));
-            break;
-        case 3: // start lon
-            slon = stod(token.substr(del_pos+1));
-            break;
-        case 4: // destination lat
-            dlat = stod(token.substr(del_pos+1));
-            break;
-        case 5: // destination lon
-            dlon = stod(token.substr(del_pos+1));
-            break;
-        case 6: // address
-            {
-                auto adr = token.substr(del_pos+1);
-                if (adr.size() > 2)
-                {
-                    a_stern.set_destination(adr);
-                }
-            }
-            break;
-        default:
-            break;
+            a_stern.set_destination(address);
+        }
+        else
+        {
+            a_stern.set_destination(dest[0], dest[1]);
         }
     }
-    if (is_nav_request_)
+    else if (mode == 1)
     {
-        if (slat != 0.0 && slon != 0.0)  a_stern.set_start(slat, slon);
-        if (dlat != 0.0 && dlon != 0.0)  a_stern.set_destination(dlat, dlon);
+        // parse json for obstacle
+        std::vector<double> pos;
+        for (double val : doc["position"])     pos.push_back(val);
+
+        auto username = simdjson::minify(doc["username"]);
+        username = username.substr(1, username.length() - 2);
+
+        add_obstacle("../Karten/3_lohmuehlenpark.nav", pos[0], pos[1]);
     }
     else
     {
-        // add hindernis
-        std::cout << "Add hindernis at position " << slat << ", " << slon << "\n";
+        remove_obstacle("../Karten/3_lohmuehlenpark.nav");
     }
+
+    // astern->set_arg
+    std::cout << "Message parsed\n";
 }
 
 int main(int argc, char *argv[])
@@ -131,7 +128,7 @@ int main(int argc, char *argv[])
         osm2nav.write_to_file("../Karten/3_lohmuehlenpark", "osm");
     }
     
-    nav_sgd::A_Star *astern = new nav_sgd::A_Star("../Karten/3_lohmuehlenpark.nav", "../Karten/0_users.xml");
+    nav_sgd::A_Star *astern = new nav_sgd::A_Star(*params, "../Karten/3_lohmuehlenpark.nav", "../Karten/0_users.xml");
 
     // create server
     int server_fd, new_socket, valread;
@@ -189,20 +186,25 @@ int main(int argc, char *argv[])
         if (c == '{' && !IN_MSG)
         {
             buffer.clear();
+            buffer.append("{");
             IN_MSG = true;
         }
         else if (IN_MSG && c == '}')
         {
             // end of message -> parse msg and compute path
-            args_from_msg(buffer, *astern);
+            std::cout << "end of message\n";
+            buffer.append("}");
+            parse_json(buffer, *astern);
+            //args_from_msg(buffer, *astern);
             astern->compute_path();
 
             std::string message_("{");
-            // TODO send waypoints {x.xxx,y.yyy;x.xxx,y.yyy;...}
+            // send waypoints {x.xxx,y.yyy;x.xxx,y.yyy;...}
             for (auto n : astern->waypoints)
             {
                 if (message_.size() > 3) message_.append(";");
                 message_.append(n.to_string());
+                std::cout << "WP: " << n.to_string() << "\n";
             }
             message_.append("}");
             send(new_socket, message_.c_str(), message_.length(), 0);

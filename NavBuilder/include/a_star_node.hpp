@@ -84,14 +84,15 @@ A_Star_Node::set_parent(A_Star_Node parent_node, A_Star_Node dest_node, double a
 {
     parent_id_ = parent_node.id;
     // calculate g_ from distance and cost factor
-    g_ = parent_node.g_ + parent_node.cost_to_node(id) * add_cost +
-                    sqrt(pow(parent_node.lat - lat, 2) + pow(parent_node.lon - lon, 2));
+    g_ = parent_node.g_ + parent_node.cost_to_node(id) * add_cost *
+                    111319*sqrt(pow(parent_node.lat - lat, 2) + pow((parent_node.lon - lon)*cos(lat/180*PI), 2));
     std::string out(" g: " + to_string(g_));
 
     // calculate h_ from distance to destination node
-    h_ = sqrt(pow(dest_node.lat - lat, 2) + pow(dest_node.lon - lon, 2));
+    h_ = 111319*sqrt(pow(dest_node.lat - lat, 2) + pow((dest_node.lon - lon)*cos(lat/180*PI), 2));
     out.append(", h: " + to_string(h_));
     out.append(", f: " + to_string(f()));
+    out.append(", add_cost: " + to_string(add_cost));
     out.append(", cost: " + to_string(parent_node.cost_to_node(id)) + "\n");
     return out;
 }

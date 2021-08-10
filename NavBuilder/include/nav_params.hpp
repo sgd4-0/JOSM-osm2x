@@ -29,7 +29,6 @@ public:
 Nav_Params::Nav_Params(std::string params_filename)
 {
     // parse file
-    params.clear();
     params_filename_ = params_filename;
 
     reload();
@@ -44,6 +43,8 @@ Nav_Params::reload()
 {
     std::ifstream params_file(params_filename_);
     std::string line;
+    params.clear();
+
     while (getline(params_file, line))
     {
         if (*line.begin() == '#' || line.size() < 3)    continue;

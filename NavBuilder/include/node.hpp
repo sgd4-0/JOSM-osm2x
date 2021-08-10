@@ -235,8 +235,8 @@ Node::angle_to_node(Node* ziel)
 std::pair<double, double>
 Node::generate_position(double distance, double angle)
 {
-	return std::make_pair(lat_ + sin(angle) * 1/111000 * distance,
-					lon_ + cos(angle) * LON_DEG * distance);
+	return std::make_pair(lat_ + sin(angle) * 1/111319.49 * distance,
+					lon_ + cos(angle) * 1/(111319.49*cos(lat_/180*PI)) * distance);
 }
 
 std::vector<Node*>

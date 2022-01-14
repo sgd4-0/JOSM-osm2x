@@ -1,6 +1,6 @@
 # Osm2X Plugin for [JOSM](https://josm.openstreetmap.de)
 
-[![license: GPLv2 or later](https://img.shields.io/badge/license-GPLv2_or_later-blue.svg?style=flat-square&maxAge=7200)](/GPL-v2.0.txt)
+[![license: GPLv2 or later](https://img.shields.io/badge/license-GPLv2_or_later-blue.svg?style=flat-square&maxAge=7200)](/license.md)
 
 A plugin that prepares and exports OSM data for use on the [Shared Guide Dog 4.0](https://github.com/PStahr-HAW/ros2-sgd4.0).
 

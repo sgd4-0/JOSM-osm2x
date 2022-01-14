@@ -1,0 +1,22 @@
+# Unterscheidung zwischen node und way??
+pole:
+   barrier: bollard
+   radius: <radius>
+tree:
+   natural: tree
+   radius: <radius>
+streetLamp:
+   highway: street_lamp
+   radius: <radius>
+trafficSign:
+   highway: traffic_sign
+   radius: <radius>
+trafficLight:
+   highway: traffic_signal
+   radius: <radius>
+railing:
+   barrier: wall
+wall:
+   barrier: wall
+fence: 
+   barrier: fence

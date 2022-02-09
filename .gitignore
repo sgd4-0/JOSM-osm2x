@@ -35,3 +35,6 @@ $ cat .gitignore
 *.exe
 *.out
 *.app
+
+# Others
+*.bak

@@ -1,7 +1,9 @@
 $ cat .gitignore
 
-# Exclude debug folder
+# Exclude debug and build folder
 **/Debug/**
+/build/**
+/bin/**
 
 # Prerequisites
 *.d

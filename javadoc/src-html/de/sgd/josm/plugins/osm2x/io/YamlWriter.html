@@ -25,10 +25,10 @@
 <span class="sourceLineNo">017</span>        public void writeDataset(SvgDocument doc) throws IOException {<a name="line.17"></a>
 <span class="sourceLineNo">018</span>                writer.write("image: &lt;path.png&gt;  # convert the svg file to a pixel image and put path here\n");<a name="line.18"></a>
 <span class="sourceLineNo">019</span>                writer.write("# The resolution depends on the resolution of the image\n");<a name="line.19"></a>
-<span class="sourceLineNo">020</span>                writer.write(String.format("# resolution = %.3f m / image_width in px\n", doc.getDocSize()[0]));<a name="line.20"></a>
-<span class="sourceLineNo">021</span>                writer.write("resolution:     # how much meters per pixel, recommended &lt;= 0.1\n");<a name="line.21"></a>
+<span class="sourceLineNo">020</span>                writer.write(String.format("# resolution = %.3f m / image_width in px\n", Math.ceil(doc.getDocSize()[0])));<a name="line.20"></a>
+<span class="sourceLineNo">021</span>                writer.write("resolution: 0.1   # how much meters per pixel, recommended &lt;= 0.1\n");<a name="line.21"></a>
 <span class="sourceLineNo">022</span>                double[] d = doc.getMapOrigin();<a name="line.22"></a>
-<span class="sourceLineNo">023</span>                writer.write(String.format("Global coordinates of map origin: lat=%.7f, lon=%.7f\n", d[0], d[1]));<a name="line.23"></a>
+<span class="sourceLineNo">023</span>                writer.write(String.format("# Global coordinates of map origin: lat=%.7f, lon=%.7f\n", d[0], d[1]));<a name="line.23"></a>
 <span class="sourceLineNo">024</span>                writer.write("origin: [0.000000, 0.000000, 0.000000]    # origin is set to bottom left corner\n");<a name="line.24"></a>
 <span class="sourceLineNo">025</span>                writer.write("negate: 0\n");<a name="line.25"></a>
 <span class="sourceLineNo">026</span>                writer.write("occupied_thresh: 0.65\n");<a name="line.26"></a>

@@ -18,7 +18,7 @@ public class YamlWriter implements Closeable {
 		writer.write("image: <path.png>  # convert the svg file to a pixel image and put path here\n");
 		writer.write("# The resolution depends on the resolution of the image\n");
 		writer.write(String.format("# resolution = %.3f m / image_width in px\n", Math.ceil(doc.getDocSize()[0])));
-		writer.write("resolution:     # how much meters per pixel, recommended <= 0.1\n");
+		writer.write("resolution: 0.1   # how much meters per pixel, recommended <= 0.1\n");
 		double[] d = doc.getMapOrigin();
 		writer.write(String.format("# Global coordinates of map origin: lat=%.7f, lon=%.7f\n", d[0], d[1]));
 		writer.write("origin: [0.000000, 0.000000, 0.000000]    # origin is set to bottom left corner\n");

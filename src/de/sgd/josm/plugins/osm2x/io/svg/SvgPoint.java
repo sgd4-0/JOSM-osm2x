@@ -1,6 +1,6 @@
 package de.sgd.josm.plugins.osm2x.io.svg;
 
-import de.sgd.josm.plugins.osm2x.Osm2XConversions;
+import de.sgd.josm.plugins.osm2x.helper.Osm2XConversions;
 
 public class SvgPoint {
 

@@ -37,9 +37,9 @@ public class SvgDocument {
 	}
 
 	public void writeToFile(Writer writer) throws IOException {
+		// Origin for svg/inkscape
 		SvgPoint documentOrigin = new SvgPoint(maxLat, minLon);
-		SvgPoint pnt = new SvgPoint(minLat, maxLon);
-		double[] xy = pnt.getLocalCoordinates(documentOrigin);
+		double[] xy = getDocSize();
 
 		// write head
 		writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -51,8 +51,8 @@ public class SvgDocument {
 				+ "xmlns:svg=\"http://www.w3.org/2000/svg\">\n",
 				(int)Math.ceil(xy[0]), (int)Math.ceil(xy[1]));
 		writer.write(line);
-		writer.write(String.format("  <desc>Coordinates top-left corner: lat=%.7f, lon=%.7f</desc>\n\n",
-				documentOrigin.lat(), documentOrigin.lon()));
+		writer.write(String.format("  <desc>Document origin (bottom-left corner): lat=%.7f, lon=%.7f</desc>\n\n",
+				minLat, minLon));
 
 		// write body
 		String indent = "  ";
@@ -61,5 +61,24 @@ public class SvgDocument {
 		}
 
 		writer.write("</svg>\n");
+	}
+
+	/**
+	 * Get the document size in meters.
+	 * @return array [width, height] in meters
+	 */
+	public double[] getDocSize() {
+		SvgPoint documentOrigin = new SvgPoint(maxLat, minLon);
+		SvgPoint pnt = new SvgPoint(minLat, maxLon);
+		return pnt.getLocalCoordinates(documentOrigin);
+	}
+
+	/**
+	 * Get the global coordinates of the bottom left corner of the map.
+	 * @return the global coordinates of the bottom left corner of the map.
+	 */
+	public double[] getMapOrigin() {
+		double[] d = {minLat, minLon};
+		return d;
 	}
 }

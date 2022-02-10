@@ -31,6 +31,9 @@ import org.openstreetmap.josm.gui.layer.LayerManager.LayerRemoveEvent;
 import org.openstreetmap.josm.gui.layer.OsmDataLayer;
 import org.openstreetmap.josm.tools.ImageProvider;
 
+import de.sgd.josm.plugins.osm2x.modules.Osm2XFilter;
+import de.sgd.josm.plugins.osm2x.modules.Osm2XMesher;
+
 public class Osm2XDialog extends ToggleDialog implements LayerChangeListener  {
 	private static final long serialVersionUID = 6317484190555235261L;
 
@@ -75,7 +78,7 @@ public class Osm2XDialog extends ToggleDialog implements LayerChangeListener  {
 	 *
 	 */
 	public Osm2XDialog() {
-		super(tr("Osm2x"), "osm2x_dlg", tr("Open Osm2x dialog"),
+		super(tr("Osm2x"), "osm2x_48", tr("Open Osm2x dialog"),
 				null, 150);
 
 		try {
@@ -102,7 +105,7 @@ public class Osm2XDialog extends ToggleDialog implements LayerChangeListener  {
 			{
 				putValue(NAME, tr("Split"));
 				new ImageProvider("dialogs", "select").getResource().attachImageIcon(this, true);
-				putValue(SHORT_DESCRIPTION, tr("Reset current measurement results and delete measurement path."));
+				putValue(SHORT_DESCRIPTION, tr("Split the current layer into ways and barriers."));
 				//putValue("help", HelpUtil.ht("/Dialog/Measurement#Reset"));
 			}
 			@Override
@@ -285,9 +288,8 @@ public class Osm2XDialog extends ToggleDialog implements LayerChangeListener  {
 		DataSet ds = MainApplication.getLayerManager().getEditDataSet();
 
 		if (ds != null && attrParser != null) {
+			ds.getReadLock().lock();
 			try {
-				ds.getReadLock().lock();
-
 				DataSet ds_new;
 				// if something is selected parse only selected
 				Collection<Way> ways = ds.getSelectedWays();

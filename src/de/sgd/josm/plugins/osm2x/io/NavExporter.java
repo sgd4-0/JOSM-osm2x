@@ -19,12 +19,14 @@ public class NavExporter extends OsmExporter {
 	@Override
 	protected void doSave(File file, OsmDataLayer layer) throws IOException {
 		// Save map data to *.nav file and adresses to *.adr file
-		String adr_path = file.getAbsolutePath();
-		adr_path = adr_path.replaceFirst(".nav", ".adr");
-		File adr_file = new File(adr_path);
+		String nav_path = file.getAbsolutePath();
+		if (!nav_path.endsWith(".nav"))
+		{
+			nav_path = nav_path.concat(".nav");
+		}
 
-		try (FileWriter writer = new FileWriter(file);
-				NavWriter w = new NavWriter(writer);)
+		try (FileWriter navWriter = new FileWriter(nav_path);
+				NavWriter w = new NavWriter(navWriter);)
 		{
 			layer.data.getReadLock().lock();
 			try {
@@ -34,8 +36,10 @@ public class NavExporter extends OsmExporter {
 			}
 		}
 
-		try (FileWriter writer = new FileWriter(adr_file);
-				AdrWriter w = new AdrWriter(writer);)
+		String adr_path = nav_path.replaceFirst(".nav", ".adr");
+		File adr_file = new File(adr_path);
+		try (FileWriter adrWriter = new FileWriter(adr_file);
+				AdrWriter w = new AdrWriter(adrWriter);)
 		{
 			layer.data.getReadLock().lock();
 			try

@@ -11,49 +11,85 @@
 <span class="sourceLineNo">003</span>import java.io.File;<a name="line.3"></a>
 <span class="sourceLineNo">004</span>import java.io.FileWriter;<a name="line.4"></a>
 <span class="sourceLineNo">005</span>import java.io.IOException;<a name="line.5"></a>
-<span class="sourceLineNo">006</span><a name="line.6"></a>
-<span class="sourceLineNo">007</span>import org.openstreetmap.josm.actions.ExtensionFileFilter;<a name="line.7"></a>
-<span class="sourceLineNo">008</span>import org.openstreetmap.josm.gui.io.importexport.OsmExporter;<a name="line.8"></a>
-<span class="sourceLineNo">009</span>import org.openstreetmap.josm.gui.layer.OsmDataLayer;<a name="line.9"></a>
-<span class="sourceLineNo">010</span><a name="line.10"></a>
-<span class="sourceLineNo">011</span>public class SvgExporter extends OsmExporter {<a name="line.11"></a>
-<span class="sourceLineNo">012</span><a name="line.12"></a>
-<span class="sourceLineNo">013</span>        public SvgExporter() {<a name="line.13"></a>
-<span class="sourceLineNo">014</span>                super(new ExtensionFileFilter("svg", "svg", "Scalable Vector Graphics (SGD) (*.svg)"));<a name="line.14"></a>
-<span class="sourceLineNo">015</span>        }<a name="line.15"></a>
-<span class="sourceLineNo">016</span><a name="line.16"></a>
-<span class="sourceLineNo">017</span>        @Override<a name="line.17"></a>
-<span class="sourceLineNo">018</span>        protected void doSave(File file, OsmDataLayer layer) throws IOException {<a name="line.18"></a>
-<span class="sourceLineNo">019</span>                // Save map data to *.svg file and create .yaml config file<a name="line.19"></a>
-<span class="sourceLineNo">020</span>                String adr_path = file.getAbsolutePath();<a name="line.20"></a>
-<span class="sourceLineNo">021</span>                adr_path = adr_path.replaceFirst(".svg", ".yaml");<a name="line.21"></a>
-<span class="sourceLineNo">022</span>                File adr_file = new File(adr_path);<a name="line.22"></a>
-<span class="sourceLineNo">023</span><a name="line.23"></a>
-<span class="sourceLineNo">024</span>                try (FileWriter writer = new FileWriter(file);<a name="line.24"></a>
-<span class="sourceLineNo">025</span>                                SvgWriter w = new SvgWriter(writer);)<a name="line.25"></a>
-<span class="sourceLineNo">026</span>                {<a name="line.26"></a>
-<span class="sourceLineNo">027</span>                        layer.data.getReadLock().lock();<a name="line.27"></a>
-<span class="sourceLineNo">028</span>                        try {<a name="line.28"></a>
-<span class="sourceLineNo">029</span>                                w.writeDataset(layer.getDataSet());<a name="line.29"></a>
-<span class="sourceLineNo">030</span>                        } finally {<a name="line.30"></a>
-<span class="sourceLineNo">031</span>                                layer.data.getReadLock().unlock();<a name="line.31"></a>
-<span class="sourceLineNo">032</span>                        }<a name="line.32"></a>
-<span class="sourceLineNo">033</span>                }<a name="line.33"></a>
-<span class="sourceLineNo">034</span><a name="line.34"></a>
-<span class="sourceLineNo">035</span>                /*<a name="line.35"></a>
-<span class="sourceLineNo">036</span>                try (FileWriter writer = new FileWriter(adr_file);<a name="line.36"></a>
-<span class="sourceLineNo">037</span>                                AdrWriter w = new AdrWriter(writer);)<a name="line.37"></a>
-<span class="sourceLineNo">038</span>                {<a name="line.38"></a>
-<span class="sourceLineNo">039</span>                        layer.data.getReadLock().lock();<a name="line.39"></a>
-<span class="sourceLineNo">040</span>                        try<a name="line.40"></a>
-<span class="sourceLineNo">041</span>                        {<a name="line.41"></a>
-<span class="sourceLineNo">042</span>                                w.writeDataset(layer.getDataSet());<a name="line.42"></a>
-<span class="sourceLineNo">043</span>                        } finally {<a name="line.43"></a>
-<span class="sourceLineNo">044</span>                                layer.data.getReadLock().unlock();<a name="line.44"></a>
-<span class="sourceLineNo">045</span>                        }<a name="line.45"></a>
-<span class="sourceLineNo">046</span>                }*/<a name="line.46"></a>
-<span class="sourceLineNo">047</span>        }<a name="line.47"></a>
-<span class="sourceLineNo">048</span>}<a name="line.48"></a>
+<span class="sourceLineNo">006</span>import java.util.ArrayList;<a name="line.6"></a>
+<span class="sourceLineNo">007</span><a name="line.7"></a>
+<span class="sourceLineNo">008</span>import org.openstreetmap.josm.actions.ExtensionFileFilter;<a name="line.8"></a>
+<span class="sourceLineNo">009</span>import org.openstreetmap.josm.data.osm.Node;<a name="line.9"></a>
+<span class="sourceLineNo">010</span>import org.openstreetmap.josm.data.osm.Way;<a name="line.10"></a>
+<span class="sourceLineNo">011</span>import org.openstreetmap.josm.gui.io.importexport.OsmExporter;<a name="line.11"></a>
+<span class="sourceLineNo">012</span>import org.openstreetmap.josm.gui.layer.OsmDataLayer;<a name="line.12"></a>
+<span class="sourceLineNo">013</span><a name="line.13"></a>
+<span class="sourceLineNo">014</span>import de.sgd.josm.plugins.osm2x.io.svg.SvgCircle;<a name="line.14"></a>
+<span class="sourceLineNo">015</span>import de.sgd.josm.plugins.osm2x.io.svg.SvgDocument;<a name="line.15"></a>
+<span class="sourceLineNo">016</span>import de.sgd.josm.plugins.osm2x.io.svg.SvgPath;<a name="line.16"></a>
+<span class="sourceLineNo">017</span>import de.sgd.josm.plugins.osm2x.io.svg.SvgPoint;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>public class SvgExporter extends OsmExporter {<a name="line.19"></a>
+<span class="sourceLineNo">020</span><a name="line.20"></a>
+<span class="sourceLineNo">021</span>        public SvgExporter() {<a name="line.21"></a>
+<span class="sourceLineNo">022</span>                super(new ExtensionFileFilter("svg", "svg", "Scalable Vector Graphics (SGD) (*.svg)"));<a name="line.22"></a>
+<span class="sourceLineNo">023</span>        }<a name="line.23"></a>
+<span class="sourceLineNo">024</span><a name="line.24"></a>
+<span class="sourceLineNo">025</span>        @Override<a name="line.25"></a>
+<span class="sourceLineNo">026</span>        protected void doSave(File file, OsmDataLayer layer) throws IOException {<a name="line.26"></a>
+<span class="sourceLineNo">027</span>                // Save map data to *.svg file and create .yaml config file<a name="line.27"></a>
+<span class="sourceLineNo">028</span>                String svg_path = file.getAbsolutePath();<a name="line.28"></a>
+<span class="sourceLineNo">029</span>                if (!svg_path.endsWith(".svg"))<a name="line.29"></a>
+<span class="sourceLineNo">030</span>                {<a name="line.30"></a>
+<span class="sourceLineNo">031</span>                        svg_path = svg_path.concat(".svg");<a name="line.31"></a>
+<span class="sourceLineNo">032</span>                }<a name="line.32"></a>
+<span class="sourceLineNo">033</span><a name="line.33"></a>
+<span class="sourceLineNo">034</span>                // get data from map and convert to svg<a name="line.34"></a>
+<span class="sourceLineNo">035</span>                SvgDocument doc = new SvgDocument();<a name="line.35"></a>
+<span class="sourceLineNo">036</span>                layer.data.getReadLock().lock();<a name="line.36"></a>
+<span class="sourceLineNo">037</span>                try {<a name="line.37"></a>
+<span class="sourceLineNo">038</span>                        // get all nodes contained in dataset<a name="line.38"></a>
+<span class="sourceLineNo">039</span>                        for (Node n : layer.getDataSet().getNodes())<a name="line.39"></a>
+<span class="sourceLineNo">040</span>                        {<a name="line.40"></a>
+<span class="sourceLineNo">041</span>                                // if node is part of a way skip this node. It will be added with the way<a name="line.41"></a>
+<span class="sourceLineNo">042</span>                                if (!n.isDeleted() &amp;&amp; n.hasKey("barrier", "natural"))<a name="line.42"></a>
+<span class="sourceLineNo">043</span>                                {<a name="line.43"></a>
+<span class="sourceLineNo">044</span>                                        SvgCircle c = new SvgCircle(new SvgPoint(n.lat(), n.lon()), 0.1, "black");<a name="line.44"></a>
+<span class="sourceLineNo">045</span>                                        doc.addGeometry(c);<a name="line.45"></a>
+<span class="sourceLineNo">046</span>                                }<a name="line.46"></a>
+<span class="sourceLineNo">047</span>                        }<a name="line.47"></a>
+<span class="sourceLineNo">048</span><a name="line.48"></a>
+<span class="sourceLineNo">049</span>                        // get all ways from dataset<a name="line.49"></a>
+<span class="sourceLineNo">050</span>                        for (Way w : layer.getDataSet().getWays())<a name="line.50"></a>
+<span class="sourceLineNo">051</span>                        {<a name="line.51"></a>
+<span class="sourceLineNo">052</span>                                ArrayList&lt;SvgPoint&gt; waypoints = new ArrayList&lt;&gt;();<a name="line.52"></a>
+<span class="sourceLineNo">053</span>                                for (Node n : w.getNodes()) {<a name="line.53"></a>
+<span class="sourceLineNo">054</span>                                        waypoints.add(new SvgPoint(n.lat(), n.lon()));<a name="line.54"></a>
+<span class="sourceLineNo">055</span>                                }<a name="line.55"></a>
+<span class="sourceLineNo">056</span>                                if (waypoints.size() &lt; 2) continue;     // a way must contain at least two points<a name="line.56"></a>
+<span class="sourceLineNo">057</span><a name="line.57"></a>
+<span class="sourceLineNo">058</span>                                if (w.isClosed()) {<a name="line.58"></a>
+<span class="sourceLineNo">059</span>                                        // create closed path with fill<a name="line.59"></a>
+<span class="sourceLineNo">060</span>                                        doc.addGeometry(new SvgPath(waypoints, "black"));<a name="line.60"></a>
+<span class="sourceLineNo">061</span>                                } else {<a name="line.61"></a>
+<span class="sourceLineNo">062</span>                                        // create path with stroke<a name="line.62"></a>
+<span class="sourceLineNo">063</span>                                        doc.addGeometry(new SvgPath(waypoints, "black", 0.2));<a name="line.63"></a>
+<span class="sourceLineNo">064</span>                                }<a name="line.64"></a>
+<span class="sourceLineNo">065</span>                        }<a name="line.65"></a>
+<span class="sourceLineNo">066</span>                } finally {<a name="line.66"></a>
+<span class="sourceLineNo">067</span>                        // unlock layer<a name="line.67"></a>
+<span class="sourceLineNo">068</span>                        layer.data.getReadLock().unlock();<a name="line.68"></a>
+<span class="sourceLineNo">069</span>                }<a name="line.69"></a>
+<span class="sourceLineNo">070</span><a name="line.70"></a>
+<span class="sourceLineNo">071</span>                try (FileWriter svgWriter = new FileWriter(svg_path);<a name="line.71"></a>
+<span class="sourceLineNo">072</span>                                SvgWriter w = new SvgWriter(svgWriter);)<a name="line.72"></a>
+<span class="sourceLineNo">073</span>                {<a name="line.73"></a>
+<span class="sourceLineNo">074</span>                        w.writeDataset(doc);<a name="line.74"></a>
+<span class="sourceLineNo">075</span>                }<a name="line.75"></a>
+<span class="sourceLineNo">076</span><a name="line.76"></a>
+<span class="sourceLineNo">077</span>                String yaml_path = svg_path.replaceFirst(".svg", ".yaml");<a name="line.77"></a>
+<span class="sourceLineNo">078</span>                try (FileWriter writer = new FileWriter(yaml_path);<a name="line.78"></a>
+<span class="sourceLineNo">079</span>                                YamlWriter w = new YamlWriter(writer);)<a name="line.79"></a>
+<span class="sourceLineNo">080</span>                {<a name="line.80"></a>
+<span class="sourceLineNo">081</span>                        w.writeDataset(doc);<a name="line.81"></a>
+<span class="sourceLineNo">082</span>                }<a name="line.82"></a>
+<span class="sourceLineNo">083</span>        }<a name="line.83"></a>
+<span class="sourceLineNo">084</span>}<a name="line.84"></a>
 
 
 

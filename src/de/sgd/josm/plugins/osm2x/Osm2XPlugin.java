@@ -33,7 +33,7 @@ public class Osm2XPlugin extends Plugin {
 
 	@Override
 	public PreferenceSetting getPreferenceSetting() {
-		return null;
+		return new Osm2XPreferenceSetting();
 	}
 
 	//public void addDownloadSelection(List<DownloadSelection> list) {

@@ -65,6 +65,9 @@ public class Osm2XMesher {
 		return width_present;
 	}
 
+	/**
+	 * To allow changing the path in short intervals, ways with a length greater than a threshold are linearly interpolated.
+	 */
 	public void interpolate() {
 		DataSet ds = new DataSet(this.original_ds);
 		this.idGen = new IdGenerator(ds);
@@ -110,6 +113,9 @@ public class Osm2XMesher {
 		this.interpolated_ds = ds;
 	}
 
+	/**
+	 * Create parallel ways and connect them to original ways
+	 */
 	public void createRoadNetwork() {
 		// get all ways -> ignore areas, but with warning
 		// ignore ways without width attribute
@@ -127,6 +133,15 @@ public class Osm2XMesher {
 
 			for (Node n : ds.getNodes()) {
 				Osm2XNodeList nodes = new Osm2XNodeList();
+				// check that nodes have an id
+				if (n.getId() == 0)
+				{
+					n.setOsmId(this.idGen.generateID(), 1);
+				}
+
+				// set original node as parent id -> is copying all keys correct?
+				Map<String, String> tags = n.getKeys();
+				tags.put("pid", Long.toString(n.getId()));
 
 				if (n.isConnectionNode()) {
 					// node connects two or more ways
@@ -140,12 +155,14 @@ public class Osm2XMesher {
 
 						Node new_node = new Node(calculateNode(n.getCoor(), last_entry, entry));
 						new_node.setOsmId(this.idGen.generateID(), 1);
+						new_node.setKeys(tags);
 						nodes.add(new_node, n.getCoor().bearing(new_node.getCoor()));
 						last_entry = entry;
 					}
 
 					Node new_node = new Node(calculateNode(n.getCoor(), last_entry, angles.firstEntry()));
 					new_node.setOsmId(this.idGen.generateID(), 1);
+					new_node.setKeys(tags);
 					nodes.add(new_node, n.getCoor().bearing(new_node.getCoor()));
 					addedNodes.put(n, nodes);
 				}
@@ -160,26 +177,29 @@ public class Osm2XMesher {
 				double width = 0;
 				if (w.get("width") != null) {
 					width = parseDouble(w.get("width"));
+					if (width < 1.5) continue;
 				} else {
 					continue;
 				}
 				// TODO filtern??
 				Way way_l = new Way(0);
 				way_l.setKeys(w.getKeys());
-				Map<String, String> keys = way_l.getKeys();
-				keys.put("left", "true");
-				way_l.setKeys(keys);
+				Map<String, String> keys_l = way_l.getKeys();
+				keys_l.put("left", "true");
 
 				Way con_l1 = new Way(0);
-				con_l1.setKeys(way_l.getKeys());
+				con_l1.setKeys(keys_l);
 				con_l1.addNode(w.getNode(0));
 
 				Way con_l2 = new Way(0);
-				con_l2.setKeys(way_l.getKeys());
+				con_l2.setKeys(keys_l);
+
+				// add angle tag to left way
+				keys_l.put("angle", "0.0");
+				way_l.setKeys(keys_l);
 
 				// ways for rights side
 				Way way_r = new Way(0);
-				way_r.setKeys(w.getKeys());
 
 				Way con_r1 = new Way(0);
 				con_r1.setKeys(w.getKeys());
@@ -187,6 +207,16 @@ public class Osm2XMesher {
 
 				Way con_r2 = new Way(0);
 				con_r2.setKeys(w.getKeys());
+
+				// add angle tag to right ways
+				Map<String, String> keys_r = way_l.getKeys();
+				keys_r.put("angle", "0.0");
+				way_r.setKeys(keys_r);
+
+				// add angle to middle ways
+				Map<String, String> keys = w.getKeys();
+				keys.put("angle", "0.0");
+				w.setKeys(keys);
 
 				Way[] con_r = {con_r1, con_r2};
 				Way[] con_l = {con_l1, con_l2};
@@ -237,14 +267,16 @@ public class Osm2XMesher {
 						// Way on the right side
 						Node new_node = new Node(Osm2XConversions.calculatePositionFrom(n_i.getCoor(), ang, width/3));
 						new_node.setOsmId(this.idGen.generateID(), 1);
-						new_node.setKeys(n_i.getKeys());
+						Map<String, String> tags_ = n_i.getKeys();
+						tags_.put("pid", Long.toString(n_i.getId()));
+						new_node.setKeys(tags_);
 						more_nodes.add(new_node);
 						way_r.addNode(new_node);
 
 						// Way on the left side
 						Node new_node1 = new Node(Osm2XConversions.calculatePositionFrom(n_i.getCoor(), ang + Math.PI, width/3));
 						new_node1.setOsmId(this.idGen.generateID(), 1);
-						new_node1.setKeys(n_i.getKeys());
+						new_node1.setKeys(tags_);
 						more_nodes.add(new_node1);
 						way_l.addNode(new_node1);
 

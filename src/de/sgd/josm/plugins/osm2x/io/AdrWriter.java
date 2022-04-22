@@ -12,6 +12,10 @@ import org.openstreetmap.josm.data.osm.Node;
 
 public class AdrWriter implements Closeable {
 
+	// define some formattings
+	private final String tab = "    ";
+	private final String node_format = tab + tab + "{address: \"%s\", nodes: [%s]}";
+
 	FileWriter writer;
 
 	public AdrWriter(FileWriter writer) {
@@ -19,7 +23,7 @@ public class AdrWriter implements Closeable {
 	}
 
 	public void writeDataset(DataSet ds) throws IOException {
-		// TODO write dataset to file
+		// write dataset to file
 		if (ds != null)
 		{
 			TreeMap<String, ArrayList<Long>> adresses = new TreeMap<>();
@@ -38,9 +42,20 @@ public class AdrWriter implements Closeable {
 				}
 			}
 
+			// write json to file
+			writer.write("{\n");
+			writer.write(tab + "addresslist: [\n");
+			boolean is_first = true;
 			for (String key : adresses.keySet()) {
-				writer.write(key + ": " + arrToString(adresses.get(key)) + "\n");
+				if (!is_first)
+				{
+					writer.write(",\n");
+				}
+				writer.write(String.format(node_format, key, arrToString(adresses.get(key))));
+				is_first = false;
 			}
+			writer.write("\n" + tab + "]\n");
+			writer.write("}\n");
 		}
 	}
 
@@ -57,8 +72,8 @@ public class AdrWriter implements Closeable {
 	private String arrToString(List<Long> list) {
 		String line = "";
 		for (long i : list) {
-			line = line.concat(Long.toString(i) + ",");
+			line = line.concat("\"" + Long.toString(i) + "\", ");
 		}
-		return line.substring(0,line.length()-1);
+		return line.substring(0,line.length()-2);
 	}
 }

@@ -36,7 +36,7 @@ public class NavExporter extends OsmExporter {
 			}
 		}
 
-		String adr_path = nav_path.replaceFirst(".nav", ".adr");
+		String adr_path = nav_path.replaceFirst(".nav", ".json");
 		File adr_file = new File(adr_path);
 		try (FileWriter adrWriter = new FileWriter(adr_file);
 				AdrWriter w = new AdrWriter(adrWriter);)

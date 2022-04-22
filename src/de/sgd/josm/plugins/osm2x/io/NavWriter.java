@@ -11,6 +11,13 @@ import org.openstreetmap.josm.data.osm.Way;
 
 public class NavWriter implements Closeable {
 
+	// define formats
+	private final String tab = "  ";
+	private final String xml_node = tab + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\">\n";
+	private final String tag_node = tab + tab + "<%s>%s</%1$s>\n";
+	private final String xml_nd = tab + tab + "<nd ref=\"%d\">\n";
+	private final String tag_nd = tab + tab + tab + "<%s>%s</%1$s>\n";
+
 	FileWriter writer;
 
 	public NavWriter(FileWriter writer) {
@@ -29,8 +36,9 @@ public class NavWriter implements Closeable {
 				List<Way> parentWays = n.getParentWays();
 				if (parentWays.size() > 1)
 				{
-					writer.write(String.format("  <node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\">\n",
-							n.getId(), n.lat(), n.lon()));
+					writer.write(String.format(xml_node, n.getId(), n.lat(), n.lon()));
+					writeNodeTag("pid", n.get("pid"), tag_node);
+					writeNodeTag("barrier", n.get("barrier"), tag_node);
 
 					for (Way w : n.getParentWays())
 					{
@@ -39,18 +47,32 @@ public class NavWriter implements Closeable {
 
 						for (Node nn : w.getNeighbours(n))
 						{
-							writer.write(String.format("    <nd ref=\"%d\">\n", nn.getId()));
-							writer.write(String.format("      <highway>%s</highway>\n", highway));
-							writer.write(String.format("      <surface>%s</surface>\n", surface));
-							writer.write("    </nd>\n");
+							writer.write(String.format(xml_nd, nn.getId()));
+							writer.write(String.format(tag_nd, "highway", highway));
+							writer.write(String.format(tag_nd, "surface", surface));
+
+							writeNodeTag("angle", w.get("angle"), tag_nd);
+							writer.write(tab + tab + "</nd>\n");
 						}
 					}
 
-					writer.write("  </node>\n");
+					writer.write(tab + "</node>\n");
 				}
 			}
 
 			writer.write("</nodelist>\n");
+		}
+	}
+
+	private void writeNodeTag(String key, String tag, String format)
+	{
+		if (key != null && tag != null)
+		{
+			try {
+				writer.write(String.format(format, key, tag));
+			} catch (IOException ioe) {
+				System.err.println("Could not write to file");
+			}
 		}
 	}
 

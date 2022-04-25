@@ -14,7 +14,7 @@ public class AdrWriter implements Closeable {
 
 	// define some formattings
 	private final String tab = "    ";
-	private final String node_format = tab + tab + "{address: \"%s\", nodes: [%s]}";
+	private final String node_format = tab + tab + "{\"address\": \"%s\", \"nodes\": [%s]}";
 
 	FileWriter writer;
 
@@ -44,7 +44,7 @@ public class AdrWriter implements Closeable {
 
 			// write json to file
 			writer.write("{\n");
-			writer.write(tab + "addresslist: [\n");
+			writer.write(tab + "\"addresslist\": [\n");
 			boolean is_first = true;
 			for (String key : adresses.keySet()) {
 				if (!is_first)

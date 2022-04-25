@@ -1,0 +1,3031 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <bounds minlat='53.5533628' minlon='10.0197029' maxlat='53.5573908' maxlon='10.0243807' origin='CGImap 0.8.6 (509833 spike-06.openstreetmap.org)' />
+  <node id='-101758' action='modify' visible='true' lat='53.55638776929' lon='10.02151648186' />
+  <node id='-101766' action='modify' visible='true' lat='53.5560797017' lon='10.02257485643'>
+    <tag k='curb' v='0.2' />
+  </node>
+  <node id='-101797' action='modify' visible='true' lat='53.55607615876' lon='10.02266895814' />
+  <node id='-101800' action='modify' visible='true' lat='53.55605686939' lon='10.02252316676'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='21' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='-101845' action='modify' visible='true' lat='53.55488492556' lon='10.02201223424'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='69' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='-101846' action='modify' visible='true' lat='53.55502846838' lon='10.02188682749' />
+  <node id='-101852' action='modify' visible='true' lat='53.55660641602' lon='10.02287637951'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='11' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='-101853' action='modify' visible='true' lat='53.55659299429' lon='10.0228172285' />
+  <node id='-101861' action='modify' visible='true' lat='53.55684733249' lon='10.02248936966' />
+  <node id='-101862' action='modify' visible='true' lat='53.55674498253' lon='10.02262588341' />
+  <node id='-101870' action='modify' visible='true' lat='53.55630920508' lon='10.02285583618' />
+  <node id='-101873' action='modify' visible='true' lat='53.556265509' lon='10.02292740649'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='13' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='-101884' action='modify' visible='true' lat='53.55677096369' lon='10.02351918696'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='9' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='-101885' action='modify' visible='true' lat='53.55680715757' lon='10.02347436676' />
+  <node id='14469672' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='13' changeset='81524159' lat='53.5538715' lon='10.0242135' />
+  <node id='14469674' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='81524159' lat='53.5549138' lon='10.023344' />
+  <node id='26678243' timestamp='2017-09-08T21:27:15Z' uid='13861' user='Abendstund' visible='true' version='6' changeset='51864033' lat='53.5547413' lon='10.0202569' />
+  <node id='26678245' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='80034854' lat='53.5543914' lon='10.020749' />
+  <node id='26678248' timestamp='2015-02-12T17:22:35Z' uid='161619' user='FvGordon' visible='true' version='9' changeset='28800274' lat='53.5554196' lon='10.0217294' />
+  <node id='248730273' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='11' changeset='105530336' lat='53.5568386' lon='10.0226526' />
+  <node id='253263117' action='delete' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='9' changeset='107015483' lat='53.5554375' lon='10.0228839' />
+  <node id='253263164' timestamp='2021-11-01T19:49:35Z' uid='1431737' user='ma-rt-in' visible='true' version='17' changeset='113252323' lat='53.5568099' lon='10.0219656'>
+    <tag k='access' v='yes' />
+    <tag k='amenity' v='parking_entrance' />
+    <tag k='capacity' v='577' />
+    <tag k='description' v='Öffentliches Parkhaus am Berliner Tor' />
+    <tag k='fee' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='maxheight' v='2' />
+    <tag k='motorcycle' v='no' />
+    <tag k='parking' v='underground' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='253416079' action='delete' timestamp='2021-03-24T07:54:42Z' uid='6085289' user='Knoblauch13' visible='true' version='13' changeset='101624582' lat='53.5571377' lon='10.0197035'>
+    <tag k='check_date:wheelchair' v='2021-03-24' />
+    <tag k='name' v='Lohmühlenstraße' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='ref' v='3' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='257690317' action='delete' timestamp='2010-06-30T19:14:54Z' uid='63375' user='Divjo' visible='true' version='6' changeset='5115775' lat='53.5533875' lon='10.0235846' />
+  <node id='257693041' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='80034854' lat='53.5543078' lon='10.0208591' />
+  <node id='257693042' timestamp='2017-09-30T12:26:09Z' uid='161619' user='FvGordon' visible='true' version='6' changeset='52508656' lat='53.5547573' lon='10.0227938' />
+  <node id='257693049' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='7' changeset='50893872' lat='53.5551516' lon='10.022122' />
+  <node id='257693057' timestamp='2017-09-30T12:26:09Z' uid='161619' user='FvGordon' visible='true' version='5' changeset='52508656' lat='53.5551098' lon='10.0220474' />
+  <node id='257700251' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='10' changeset='52332006' lat='53.5550164' lon='10.0230674' />
+  <node id='257700252' action='delete' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='10' changeset='64259154' lat='53.5564303' lon='10.0213239' />
+  <node id='258524139' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='10' changeset='50893872' lat='53.5565456' lon='10.0213633' />
+  <node id='260718734' action='modify' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='8' changeset='102351940' lat='53.5572147' lon='10.0208851' />
+  <node id='296049113' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='12' changeset='81524159' lat='53.555152' lon='10.0242929' />
+  <node id='305286859' timestamp='2015-11-16T08:26:19Z' uid='338611' user='marek kleciak' visible='true' version='12' changeset='35343814' lat='53.5535981' lon='10.0243027' />
+  <node id='305983054' timestamp='2017-09-30T11:05:05Z' uid='161619' user='FvGordon' visible='true' version='10' changeset='52505453' lat='53.5540389' lon='10.0240199' />
+  <node id='305983055' timestamp='2010-06-30T19:14:56Z' uid='63375' user='Divjo' visible='true' version='6' changeset='5115775' lat='53.5538154' lon='10.0228561' />
+  <node id='305983056' timestamp='2015-08-12T06:37:57Z' uid='561067' user='flor!an' visible='true' version='9' changeset='33283773' lat='53.5539615' lon='10.0237053' />
+  <node id='305983057' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='13' changeset='81524159' lat='53.554301' lon='10.0234496'>
+    <tag k='access' v='private' />
+    <tag k='amenity' v='parking_entrance' />
+    <tag k='level' v='-1' />
+    <tag k='maxheight' v='2.1' />
+    <tag k='name' v='Berliner Tor Center/IBM' />
+    <tag k='parking' v='underground' />
+  </node>
+  <node id='313338712' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='16' changeset='105530336' lat='53.5567008' lon='10.0233819' />
+  <node id='313339214' timestamp='2018-07-02T09:51:37Z' uid='13861' user='Abendstund' visible='true' version='23' changeset='60342656' lat='53.5568449' lon='10.0224681'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='5' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+    <tag k='level' v='1' />
+  </node>
+  <node id='313339323' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='19' changeset='105530336' lat='53.5568885' lon='10.0230241' />
+  <node id='313339478' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='7' changeset='105530336' lat='53.5564739' lon='10.0220721' />
+  <node id='313339524' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='24' changeset='107015483' lat='53.5562388' lon='10.0223487'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='21' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='313339866' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='11' changeset='105530336' lat='53.5566638' lon='10.0232894' />
+  <node id='313340564' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='13' changeset='105530336' lat='53.5566827' lon='10.0233351' />
+  <node id='313340690' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='7' changeset='105530336' lat='53.5568867' lon='10.0227456' />
+  <node id='314836134' action='delete' timestamp='2020-12-12T11:55:48Z' uid='6085289' user='Knoblauch13' visible='true' version='14' changeset='95719649' lat='53.5571527' lon='10.0199127'>
+    <tag k='check_date:wheelchair' v='2020-12-12' />
+    <tag k='name' v='Lohmühlenstraße' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='ref' v='4' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='353236472' action='delete' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='107015483' lat='53.5553487' lon='10.0229938' />
+  <node id='364125358' timestamp='2018-05-08T02:41:24Z' uid='237555' user='deerwood' visible='true' version='12' changeset='58774780' lat='53.5568098' lon='10.0215642'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='3' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='364125416' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='9' changeset='102351940' lat='53.5566582' lon='10.0212211' />
+  <node id='380154791' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81524159' lat='53.5552188' lon='10.0242464'>
+    <tag k='barrier' v='swing_gate' />
+    <tag k='foot' v='yes' />
+    <tag k='swing_gate:type' v='single' />
+    <tag k='vehicle' v='no' />
+    <tag k='vehicle:conditional' v='permissive @ (Mo-Fr 07:00-21:00)' />
+  </node>
+  <node id='393959318' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='52332006' lat='53.5548064' lon='10.0228089' />
+  <node id='393959320' timestamp='2015-08-12T06:37:57Z' uid='561067' user='flor!an' visible='true' version='8' changeset='33283773' lat='53.5539962' lon='10.0238513' />
+  <node id='471948111' action='delete' timestamp='2016-04-05T14:16:04Z' uid='2144605' user='Gavaasuren' visible='true' version='11' changeset='38318505' lat='53.5534224' lon='10.0219625'>
+    <tag k='level' v='0' />
+  </node>
+  <node id='620388579' action='delete' timestamp='2021-04-25T20:39:10Z' uid='6686188' user='Leo Slager' visible='true' version='7' changeset='103591426' lat='53.5534466' lon='10.0240601'>
+    <tag k='TMC:cid_58:tabcd_1:Class' v='Point' />
+    <tag k='TMC:cid_58:tabcd_1:Direction' v='positive' />
+    <tag k='TMC:cid_58:tabcd_1:LCLversion' v='8.00' />
+    <tag k='TMC:cid_58:tabcd_1:LocationCode' v='35769' />
+    <tag k='TMC:cid_58:tabcd_1:NextLocationCode' v='46206' />
+    <tag k='TMC:cid_58:tabcd_1:PrevLocationCode' v='53931' />
+    <tag k='crossing' v='no' />
+    <tag k='highway' v='traffic_signals' />
+  </node>
+  <node id='620388581' timestamp='2020-12-03T08:47:21Z' uid='6085289' user='Knoblauch13' visible='true' version='13' changeset='95209362' lat='53.5537065' lon='10.0242584'>
+    <tag k='button_operated' v='no' />
+    <tag k='crossing' v='traffic_signals' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='traffic_signals:sound' v='no' />
+    <tag k='traffic_signals:vibration' v='no' />
+  </node>
+  <node id='673542142' action='delete' timestamp='2016-03-03T19:58:55Z' uid='161619' user='FvGordon' visible='true' version='6' changeset='37595487' lat='53.5533629' lon='10.0218881' />
+  <node id='704737735' timestamp='2016-02-14T00:00:09Z' uid='617520' user='sundew' visible='true' version='5' changeset='37196536' lat='53.5537724' lon='10.0233869' />
+  <node id='704737779' timestamp='2015-08-12T06:37:59Z' uid='561067' user='flor!an' visible='true' version='6' changeset='33283773' lat='53.5539097' lon='10.0232987' />
+  <node id='704737791' timestamp='2010-09-23T20:30:32Z' uid='161619' user='FvGordon' visible='true' version='5' changeset='5857627' lat='53.55368' lon='10.022949' />
+  <node id='704836873' timestamp='2019-10-22T16:39:31Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='76060198' lat='53.5538969' lon='10.0234172' />
+  <node id='719549270' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='10' changeset='81524159' lat='53.5550417' lon='10.0243569'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='4' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Bei der Hauptfeuerwache' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='719549280' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='10' changeset='81524159' lat='53.5549165' lon='10.0236576'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='2' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Bei der Hauptfeuerwache' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='719549301' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81524159' lat='53.5550214' lon='10.0242834'>
+    <tag k='barrier' v='gate' />
+    <tag k='emergency' v='yes' />
+  </node>
+  <node id='719549307' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='81524159' lat='53.5551266' lon='10.0242015' />
+  <node id='719549322' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='81524159' lat='53.5549348' lon='10.0243508' />
+  <node id='719549388' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81524159' lat='53.5548601' lon='10.0233939' />
+  <node id='752086191' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81524159' lat='53.554926' lon='10.0234522' />
+  <node id='752086193' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='10' changeset='81524159' lat='53.5541307' lon='10.0242095' />
+  <node id='752086202' action='delete' timestamp='2016-04-08T12:09:32Z' uid='2415107' user='tklug' visible='true' version='4' changeset='38404370' lat='53.5536182' lon='10.0237828' />
+  <node id='752086206' action='delete' timestamp='2016-04-08T12:09:32Z' uid='2415107' user='tklug' visible='true' version='6' changeset='38404370' lat='53.5534851' lon='10.0239291' />
+  <node id='752086218' action='delete' timestamp='2016-04-19T08:19:57Z' uid='2415107' user='tklug' visible='true' version='4' changeset='38688026' lat='53.5535126' lon='10.0240139' />
+  <node id='752086228' action='delete' timestamp='2016-04-19T08:19:57Z' uid='2415107' user='tklug' visible='true' version='5' changeset='38688026' lat='53.5536462' lon='10.0238785' />
+  <node id='752086249' action='delete' timestamp='2016-04-05T14:16:05Z' uid='2144605' user='Gavaasuren' visible='true' version='8' changeset='38318505' lat='53.5534386' lon='10.0220649'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='775863169' timestamp='2021-01-27T09:14:27Z' uid='6085289' user='Knoblauch13' visible='true' version='6' changeset='98215869' lat='53.5547841' lon='10.0201948'>
+    <tag k='crossing' v='uncontrolled' />
+    <tag k='crossing:island' v='no' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='787115240' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='80034854' lat='53.5541865' lon='10.0210082' />
+  <node id='787115243' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='80034854' lat='53.5546408' lon='10.0228654'>
+    <tag k='highway' v='turning_circle' />
+  </node>
+  <node id='788416300' action='delete' timestamp='2016-04-19T08:19:57Z' uid='2415107' user='tklug' visible='true' version='11' changeset='38688026' lat='53.5536785' lon='10.023845' />
+  <node id='788416322' action='delete' timestamp='2015-08-12T06:37:57Z' uid='561067' user='flor!an' visible='true' version='5' changeset='33283773' lat='53.554011' lon='10.0238071' />
+  <node id='788416436' timestamp='2021-01-27T09:14:28Z' uid='6085289' user='Knoblauch13' visible='true' version='12' changeset='98215872' lat='53.5569284' lon='10.0202231'>
+    <tag k='check_date:wheelchair' v='2021-01-27' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='ref' v='5' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='788416448' action='delete' timestamp='2018-10-08T09:19:44Z' uid='13861' user='Abendstund' visible='true' version='7' changeset='63302902' lat='53.5571026' lon='10.0198206'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='788416534' action='delete' timestamp='2017-02-08T11:49:29Z' uid='360562' user='haytigran' visible='true' version='7' changeset='45914058' lat='53.5568787' lon='10.0200995'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='788416603' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='81524159' lat='53.5539542' lon='10.0238487' />
+  <node id='788416750' timestamp='2020-02-26T16:02:14Z' uid='1431737' user='ma-rt-in' visible='true' version='14' changeset='81511533' lat='53.5536828' lon='10.023567'>
+    <tag k='entrance' v='yes' />
+    <tag k='entrance_marker:subway' v='yes' />
+    <tag k='level' v='0' />
+    <tag k='name' v='BeimStrohhause/Berliner Tor' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='788416775' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='80035528' lat='53.5548731' lon='10.0198467'>
+    <tag k='access' v='private' />
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='64' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='home' />
+  </node>
+  <node id='788416806' action='delete' timestamp='2016-03-01T10:48:40Z' uid='2415107' user='tklug' visible='true' version='7' changeset='37539918' lat='53.5537715' lon='10.0239747' />
+  <node id='789307229' timestamp='2015-02-12T17:22:35Z' uid='161619' user='FvGordon' visible='true' version='5' changeset='28800274' lat='53.5560191' lon='10.0210361' />
+  <node id='795324028' action='delete' timestamp='2013-02-14T22:58:15Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='15034814' lat='53.5543047' lon='10.0223442'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='27' />
+    <tag k='addr:postcode' v='20097' />
+    <tag k='addr:street' v='Beim Strohhause' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='795324030' action='delete' timestamp='2013-02-14T22:58:15Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='15034814' lat='53.5542074' lon='10.022737'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='29' />
+    <tag k='addr:postcode' v='20097' />
+    <tag k='addr:street' v='Beim Strohhause' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='795324037' action='delete' timestamp='2013-02-14T22:58:14Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='15034814' lat='53.5540671' lon='10.0216057'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='25' />
+    <tag k='addr:postcode' v='20097' />
+    <tag k='addr:street' v='Beim Strohhause' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='795324045' action='delete' timestamp='2013-02-14T22:58:14Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='15034814' lat='53.5537955' lon='10.0217683'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='21' />
+    <tag k='addr:postcode' v='20097' />
+    <tag k='addr:street' v='Beim Strohhause' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='795324046' action='delete' timestamp='2013-02-14T22:58:14Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='15034814' lat='53.5538858' lon='10.0221391'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='19' />
+    <tag k='addr:postcode' v='20097' />
+    <tag k='addr:street' v='Beim Strohhause' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='797447838' action='delete' timestamp='2016-04-05T14:16:05Z' uid='2144605' user='Gavaasuren' visible='true' version='7' changeset='38318505' lat='53.5535037' lon='10.0224567'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='797447900' action='delete' timestamp='2020-02-26T16:05:07Z' uid='1431737' user='ma-rt-in' visible='true' version='11' changeset='81511632' lat='53.5535192' lon='10.0225595'>
+    <tag k='entrance' v='yes' />
+    <tag k='entrance_marker:subway' v='yes' />
+    <tag k='name' v='Beim Strohhause' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='797447908' action='delete' timestamp='2016-04-06T12:21:01Z' uid='2144605' user='Gavaasuren' visible='true' version='8' changeset='38349644' lat='53.5536973' lon='10.0236704'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='797447946' timestamp='2020-02-26T15:58:57Z' uid='1431737' user='ma-rt-in' visible='true' version='12' changeset='81511379' lat='53.5537585' lon='10.0240165'>
+    <tag k='entrance' v='yes' />
+    <tag k='entrance_marker:subway' v='yes' />
+    <tag k='level' v='0' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='801398443' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='4' changeset='50893872' lat='53.5551805' lon='10.0221865' />
+  <node id='801398566' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='8' changeset='52332006' lat='53.5553605' lon='10.0228021' />
+  <node id='802868213' action='delete' timestamp='2015-08-12T06:37:57Z' uid='561067' user='flor!an' visible='true' version='4' changeset='33283773' lat='53.5540267' lon='10.0238584' />
+  <node id='802868221' action='delete' timestamp='2015-08-12T06:37:57Z' uid='561067' user='flor!an' visible='true' version='4' changeset='33283773' lat='53.5548288' lon='10.0232373' />
+  <node id='826747405' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='80034854' lat='53.5543175' lon='10.0211521' />
+  <node id='828129182' timestamp='2019-02-21T13:06:40Z' uid='507893' user='wsoroe' visible='true' version='9' changeset='67428794' lat='53.5572973' lon='10.0211915'>
+    <tag k='historic' v='memorial' />
+    <tag k='memorial:addr' v='Lübeckertordamm 4, Hamburg' />
+    <tag k='memorial:text' v='Dr. Franz Oppens Reichsfinanzrat Jg. 1876 verhaftet 1944 deportiert 1944 Auschwitz ermordet' />
+    <tag k='memorial:type' v='stolperstein' />
+    <tag k='name' v='Dr. Franz Oppens' />
+    <tag k='network' v='Stolpersteine Hamburg' />
+    <tag k='person:date_of_birth' v='1876' />
+  </node>
+  <node id='848726893' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5570351' lon='10.0229382' />
+  <node id='922251305' action='delete' timestamp='2016-03-01T10:48:40Z' uid='2415107' user='tklug' visible='true' version='5' changeset='37539918' lat='53.5534221' lon='10.021863' />
+  <node id='923227974' timestamp='2010-09-23T20:28:12Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='5857627' lat='53.5536846' lon='10.0229727' />
+  <node id='923228180' timestamp='2010-09-23T20:28:15Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='5857627' lat='53.5537617' lon='10.0233386' />
+  <node id='1031091705' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5571014' lon='10.0225976' />
+  <node id='1031091707' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.556998' lon='10.0228949' />
+  <node id='1031091733' action='delete' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='6' changeset='107015483' lat='53.5561861' lon='10.0219419' />
+  <node id='1031091751' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5571464' lon='10.022798' />
+  <node id='1031091948' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569462' lon='10.0223978' />
+  <node id='1031091997' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5570077' lon='10.0225747' />
+  <node id='1163637961' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='109160260' lat='53.5566932' lon='10.0217087'>
+    <tag k='barrier' v='lift_gate' />
+    <tag k='maxheight' v='2' />
+    <tag k='motorcycle' v='no' />
+  </node>
+  <node id='1163637965' action='delete' timestamp='2017-02-08T11:49:29Z' uid='360562' user='haytigran' visible='true' version='7' changeset='45914058' lat='53.5568622' lon='10.0200636' />
+  <node id='1163637968' action='delete' timestamp='2017-02-08T11:49:29Z' uid='360562' user='haytigran' visible='true' version='5' changeset='45914058' lat='53.5570867' lon='10.0197702' />
+  <node id='1163637976' action='delete' timestamp='2015-07-29T12:03:29Z' uid='338611' user='marek kleciak' visible='true' version='2' changeset='32953798' lat='53.5572138' lon='10.0199571' />
+  <node id='1163637991' timestamp='2016-10-17T11:35:30Z' uid='4736721' user='Kristian K' visible='true' version='4' changeset='42957603' lat='53.556637' lon='10.0215848' />
+  <node id='1172896030' action='delete' timestamp='2016-04-19T08:19:55Z' uid='2415107' user='tklug' visible='true' version='3' changeset='38688026' lat='53.553619' lon='10.023915' />
+  <node id='1350434522' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='11' changeset='102351940' lat='53.5572775' lon='10.0201017' />
+  <node id='1350434530' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='102351940' lat='53.5573432' lon='10.0211658' />
+  <node id='1740400988' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='81524159' lat='53.5541692' lon='10.0239196' />
+  <node id='1740429205' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='105530336' lat='53.5569194' lon='10.0237556' />
+  <node id='1740429218' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569392' lon='10.0227903' />
+  <node id='1740429223' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5564341' lon='10.022724' />
+  <node id='1740429230' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569999' lon='10.0226112' />
+  <node id='1740429232' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5564505' lon='10.0224013' />
+  <node id='1740429246' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570744' lon='10.0227439' />
+  <node id='1740429256' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570377' lon='10.0228171' />
+  <node id='1740429278' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570672' lon='10.0227963' />
+  <node id='1740429295' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5567467' lon='10.0233229' />
+  <node id='1740429307' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5568957' lon='10.0227771' />
+  <node id='1740429345' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569873' lon='10.0229652' />
+  <node id='1740429354' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570028' lon='10.0226824' />
+  <node id='1740429357' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.55700640157' lon='10.02295254925' />
+  <node id='1740429361' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5563769' lon='10.0227982' />
+  <node id='1740429368' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.55701497618' lon='10.02298629107' />
+  <node id='1740429370' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570557' lon='10.0229123' />
+  <node id='1740429391' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569005' lon='10.0228571' />
+  <node id='1740429422' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570263' lon='10.0228668' />
+  <node id='1740429424' timestamp='2021-05-29T10:50:24Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105529172' lat='53.5569892' lon='10.0239115'>
+    <tag k='barrier' v='cycle_barrier' />
+  </node>
+  <node id='1740429426' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569218' lon='10.0225379' />
+  <node id='1740429427' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='105530336' lat='53.5569058' lon='10.0237215' />
+  <node id='1740429428' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='105530336' lat='53.5569367' lon='10.0237989' />
+  <node id='1740429447' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570572' lon='10.0228513' />
+  <node id='1740456601' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569621' lon='10.0218979' />
+  <node id='1740456619' timestamp='2016-10-17T11:45:21Z' uid='4736721' user='Kristian K' visible='true' version='2' changeset='42957764' lat='53.5572123' lon='10.0212627' />
+  <node id='1740456640' timestamp='2013-12-24T05:55:44Z' uid='51991' user='Osmonav' visible='true' version='3' changeset='19612084' lat='53.5570111' lon='10.0217588' />
+  <node id='1740456649' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5569454' lon='10.0221395'>
+    <tag k='barrier' v='bollard' />
+  </node>
+  <node id='1740456654' timestamp='2016-10-17T11:48:57Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957835' lat='53.5571523' lon='10.0213327' />
+  <node id='1741175343' timestamp='2016-10-17T11:45:23Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957764' lat='53.5568702' lon='10.0214445' />
+  <node id='1741175346' timestamp='2016-10-17T11:45:23Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957764' lat='53.5568493' lon='10.0214314' />
+  <node id='1741175351' timestamp='2018-07-02T09:51:37Z' uid='13861' user='Abendstund' visible='true' version='10' changeset='60342656' lat='53.5568403' lon='10.0224738'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='5' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+    <tag k='level' v='0' />
+  </node>
+  <node id='1741175372' timestamp='2013-12-24T05:55:45Z' uid='51991' user='Osmonav' visible='true' version='3' changeset='19612084' lat='53.556988' lon='10.0214336' />
+  <node id='1741175373' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.556906' lon='10.0231203' />
+  <node id='1741175375' timestamp='2013-12-24T05:55:45Z' uid='51991' user='Osmonav' visible='true' version='2' changeset='19612084' lat='53.5567987' lon='10.0214023' />
+  <node id='1741175376' timestamp='2013-12-24T05:55:45Z' uid='51991' user='Osmonav' visible='true' version='2' changeset='19612084' lat='53.5567596' lon='10.0213875' />
+  <node id='1741175379' timestamp='2013-12-24T05:55:45Z' uid='51991' user='Osmonav' visible='true' version='2' changeset='19612084' lat='53.5567381' lon='10.0214026' />
+  <node id='1741175381' timestamp='2016-10-17T11:45:23Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957764' lat='53.5568201' lon='10.0214169' />
+  <node id='1741175435' timestamp='2016-10-17T11:45:23Z' uid='4736721' user='Kristian K' visible='true' version='4' changeset='42957764' lat='53.5569514' lon='10.0214604' />
+  <node id='1741175437' timestamp='2013-04-11T18:43:58Z' uid='561067' user='flor!an' visible='true' version='2' changeset='15693297' lat='53.5571188' lon='10.0212812' />
+  <node id='1741175439' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='9' changeset='105530336' lat='53.5569271' lon='10.023186'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='7' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='1741175441' timestamp='2016-10-17T11:45:23Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957764' lat='53.5567808' lon='10.0213917' />
+  <node id='1741175444' timestamp='2017-01-25T11:13:15Z' uid='507893' user='wsoroe' visible='true' version='4' changeset='45471780' lat='53.5569199' lon='10.0214635' />
+  <node id='1741175452' timestamp='2013-12-24T05:55:45Z' uid='51991' user='Osmonav' visible='true' version='3' changeset='19612084' lat='53.5570207' lon='10.0213959' />
+  <node id='1741175455' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='9' changeset='105530336' lat='53.55704799839' lon='10.02306514042'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='7' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='1741175461' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='11' changeset='109160260' lat='53.5567152' lon='10.0219331'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='5' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+    <tag k='layer' v='1' />
+  </node>
+  <node id='1783244798' timestamp='2014-03-28T22:40:43Z' uid='368215' user='wandsecacher' visible='true' version='5' changeset='21374484' lat='53.554247' lon='10.0199435'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='13 A' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Ferdinand-Beit-Straße' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='1783244805' timestamp='2014-10-15T13:52:18Z' uid='645538' user='vademecum' visible='true' version='6' changeset='26095579' lat='53.5544228' lon='10.019929'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='13 B' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Ferdinand-Beit-Straße' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='2147753889' action='delete' timestamp='2013-02-09T14:06:44Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='14967865' lat='53.554332' lon='10.0226489'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='2263121721' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.555678' lon='10.0232465' />
+  <node id='2263121722' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='105530336' lat='53.5565504' lon='10.0214979' />
+  <node id='2263121732' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5564725' lon='10.0227809' />
+  <node id='2263121735' timestamp='2016-10-17T11:48:57Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957835' lat='53.5570454' lon='10.0215361' />
+  <node id='2263121738' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.556969' lon='10.02208' />
+  <node id='2263121740' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569459' lon='10.0223073'>
+    <tag k='barrier' v='bollard' />
+  </node>
+  <node id='2263121741' timestamp='2016-10-17T11:48:57Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957835' lat='53.5570795' lon='10.0216107' />
+  <node id='2263121748' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5564802' lon='10.0223056' />
+  <node id='2263121750' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5568347' lon='10.0221515' />
+  <node id='2263121753' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5562942' lon='10.0223348' />
+  <node id='2263121754' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='107015483' lat='53.5556941' lon='10.0235772' />
+  <node id='2263121757' action='delete' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='4' changeset='50893872' lat='53.5571827' lon='10.0209642'>
+    <tag k='width' v='2' />
+  </node>
+  <node id='2263121759' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5556943' lon='10.0231325' />
+  <node id='2263121760' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5556381' lon='10.0233463' />
+  <node id='2263121762' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.556306' lon='10.0224047' />
+  <node id='2263121763' timestamp='2016-10-17T11:45:21Z' uid='4736721' user='Kristian K' visible='true' version='2' changeset='42957764' lat='53.557267' lon='10.0212873' />
+  <node id='2263121779' timestamp='2013-12-24T05:55:47Z' uid='51991' user='Osmonav' visible='true' version='2' changeset='19612084' lat='53.5564508' lon='10.0225994' />
+  <node id='2263121780' action='modify' timestamp='2013-12-24T05:55:47Z' uid='51991' user='Osmonav' visible='true' version='2' changeset='19612084' lat='53.55625034781' lon='10.02287431936' />
+  <node id='2263121782' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.556471' lon='10.0230335' />
+  <node id='2263121783' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5566424' lon='10.0217139' />
+  <node id='2263121790' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5570193' lon='10.0225214' />
+  <node id='2263121791' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5565231' lon='10.0221876' />
+  <node id='2263121792' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5561021' lon='10.0227272' />
+  <node id='2263121794' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.55646' lon='10.0227286' />
+  <node id='2263121795' timestamp='2016-10-17T11:45:21Z' uid='4736721' user='Kristian K' visible='true' version='2' changeset='42957764' lat='53.5572574' lon='10.0212202' />
+  <node id='2263121799' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5566822' lon='10.0225408' />
+  <node id='2263121804' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5566552' lon='10.0227788' />
+  <node id='2263121807' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5568735' lon='10.0220874'>
+    <tag k='barrier' v='lift_gate' />
+  </node>
+  <node id='2263121810' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5561803' lon='10.0229041' />
+  <node id='2263121813' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.556555' lon='10.0228407' />
+  <node id='2263121822' action='delete' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='102351940' lat='53.5571544' lon='10.0210045'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='2' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Lübeckertordamm' />
+    <tag k='entrance' v='main' />
+    <tag k='width' v='2' />
+  </node>
+  <node id='2263121827' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5565272' lon='10.0228402' />
+  <node id='2263121830' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.557195' lon='10.0226439' />
+  <node id='2263121837' timestamp='2013-12-24T05:55:48Z' uid='51991' user='Osmonav' visible='true' version='2' changeset='19612084' lat='53.556497' lon='10.0229534' />
+  <node id='2263121839' timestamp='2016-10-17T11:48:57Z' uid='4736721' user='Kristian K' visible='true' version='2' changeset='42957835' lat='53.5569949' lon='10.0214257' />
+  <node id='2263121842' timestamp='2016-10-17T11:45:21Z' uid='4736721' user='Kristian K' visible='true' version='2' changeset='42957764' lat='53.5571685' lon='10.0213974' />
+  <node id='2263121844' timestamp='2016-10-17T11:48:57Z' uid='4736721' user='Kristian K' visible='true' version='4' changeset='42957835' lat='53.5572991' lon='10.021435' />
+  <node id='2263121850' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569435' lon='10.0220483' />
+  <node id='2263121863' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.55704' lon='10.0225464' />
+  <node id='2263121868' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='109160260' lat='53.5566762' lon='10.0217906' />
+  <node id='2263121872' timestamp='2016-10-17T11:45:21Z' uid='4736721' user='Kristian K' visible='true' version='3' changeset='42957764' lat='53.5570984' lon='10.0217417' />
+  <node id='2263121874' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5564999' lon='10.0228234' />
+  <node id='2263121882' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569489' lon='10.0220054'>
+    <tag k='barrier' v='bollard' />
+  </node>
+  <node id='2263121886' action='delete' timestamp='2017-01-25T11:13:15Z' uid='507893' user='wsoroe' visible='true' version='7' changeset='45471780' lat='53.5570576' lon='10.0217929' />
+  <node id='2263121887' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5566892' lon='10.0227153' />
+  <node id='2263129062' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='105530336' lat='53.5566813' lon='10.0216853' />
+  <node id='2263160598' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5569322' lon='10.0225054'>
+    <tag k='barrier' v='lift_gate' />
+  </node>
+  <node id='2366341724' action='delete' timestamp='2021-04-25T20:39:10Z' uid='6686188' user='Leo Slager' visible='true' version='7' changeset='103591426' lat='53.5534569' lon='10.0241579'>
+    <tag k='bus' v='yes' />
+    <tag k='name' v='U S Berliner Tor (Beim Strohhause)' />
+    <tag k='public_transport' v='stop_position' />
+  </node>
+  <node id='2411404332' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='81524159' lat='53.5549353' lon='10.0232201'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bicycle' v='yes' />
+    <tag k='bollard' v='rising' />
+    <tag k='foot' v='yes' />
+    <tag k='material' v='metal' />
+  </node>
+  <node id='2525690967' action='delete' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='76061110' lat='53.553405' lon='10.0221862' />
+  <node id='2525690970' action='delete' timestamp='2021-07-24T06:33:03Z' uid='2237831' user='mark20611' visible='true' version='3' changeset='108520806' lat='53.5534634' lon='10.0218459'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bicycle' v='yes' />
+    <tag k='bollard' v='fixed' />
+    <tag k='foot' v='yes' />
+  </node>
+  <node id='2525690973' action='delete' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='80034854' lat='53.5534818' lon='10.0215167' />
+  <node id='2525694782' action='delete' timestamp='2016-03-03T19:58:55Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='37595487' lat='53.5534686' lon='10.0226301' />
+  <node id='2592351058' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='2' changeset='50893872' lat='53.5569774' lon='10.0208178' />
+  <node id='2592351070' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='7' changeset='102351940' lat='53.5573457' lon='10.0202738' />
+  <node id='2667085035' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52508656' lat='53.5559551' lon='10.0211102'>
+    <tag k='barrier' v='lift_gate' />
+    <tag k='bicycle' v='no' />
+    <tag k='foot' v='no' />
+    <tag k='motor_vehicle' v='yes' />
+  </node>
+  <node id='2707111364' action='delete' timestamp='2018-03-13T14:57:52Z' uid='13861' user='Abendstund' visible='true' version='2' changeset='57148045' lat='53.5536093' lon='10.0212605'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='17' />
+    <tag k='addr:postcode' v='20097' />
+    <tag k='addr:street' v='Beim Strohhause' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='2707111366' action='delete' timestamp='2014-03-08T16:14:55Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='20989486' lat='53.5541455' lon='10.0208781'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='12' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Ferdinand-Beit-Straße' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='2964255550' action='delete' timestamp='2016-03-01T10:48:36Z' uid='2415107' user='tklug' visible='true' version='3' changeset='37539918' lat='53.5534188' lon='10.0237401'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='3346089307' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52508656' lat='53.555143' lon='10.022034' />
+  <node id='3346089308' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52508656' lat='53.5554849' lon='10.0216311'>
+    <tag k='barrier' v='lift_gate' />
+    <tag k='bicycle' v='no' />
+    <tag k='foot' v='no' />
+    <tag k='motor_vehicle' v='yes' />
+  </node>
+  <node id='3346089309' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='2' changeset='45370964' lat='53.5560146' lon='10.0211084' />
+  <node id='3346089310' action='delete' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='2' changeset='50893872' lat='53.5560481' lon='10.0210632' />
+  <node id='3346089311' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='4' changeset='45370964' lat='53.5562159' lon='10.0217005' />
+  <node id='3461852707' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='2' changeset='105530336' lat='53.5566423' lon='10.0225735' />
+  <node id='3461852709' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='2' changeset='105530336' lat='53.5564661' lon='10.0224202' />
+  <node id='3461852710' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='2' changeset='105530336' lat='53.5564791' lon='10.0224455' />
+  <node id='3671760252' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='102351940' lat='53.5571791' lon='10.0199727' />
+  <node id='3691017003' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5549267' lon='10.0231417' />
+  <node id='3691017004' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5550816' lon='10.0230709' />
+  <node id='3691017009' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5551465' lon='10.0230695' />
+  <node id='3691017010' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5550887' lon='10.0231146' />
+  <node id='3691017014' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='52332006' lat='53.5549858' lon='10.0231865' />
+  <node id='3691017016' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='105530336' lat='53.5562882' lon='10.0216364' />
+  <node id='3692819566' action='delete' timestamp='2015-08-12T18:35:31Z' uid='561067' user='flor!an' visible='true' version='2' changeset='33297542' lat='53.5547998' lon='10.0231782' />
+  <node id='3692819574' action='delete' timestamp='2015-08-12T06:37:54Z' uid='561067' user='flor!an' visible='true' version='1' changeset='33283773' lat='53.5539663' lon='10.0238973' />
+  <node id='3692819575' action='delete' timestamp='2015-08-12T06:37:54Z' uid='561067' user='flor!an' visible='true' version='1' changeset='33283773' lat='53.5538012' lon='10.0240132' />
+  <node id='3692819576' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='81524159' lat='53.5537874' lon='10.0239962' />
+  <node id='3692819582' action='delete' timestamp='2015-11-16T08:26:19Z' uid='338611' user='marek kleciak' visible='true' version='2' changeset='35343814' lat='53.5535414' lon='10.0243381' />
+  <node id='3692819584' timestamp='2015-08-12T06:37:54Z' uid='561067' user='flor!an' visible='true' version='1' changeset='33283773' lat='53.5538138' lon='10.0241955' />
+  <node id='3692819585' timestamp='2015-11-16T08:26:21Z' uid='338611' user='marek kleciak' visible='true' version='2' changeset='35343814' lat='53.5535723' lon='10.024338' />
+  <node id='3692819590' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='81524159' lat='53.5549468' lon='10.0235134' />
+  <node id='3692819593' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5552351' lon='10.0230076' />
+  <node id='3692819594' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5553165' lon='10.0229301' />
+  <node id='3692819595' action='delete' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5553317' lon='10.0229741' />
+  <node id='3692819655' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='76061110' lat='53.5545921' lon='10.0228894'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bollard' v='removable' />
+  </node>
+  <node id='3692819656' timestamp='2021-09-13T07:37:38Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='111128109' lat='53.5539772' lon='10.0232582'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bollard' v='removable' />
+  </node>
+  <node id='3693898797' action='delete' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336' lat='53.5563268' lon='10.0216687' />
+  <node id='3693898798' action='delete' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='5' changeset='64259154' lat='53.5565146' lon='10.0214246' />
+  <node id='3693898802' timestamp='2015-08-12T18:35:29Z' uid='561067' user='flor!an' visible='true' version='1' changeset='33297542' lat='53.5560371' lon='10.021077' />
+  <node id='3693899426' action='delete' timestamp='2015-08-12T18:35:29Z' uid='561067' user='flor!an' visible='true' version='1' changeset='33297542' lat='53.5554266' lon='10.0228519' />
+  <node id='3693899427' action='delete' timestamp='2015-08-12T18:35:29Z' uid='561067' user='flor!an' visible='true' version='1' changeset='33297542' lat='53.555889' lon='10.0222584' />
+  <node id='3693899428' action='delete' timestamp='2017-01-22T14:50:24Z' uid='561067' user='flor!an' visible='true' version='2' changeset='45370877' lat='53.5562905' lon='10.0218117' />
+  <node id='3693899429' action='delete' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='107015483' lat='53.5559044' lon='10.0222901' />
+  <node id='3693899430' timestamp='2020-12-19T18:18:08Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96117906' lat='53.5559593' lon='10.0220876'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899431' action='delete' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='7' changeset='111600515' lat='53.555919' lon='10.0222721' />
+  <node id='3693899432' timestamp='2020-12-19T18:18:06Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96117906' lat='53.5559253' lon='10.0222051'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899433' action='delete' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='7' changeset='111600515' lat='53.5561604' lon='10.0219736' />
+  <node id='3693899434' timestamp='2020-12-19T18:18:15Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96117906' lat='53.5561256' lon='10.021965'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899435' timestamp='2020-12-19T18:18:14Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96117906' lat='53.5560937' lon='10.0219632'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899436' timestamp='2020-12-19T18:18:13Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96117906' lat='53.5560556' lon='10.0219742'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899437' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='5' changeset='111600515' lat='53.556022' lon='10.0219975'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899438' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='5' changeset='111600515' lat='53.5559857' lon='10.0220408'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899439' timestamp='2020-12-19T18:18:07Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96117906' lat='53.5559404' lon='10.022145'>
+    <tag k='barrier' v='bollard' />
+    <tag k='kerb' v='lowered' />
+    <tag k='material' v='stone' />
+    <tag k='tactile_paving' v='no' />
+  </node>
+  <node id='3693899447' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5559312' lon='10.0220966' />
+  <node id='3693899448' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5560866' lon='10.0219199' />
+  <node id='3693899451' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5560328' lon='10.0219515' />
+  <node id='3693899453' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5559845' lon='10.0220049' />
+  <node id='3693899454' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.5559651' lon='10.0219753' />
+  <node id='3693899455' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.556079' lon='10.0218733' />
+  <node id='3693899456' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.5558979' lon='10.0220824' />
+  <node id='3693899457' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5562167' lon='10.0218094' />
+  <node id='3693899458' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.556115' lon='10.0219026' />
+  <node id='3693899459' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561903' lon='10.0218426' />
+  <node id='3693899460' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5558623' lon='10.0222261' />
+  <node id='3693899463' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561502' lon='10.0218733' />
+  <node id='3693899468' timestamp='2017-09-24T14:21:05Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52329811' lat='53.556061' lon='10.0211217' />
+  <node id='3693899475' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5564423' lon='10.021998' />
+  <node id='3693899481' timestamp='2017-09-24T15:46:52Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5562422' lon='10.0217594' />
+  <node id='3693899486' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='2' changeset='45370964' lat='53.556218' lon='10.0216164' />
+  <node id='3693899487' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='2' changeset='45370964' lat='53.5562005' lon='10.0214726' />
+  <node id='3693899488' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='2' changeset='45370964' lat='53.5560743' lon='10.0211959' />
+  <node id='3693899489' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64605321' lat='53.5561846' lon='10.0217869' />
+  <node id='3693899490' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.5561562' lon='10.0218184' />
+  <node id='3693899491' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.5560174' lon='10.0219045' />
+  <node id='3693899492' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.5559976' lon='10.0219285' />
+  <node id='3693899493' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64605321' lat='53.5559351' lon='10.0220229' />
+  <node id='3693899495' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5553038' lon='10.022909' />
+  <node id='3693899498' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5549813' lon='10.0231674' />
+  <node id='3693899511' action='delete' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='6' changeset='64259154' lat='53.5562426' lon='10.0214324' />
+  <node id='3693915193' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5562582' lon='10.0215464' />
+  <node id='3693915194' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5562212' lon='10.0214509' />
+  <node id='3693915195' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5562056' lon='10.0214078' />
+  <node id='3693915196' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561745' lon='10.0213319' />
+  <node id='3693915197' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561475' lon='10.0212645' />
+  <node id='3693915198' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5560892' lon='10.0211675' />
+  <node id='3693915199' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561153' lon='10.0212049' />
+  <node id='3693915204' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='2' changeset='45370964' lat='53.5561526' lon='10.0213337' />
+  <node id='3693915205' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5561543' lon='10.0212348' />
+  <node id='3693927700' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='107015483' lat='53.5553892' lon='10.0229438'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='3693927701' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='107015483' lat='53.5560595' lon='10.0220984'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='21' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='3693927702' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='107015483' lat='53.5560317' lon='10.0221327'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='21' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='3693927703' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='107015483' lat='53.5560431' lon='10.0221187'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='21' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='3722049722' timestamp='2015-11-16T08:26:19Z' uid='338611' user='marek kleciak' visible='true' version='2' changeset='35343814' lat='53.553556' lon='10.0243717' />
+  <node id='3838605145' timestamp='2016-03-03T19:58:55Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='37595487' lat='53.5535986' lon='10.0234689' />
+  <node id='3838605149' timestamp='2019-12-19T19:32:49Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='78652914' lat='53.5537611' lon='10.0242273'>
+    <tag k='highway' v='traffic_signals' />
+  </node>
+  <node id='4004950391' timestamp='2016-02-13T23:59:58Z' uid='617520' user='sundew' visible='true' version='1' changeset='37196536' lat='53.553694' lon='10.0234374' />
+  <node id='4034450312' action='delete' timestamp='2020-02-26T15:44:00Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='81510877' lat='53.5534306' lon='10.0219542'>
+    <tag k='entrance' v='yes' />
+    <tag k='entrance_marker:subway' v='yes' />
+    <tag k='name' v='Lindenplatz' />
+    <tag k='railway' v='subway_entrance' />
+    <tag k='ref' v='1' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='4034450552' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534032' lon='10.0237554'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4034450556' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534344' lon='10.0237247'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4034450559' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534401' lon='10.0219547'>
+    <tag k='level' v='0' />
+  </node>
+  <node id='4034450561' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534484' lon='10.0238861'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450563' action='delete' timestamp='2016-04-08T12:09:31Z' uid='2415107' user='tklug' visible='true' version='4' changeset='38404370' lat='53.5534562' lon='10.0221168' />
+  <node id='4034450564' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534623' lon='10.0221682' />
+  <node id='4034450565' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.553464' lon='10.0238708'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450568' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534562' lon='10.0220573'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450571' action='delete' timestamp='2016-04-05T14:16:03Z' uid='2144605' user='Gavaasuren' visible='true' version='2' changeset='38318505' lat='53.5534796' lon='10.0238554'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450576' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.5535407' lon='10.0236207'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4034450578' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.5535554' lon='10.0236062'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4034450579' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.5535702' lon='10.0235918'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4034450581' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.5535859' lon='10.0237513'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450582' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.5536007' lon='10.0237369'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450584' action='delete' timestamp='2016-03-01T10:48:20Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918' lat='53.5536154' lon='10.0237224'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450589' action='delete' timestamp='2016-04-19T08:19:56Z' uid='2415107' user='tklug' visible='true' version='4' changeset='38688026' lat='53.553705' lon='10.0239349'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450591' action='delete' timestamp='2016-04-08T12:09:31Z' uid='2415107' user='tklug' visible='true' version='3' changeset='38404370' lat='53.553688' lon='10.0238707' />
+  <node id='4034450592' action='delete' timestamp='2016-04-19T08:19:56Z' uid='2415107' user='tklug' visible='true' version='4' changeset='38688026' lat='53.5537191' lon='10.023915'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4034450599' timestamp='2016-04-06T12:20:59Z' uid='2144605' user='Gavaasuren' visible='true' version='3' changeset='38349644' lat='53.5537438' lon='10.0240179'>
+    <tag k='level' v='0' />
+  </node>
+  <node id='4034450600' timestamp='2016-04-06T12:20:59Z' uid='2144605' user='Gavaasuren' visible='true' version='3' changeset='38349644' lat='53.5537582' lon='10.0239986'>
+    <tag k='level' v='0' />
+  </node>
+  <node id='4098330217' timestamp='2016-04-04T21:53:54Z' uid='23785' user='greecemapper' visible='true' version='1' changeset='38303829' lat='53.55673' lon='10.0199294'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='102' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Steindamm' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='4242630221' action='delete' timestamp='2017-02-08T11:49:30Z' uid='360562' user='haytigran' visible='true' version='2' changeset='45914058' lat='53.5569227' lon='10.0197746'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4242630223' action='delete' timestamp='2017-02-08T11:49:30Z' uid='360562' user='haytigran' visible='true' version='2' changeset='45914058' lat='53.5569371' lon='10.0197563'>
+    <tag k='level' v='-2' />
+  </node>
+  <node id='4242630226' action='delete' timestamp='2017-02-08T11:49:30Z' uid='360562' user='haytigran' visible='true' version='2' changeset='45914058' lat='53.5569669' lon='10.0198703'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4242630227' action='delete' timestamp='2017-02-08T11:49:30Z' uid='360562' user='haytigran' visible='true' version='2' changeset='45914058' lat='53.5569811' lon='10.0198517'>
+    <tag k='level' v='-1' />
+  </node>
+  <node id='4242630228' action='delete' timestamp='2017-02-08T11:49:30Z' uid='360562' user='haytigran' visible='true' version='2' changeset='45914058' lat='53.5569832' lon='10.0199055' />
+  <node id='4242630229' action='delete' timestamp='2017-02-08T11:49:30Z' uid='360562' user='haytigran' visible='true' version='2' changeset='45914058' lat='53.5569974' lon='10.019887' />
+  <node id='4432531747' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5549123' lon='10.0230452' />
+  <node id='4432531750' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.555113' lon='10.0230161' />
+  <node id='4623635465' action='delete' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5565004' lon='10.02145' />
+  <node id='4623635466' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='3' changeset='105530336' lat='53.5564076' lon='10.0215669'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='5' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Berliner Tor' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='4623635470' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52332006' lat='53.5565026' lon='10.0213917'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bollard' v='rising' />
+  </node>
+  <node id='4623635472' action='delete' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64259154' lat='53.5563949' lon='10.0212434' />
+  <node id='4623638168' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64605321' lat='53.556046' lon='10.0218895' />
+  <node id='4623638169' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='2' changeset='64605321' lat='53.5562042' lon='10.0217452' />
+  <node id='4623638170' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.5562187' lon='10.0216561' />
+  <node id='4623638171' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.5562137' lon='10.0215555' />
+  <node id='4623638172' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.556206' lon='10.021503' />
+  <node id='4623638173' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.5561922' lon='10.0214365' />
+  <node id='4623638174' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.5561762' lon='10.0213921' />
+  <node id='4623638175' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.5561291' lon='10.0212788' />
+  <node id='4623638176' action='delete' timestamp='2017-01-22T14:54:31Z' uid='561067' user='flor!an' visible='true' version='1' changeset='45370964' lat='53.5560992' lon='10.0212251' />
+  <node id='4623638177' action='delete' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52508656' lat='53.5560405' lon='10.0211539' />
+  <node id='4623638178' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5552229' lon='10.0229351' />
+  <node id='4623638179' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5550613' lon='10.023049' />
+  <node id='4623638180' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5549545' lon='10.0230656' />
+  <node id='4623638181' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5548779' lon='10.023122' />
+  <node id='4631893943' timestamp='2017-01-25T11:13:14Z' uid='507893' user='wsoroe' visible='true' version='1' changeset='45471780' lat='53.5568944' lon='10.0214566' />
+  <node id='4675037006' timestamp='2017-08-06T19:00:00Z' uid='561067' user='flor!an' visible='true' version='2' changeset='50893872' lat='53.5564301' lon='10.0214655' />
+  <node id='5018570888' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='81524159' lat='53.5548962' lon='10.0232153' />
+  <node id='5018571326' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='52508656' lat='53.5554544' lon='10.0218787' />
+  <node id='5018571327' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5554877' lon='10.0220434' />
+  <node id='5018571328' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5555615' lon='10.0221443' />
+  <node id='5018571329' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='3' changeset='111600515' lat='53.5556369' lon='10.0222251' />
+  <node id='5018571330' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='2' changeset='111600515' lat='53.5557083' lon='10.0222652' />
+  <node id='5018571331' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.555795' lon='10.0223087' />
+  <node id='5018571332' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5552359' lon='10.0221872' />
+  <node id='5018571334' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52508656' lat='53.5557064' lon='10.0213855' />
+  <node id='5018571335' action='delete' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='5' changeset='111600515' lat='53.5557857' lon='10.0215846' />
+  <node id='5018571337' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52508656' lat='53.5557648' lon='10.0215321' />
+  <node id='5018571340' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64259154' lat='53.5564935' lon='10.0205392' />
+  <node id='5018571341' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='4' changeset='64259154' lat='53.5568328' lon='10.0201896' />
+  <node id='5018571342' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5564776' lon='10.0213299' />
+  <node id='5018571343' timestamp='2017-08-06T18:59:59Z' uid='561067' user='flor!an' visible='true' version='1' changeset='50893872' lat='53.5569012' lon='10.020779' />
+  <node id='5018571344' timestamp='2017-08-06T18:59:59Z' uid='561067' user='flor!an' visible='true' version='1' changeset='50893872' lat='53.5569503' lon='10.0206399' />
+  <node id='5018571347' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561221' lon='10.0211737' />
+  <node id='5018571348' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5561017' lon='10.0211335' />
+  <node id='5018571349' timestamp='2021-08-18T08:00:25Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='109856243' lat='53.5560787' lon='10.0210975'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bollard' v='fixed' />
+  </node>
+  <node id='5018571358' timestamp='2017-08-06T18:59:59Z' uid='561067' user='flor!an' visible='true' version='1' changeset='50893872' lat='53.5565746' lon='10.0214398' />
+  <node id='5018571361' action='delete' timestamp='2017-09-24T15:46:53Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52332006' lat='53.5565125' lon='10.0214122' />
+  <node id='5126613807' timestamp='2018-11-07T10:44:42Z' uid='506379' user='hamdroid' visible='true' version='2' changeset='64257994' lat='53.5549729' lon='10.0223945' />
+  <node id='5126614332' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64259154' lat='53.5567893' lon='10.0202341' />
+  <node id='5126614333' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64259154' lat='53.5560942' lon='10.0210281' />
+  <node id='5126614335' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64259154' lat='53.5565441' lon='10.0204562' />
+  <node id='5126614336' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64259154' lat='53.5566114' lon='10.0203726' />
+  <node id='5126614337' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='3' changeset='64259154' lat='53.5567111' lon='10.0203054' />
+  <node id='5126614356' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='81524159' lat='53.5549105' lon='10.023217'>
+    <tag k='barrier' v='bollard' />
+    <tag k='material' v='stone' />
+  </node>
+  <node id='5126614357' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='81524159' lat='53.5549559' lon='10.0232226'>
+    <tag k='barrier' v='bollard' />
+    <tag k='material' v='stone' />
+  </node>
+  <node id='5126614359' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='81524159' lat='53.5549645' lon='10.0232237' />
+  <node id='5126614363' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='81524159' lat='53.5548152' lon='10.0227661'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bicycle' v='yes' />
+    <tag k='bollard' v='removable' />
+    <tag k='foot' v='yes' />
+    <tag k='material' v='metal' />
+  </node>
+  <node id='5126614365' timestamp='2017-09-24T15:46:50Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52332006' lat='53.5554637' lon='10.021968' />
+  <node id='5126614366' timestamp='2017-09-30T12:26:10Z' uid='161619' user='FvGordon' visible='true' version='2' changeset='52508656' lat='53.5553434' lon='10.022011' />
+  <node id='5126614367' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52332006' lat='53.5549096' lon='10.0230879' />
+  <node id='5126614368' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52332006' lat='53.5548518' lon='10.0229792' />
+  <node id='5126614369' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52332006' lat='53.554851' lon='10.023181' />
+  <node id='5126614370' timestamp='2018-11-07T10:44:42Z' uid='506379' user='hamdroid' visible='true' version='2' changeset='64257994' lat='53.5548844' lon='10.0225647' />
+  <node id='5126614372' timestamp='2017-09-24T15:46:51Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52332006' lat='53.5564523' lon='10.0213625' />
+  <node id='5139451961' action='modify' timestamp='2017-09-30T12:26:05Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5549931' lon='10.021817'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='69' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='5139452002' timestamp='2017-09-30T12:26:06Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5558028' lon='10.02149' />
+  <node id='5139452003' timestamp='2017-09-30T12:26:06Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5557262' lon='10.0215752' />
+  <node id='5139452004' timestamp='2017-09-30T12:26:06Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5557179' lon='10.021415' />
+  <node id='5139452005' timestamp='2017-09-30T12:26:06Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5556954' lon='10.0213567' />
+  <node id='5139452006' action='delete' timestamp='2017-09-30T12:26:06Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.555674' lon='10.0213001'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='3' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Minenstraße' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='5139452007' action='modify' timestamp='2017-09-30T12:26:06Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5556751' lon='10.0213047'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='3' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Minenstraße' />
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='5139465927' action='delete' timestamp='2017-09-30T12:26:07Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.556057' lon='10.0211744' />
+  <node id='5139465928' timestamp='2017-09-30T12:26:07Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5560431' lon='10.0212234' />
+  <node id='5139465931' timestamp='2021-08-18T08:00:25Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='109856243' lat='53.5560786' lon='10.0211504'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bicycle' v='yes' />
+    <tag k='bollard' v='removable' />
+    <tag k='emergency' v='yes' />
+    <tag k='foot' v='yes' />
+  </node>
+  <node id='5139465934' timestamp='2017-09-30T12:26:07Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='52508656' lat='53.5564279' lon='10.0206715' />
+  <node id='5139465935' timestamp='2018-11-07T11:30:41Z' uid='506379' user='hamdroid' visible='true' version='2' changeset='64259154' lat='53.5564564' lon='10.0206221' />
+  <node id='6043686597' timestamp='2018-11-07T10:44:41Z' uid='506379' user='hamdroid' visible='true' version='1' changeset='64257994' lat='53.5548439' lon='10.0226721' />
+  <node id='6043758127' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='1' changeset='64259154' lat='53.5563328' lon='10.0207905' />
+  <node id='6043758128' timestamp='2018-11-07T11:30:40Z' uid='506379' user='hamdroid' visible='true' version='1' changeset='64259154' lat='53.556289' lon='10.0207879' />
+  <node id='6069206334' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='1' changeset='64605321' lat='53.5561209' lon='10.0218487' />
+  <node id='6069206335' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='1' changeset='64605321' lat='53.5557927' lon='10.0222658' />
+  <node id='6069206336' action='delete' timestamp='2018-11-17T20:00:54Z' uid='506379' user='hamdroid' visible='true' version='1' changeset='64605321' lat='53.555858' lon='10.0221705' />
+  <node id='6906544444' action='delete' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='76061110' lat='53.5536079' lon='10.0221049' />
+  <node id='6906544445' action='delete' timestamp='2021-07-24T06:31:22Z' uid='2237831' user='mark20611' visible='true' version='2' changeset='108520806' lat='53.5534927' lon='10.0221535'>
+    <tag k='barrier' v='bollard' />
+    <tag k='bicycle' v='yes' />
+    <tag k='bollard' v='fixed' />
+    <tag k='foot' v='yes' />
+  </node>
+  <node id='6906544446' action='delete' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='76061110' lat='53.5535218' lon='10.0217311' />
+  <node id='6906544447' action='delete' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='76061110' lat='53.5535926' lon='10.0225681' />
+  <node id='6906544448' action='delete' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='76061110' lat='53.5536838' lon='10.0224401' />
+  <node id='6906544449' action='delete' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='76061110' lat='53.5535118' lon='10.0216875' />
+  <node id='6906544453' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='1' changeset='76061110' lat='53.5547394' lon='10.0228042' />
+  <node id='7156477908' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854' lat='53.5543661' lon='10.0209782'>
+    <tag k='barrier' v='swing_gate' />
+    <tag k='swing_gate:type' v='single' />
+  </node>
+  <node id='7156477909' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854' lat='53.5544725' lon='10.021416'>
+    <tag k='access' v='private' />
+    <tag k='amenity' v='parking_entrance' />
+    <tag k='parking' v='underground' />
+  </node>
+  <node id='7156477916' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854' lat='53.5546839' lon='10.0209813'>
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:housenumber' v='69' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='main' />
+  </node>
+  <node id='7156477917' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854' lat='53.5542577' lon='10.0209285' />
+  <node id='7156477918' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854' lat='53.55433' lon='10.0208298' />
+  <node id='7156477919' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854' lat='53.5543278' lon='10.0209329' />
+  <node id='7156478352' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.5544601' lon='10.0204166'>
+    <tag k='access' v='private' />
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='74' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='home' />
+  </node>
+  <node id='7156478353' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.5545515' lon='10.0202952'>
+    <tag k='access' v='private' />
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='72' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='home' />
+  </node>
+  <node id='7156478354' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.554638' lon='10.0201775'>
+    <tag k='access' v='private' />
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='70' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='home' />
+  </node>
+  <node id='7156478355' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.5547134' lon='10.0200953'>
+    <tag k='access' v='private' />
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='68' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='home' />
+  </node>
+  <node id='7156478356' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.554784' lon='10.0199907'>
+    <tag k='access' v='private' />
+    <tag k='addr:city' v='Hamburg' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='66' />
+    <tag k='addr:postcode' v='20099' />
+    <tag k='addr:street' v='Stiftstraße' />
+    <tag k='entrance' v='home' />
+  </node>
+  <node id='7156478367' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.5548098' lon='10.0202755' />
+  <node id='7156478368' timestamp='2020-01-24T13:25:18Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80035528' lat='53.5554529' lon='10.0216793' />
+  <node id='7246336360' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5548884' lon='10.0233932' />
+  <node id='7246336361' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.554899' lon='10.0234018' />
+  <node id='7246336362' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5549102' lon='10.0234165' />
+  <node id='7246336363' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.554905' lon='10.0234088' />
+  <node id='7246336364' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5548816' lon='10.0233906' />
+  <node id='7246336365' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5548753' lon='10.0233894' />
+  <node id='7246336366' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5548678' lon='10.02339' />
+  <node id='7246336371' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.553961' lon='10.0238759' />
+  <node id='7246336372' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.554019' lon='10.0238334' />
+  <node id='7246371277' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5549275' lon='10.0232865' />
+  <node id='7246371279' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5552021' lon='10.024258' />
+  <node id='7246371285' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5550731' lon='10.0242432'>
+    <tag k='access' v='private' />
+    <tag k='barrier' v='lift_gate' />
+  </node>
+  <node id='7246371286' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5550888' lon='10.024231' />
+  <node id='7246371303' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5557367' lon='10.0238281' />
+  <node id='7246371304' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5556789' lon='10.0239396' />
+  <node id='7246371343' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5549007' lon='10.0230711' />
+  <node id='7246371344' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5544694' lon='10.0208566' />
+  <node id='7246371345' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5545351' lon='10.0209367' />
+  <node id='7246371346' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5545398' lon='10.0209334' />
+  <node id='7246371347' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='81524159' lat='53.5546338' lon='10.020881' />
+  <node id='8596101575' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='102351940' lat='53.556997' lon='10.0204564' />
+  <node id='8596101576' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5569426' lon='10.020256' />
+  <node id='8596101577' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5570225' lon='10.0205127' />
+  <node id='8596101578' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5569182' lon='10.0202851' />
+  <node id='8596101580' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.557308' lon='10.0210888' />
+  <node id='8596101582' action='delete' timestamp='2021-05-04T07:12:36Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='104101233' lat='53.5572606' lon='10.0206588'>
+    <tag k='button_operated' v='yes' />
+    <tag k='crossing' v='traffic_signals' />
+    <tag k='crossing:island' v='yes' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='traffic_signals:sound' v='yes' />
+    <tag k='traffic_signals:vibration' v='no' />
+  </node>
+  <node id='8596101583' action='delete' timestamp='2021-05-04T07:12:29Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='104101223' lat='53.5573165' lon='10.0202004'>
+    <tag k='bicycle' v='yes' />
+    <tag k='button_operated' v='no' />
+    <tag k='crossing' v='traffic_signals' />
+    <tag k='crossing:island' v='no' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='no' />
+    <tag k='traffic_signals:sound' v='yes' />
+    <tag k='traffic_signals:vibration' v='yes' />
+  </node>
+  <node id='8596101584' action='delete' timestamp='2021-05-04T07:12:37Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='104101233' lat='53.5572082' lon='10.0201893'>
+    <tag k='button_operated' v='yes' />
+    <tag k='crossing' v='traffic_signals' />
+    <tag k='crossing:island' v='yes' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='traffic_signals:sound' v='yes' />
+    <tag k='traffic_signals:vibration' v='no' />
+  </node>
+  <node id='8596101587' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5571819' lon='10.0204804' />
+  <node id='8596101588' action='delete' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5572664' lon='10.0203266' />
+  <node id='8596109036' action='delete' timestamp='2021-05-04T07:12:39Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='104101233' lat='53.5571089' lon='10.0203148'>
+    <tag k='button_operated' v='yes' />
+    <tag k='crossing' v='traffic_signals' />
+    <tag k='crossing:island' v='yes' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='traffic_signals:sound' v='yes' />
+    <tag k='traffic_signals:vibration' v='no' />
+  </node>
+  <node id='8596109045' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5570907' lon='10.0206397'>
+    <tag k='bicycle' v='yes' />
+    <tag k='button_operated' v='no' />
+    <tag k='crossing' v='traffic_signals' />
+    <tag k='highway' v='crossing' />
+    <tag k='tactile_paving' v='no' />
+    <tag k='traffic_signals:sound' v='yes' />
+    <tag k='traffic_signals:vibration' v='yes' />
+  </node>
+  <node id='8596109046' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.557055' lon='10.0206977'>
+    <tag k='crossing' v='no' />
+    <tag k='highway' v='traffic_signals' />
+    <tag k='traffic_signals:direction' v='forward' />
+  </node>
+  <node id='8596109047' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5570256' lon='10.0207442' />
+  <node id='8596122141' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5568602' lon='10.0201524' />
+  <node id='8596122143' action='modify' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5572046' lon='10.0207283' />
+  <node id='8596122144' action='modify' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5571622' lon='10.0207811' />
+  <node id='8596122147' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5570567' lon='10.0203809' />
+  <node id='8596122148' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5572389' lon='10.0201505' />
+  <node id='8596122149' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5571681' lon='10.0202401' />
+  <node id='8596122150' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940' lat='53.5571466' lon='10.0202673' />
+  <node id='8656021615' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5556094' lon='10.0201171' />
+  <node id='8656021616' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5557527' lon='10.0199354' />
+  <node id='8656050017' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5559433' lon='10.0201252' />
+  <node id='8656050018' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5558614' lon='10.0200344' />
+  <node id='8656050019' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5559214' lon='10.0199554' />
+  <node id='8656050020' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5559754' lon='10.0200835' />
+  <node id='8656050021' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5558803' lon='10.0202068' />
+  <node id='8656050022' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5558088' lon='10.0205646' />
+  <node id='8656050023' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5559595' lon='10.0203754' />
+  <node id='8656050024' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5557756' lon='10.0204896' />
+  <node id='8656050025' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5559234' lon='10.020304' />
+  <node id='8656050026' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5561388' lon='10.0204492' />
+  <node id='8656050027' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5561787' lon='10.0205328' />
+  <node id='8656050028' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5561001' lon='10.020368' />
+  <node id='8656050029' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5560604' lon='10.0204198' />
+  <node id='8656050030' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5560973' lon='10.0205019' />
+  <node id='8656050031' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5562243' lon='10.0203405' />
+  <node id='8656050032' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5560828' lon='10.0199619' />
+  <node id='8656050033' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5561223' lon='10.0200495' />
+  <node id='8656050034' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5561305' lon='10.0201395' />
+  <node id='8656050035' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5563965' lon='10.0206864'>
+    <tag k='access' v='private' />
+    <tag k='barrier' v='gate' />
+  </node>
+  <node id='8656050036' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5564047' lon='10.0207005' />
+  <node id='8656050037' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5563232' lon='10.0205619' />
+  <node id='8656050038' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5561864' lon='10.0202554' />
+  <node id='8656050039' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5560095' lon='10.0204862' />
+  <node id='8656050040' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5560337' lon='10.0205417' />
+  <node id='8656050041' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.555972' lon='10.0203998' />
+  <node id='8656050042' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5559147' lon='10.0202871' />
+  <node id='8656050043' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5558502' lon='10.0201363' />
+  <node id='8656050044' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5558198' lon='10.0200892' />
+  <node id='8656050053' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914' lat='53.5557213' lon='10.0198654' />
+  <node id='8778727713' timestamp='2021-05-29T10:50:24Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105529172' lat='53.5557893' lon='10.0237939'>
+    <tag k='barrier' v='gate' />
+  </node>
+  <node id='8778770362' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5563175' lon='10.0217053' />
+  <node id='8778770363' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.556296' lon='10.0223741' />
+  <node id='8778770364' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5563001' lon='10.0223053' />
+  <node id='8778770365' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.556446' lon='10.0227331' />
+  <node id='8778770366' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.556314' lon='10.0222779' />
+  <node id='8778770367' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.555966' lon='10.023063' />
+  <node id='8778770368' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5559033' lon='10.0228831' />
+  <node id='8778770369' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.55602080571' lon='10.02273817021' />
+  <node id='8778770382' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5569232' lon='10.0220425' />
+  <node id='8778770392' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5569066' lon='10.0225662' />
+  <node id='8778770393' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5567651' lon='10.0227265' />
+  <node id='8778770394' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5567328' lon='10.0227314' />
+  <node id='8778770395' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5567944' lon='10.0227088' />
+  <node id='8778770396' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5567066' lon='10.022725' />
+  <node id='8778770397' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5568857' lon='10.0229665' />
+  <node id='8778770398' action='delete' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5569809' lon='10.0228424' />
+  <node id='8778770403' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5566944' lon='10.0225775' />
+  <node id='8778770404' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5566751' lon='10.0227499' />
+  <node id='8778770405' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5564906' lon='10.0229993' />
+  <node id='8778770406' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5563564' lon='10.0223999' />
+  <node id='8778770407' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5565005' lon='10.0222322' />
+  <node id='8778770413' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5566988' lon='10.0226696' />
+  <node id='8778770414' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5567001' lon='10.0226191' />
+  <node id='8778775635' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5569995' lon='10.0224954' />
+  <node id='8778775636' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5571968' lon='10.0226084' />
+  <node id='8778775637' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5571916' lon='10.0225749' />
+  <node id='8778775638' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336' lat='53.5568987' lon='10.0220532' />
+  <node id='8868703183' timestamp='2021-09-15T14:38:30Z' uid='33072' user='hh42' visible='true' version='2' changeset='111248752' lat='53.555689' lon='10.0235819'>
+    <tag k='access' v='private' />
+    <tag k='barrier' v='gate' />
+    <tag k='height' v='2' />
+    <tag k='material' v='steel' />
+  </node>
+  <node id='8868703184' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='107015483' lat='53.5557153' lon='10.0238694' />
+  <node id='8868703185' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='107015483' lat='53.555651' lon='10.023611' />
+  <node id='8943371742' timestamp='2021-07-23T06:37:49Z' uid='6085289' user='Knoblauch13' visible='true' version='1' changeset='108467947' lat='53.556174' lon='10.0228898' />
+  <node id='8980700371' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='109160260' lat='53.5566679' lon='10.0218009' />
+  <node id='8980700372' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='109160260' lat='53.556722' lon='10.0219248' />
+  <node id='9116769311' timestamp='2021-09-23T11:30:16Z' uid='6085289' user='Knoblauch13' visible='true' version='1' changeset='111587367' lat='53.5564638' lon='10.0224469' />
+  <node id='9117454551' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='1' changeset='111600515' lat='53.5557667' lon='10.0222981' />
+  <node id='9209924189' timestamp='2021-10-29T12:31:28Z' uid='3610826' user='km2bp' visible='true' version='1' changeset='113122814' lat='53.5548016' lon='10.0202297' />
+  <node id='9209924190' timestamp='2021-10-29T12:31:28Z' uid='3610826' user='km2bp' visible='true' version='1' changeset='113122814' lat='53.554763' lon='10.0201525' />
+  <way id='-102487' action='modify' visible='true'>
+    <nd ref='8596101578' />
+    <nd ref='8596122141' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='-102490' action='modify' visible='true'>
+    <nd ref='3693927703' />
+    <nd ref='3693899453' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lanes' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='-102498' action='modify' visible='true'>
+    <nd ref='4623635466' />
+    <nd ref='-101758' />
+    <tag k='highway' v='service' />
+    <tag k='lanes' v='1' />
+    <tag k='motor_vehicle' v='private;delivery' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='-102512' action='modify' visible='true'>
+    <nd ref='-101800' />
+    <nd ref='-101766' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='1' />
+  </way>
+  <way id='-102570' action='modify' visible='true'>
+    <nd ref='-101766' />
+    <nd ref='-101797' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='-102576' action='modify' visible='true'>
+    <nd ref='-101845' />
+    <nd ref='-101846' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='-102582' action='modify' visible='true'>
+    <nd ref='-101852' />
+    <nd ref='-101853' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='-102599' action='modify' visible='true'>
+    <nd ref='1741175351' />
+    <nd ref='-101861' />
+    <nd ref='-101862' />
+    <nd ref='8778770414' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='1' />
+  </way>
+  <way id='-102619' action='modify' visible='true'>
+    <nd ref='-101873' />
+    <nd ref='2263121780' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='1' />
+  </way>
+  <way id='-102629' action='modify' visible='true'>
+    <nd ref='-101884' />
+    <nd ref='-101885' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='-102638' action='modify' visible='true'>
+    <nd ref='1741175455' />
+    <nd ref='1740429368' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='3655719' action='modify' timestamp='2021-08-03T06:21:55Z' uid='1431737' user='ma-rt-in' visible='true' version='22' changeset='109067485'>
+    <nd ref='305286859' />
+    <nd ref='3692819585' />
+    <nd ref='3722049722' />
+    <tag k='cycleway:right' v='lane' />
+    <tag k='foot' v='no' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='5229520' action='modify' timestamp='2021-08-06T22:26:56Z' uid='1551542' user='frantzius2177' visible='true' version='15' changeset='109286211'>
+    <nd ref='789307229' />
+    <nd ref='2667085035' />
+    <nd ref='5018571334' />
+    <nd ref='3346089308' />
+    <nd ref='7156478368' />
+    <nd ref='26678248' />
+    <tag k='highway' v='service' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Wismarer Straße' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='5' />
+  </way>
+  <way id='5229521' action='modify' timestamp='2021-02-19T08:07:03Z' uid='6085289' user='Knoblauch13' visible='true' version='10' changeset='99574748'>
+    <nd ref='26678243' />
+    <nd ref='26678248' />
+    <tag k='highway' v='residential' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Minenstraße' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='23050137' action='modify' timestamp='2021-09-23T11:30:19Z' uid='6085289' user='Knoblauch13' visible='true' version='16' changeset='111587367'>
+    <nd ref='2263121794' />
+    <nd ref='2263121732' />
+    <nd ref='2263121874' />
+    <nd ref='2263121827' />
+    <nd ref='2263121813' />
+    <nd ref='-101853' />
+    <nd ref='2263121804' />
+    <nd ref='8778770404' />
+    <nd ref='2263121887' />
+    <nd ref='8778770413' />
+    <nd ref='8778770414' />
+    <nd ref='8778770403' />
+    <nd ref='2263121799' />
+    <nd ref='2263121791' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='service' />
+    <tag k='motor_vehicle' v='private' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='23407003' action='delete' timestamp='2019-11-09T17:46:02Z' uid='507893' user='wsoroe' visible='true' version='12' changeset='76850126'>
+    <tag k='bicycle' v='no' />
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='23783478' action='modify' timestamp='2021-08-19T07:15:05Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='109913248'>
+    <nd ref='26678245' />
+    <nd ref='7156477918' />
+    <nd ref='257693041' />
+    <tag k='highway' v='service' />
+    <tag k='name' v='Kolbergstraße' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='23783479' action='modify' timestamp='2021-01-15T08:07:54Z' uid='6085289' user='Knoblauch13' visible='true' version='9' changeset='97541952'>
+    <nd ref='393959318' />
+    <nd ref='5126614363' />
+    <nd ref='6043686597' />
+    <nd ref='5126614370' />
+    <nd ref='5126613807' />
+    <nd ref='801398443' />
+    <nd ref='257693049' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='23783481' action='modify' timestamp='2020-12-18T07:41:28Z' uid='6085289' user='Knoblauch13' visible='true' version='7' changeset='96050452'>
+    <nd ref='5139451961' />
+    <nd ref='-101846' />
+    <nd ref='257693057' />
+    <nd ref='257693049' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='23855331' action='modify' timestamp='2021-08-18T08:00:24Z' uid='6085289' user='Knoblauch13' visible='true' version='10' changeset='109854223'>
+    <nd ref='258524139' />
+    <nd ref='5018571358' />
+    <nd ref='1163637991' />
+    <tag k='highway' v='service' />
+    <tag k='motor_vehicle' v='private' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='27869811' action='modify' timestamp='2010-04-23T22:25:25Z' uid='161619' user='FvGordon' visible='true' version='4' changeset='4508198'>
+    <nd ref='305983054' />
+    <nd ref='393959320' />
+    <tag k='highway' v='service' />
+    <tag k='service' v='driveway' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='27869812' action='modify' timestamp='2021-08-06T22:27:55Z' uid='1551542' user='frantzius2177' visible='true' version='7' changeset='109286211'>
+    <nd ref='305983056' />
+    <nd ref='305983057' />
+    <tag k='highway' v='service' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='5' />
+    <tag k='service' v='parking_aisle' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='28525397' action='modify' timestamp='2020-12-20T17:24:24Z' uid='6085289' user='Knoblauch13' visible='true' version='7' changeset='96147644'>
+    <nd ref='1740429422' />
+    <nd ref='313339214' />
+    <tag k='bridge' v='yes' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='28525406' action='delete' timestamp='2020-12-20T17:25:14Z' uid='6085289' user='Knoblauch13' visible='true' version='12' changeset='96147602'>
+    <tag k='foot' v='yes' />
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='15' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='28525407' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='7' changeset='105530336'>
+    <nd ref='313339323' />
+    <nd ref='8778770397' />
+    <nd ref='1740429391' />
+    <nd ref='1740429307' />
+    <nd ref='313340690' />
+    <nd ref='248730273' />
+    <tag k='bicycle' v='yes' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='28525421' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='7' changeset='105530336'>
+    <nd ref='313339478' />
+    <nd ref='8778770366' />
+    <nd ref='8778770364' />
+    <nd ref='2263121753' />
+    <tag k='highway' v='service' />
+    <tag k='lit' v='yes' />
+    <tag k='motor_vehicle' v='delivery' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='28525440' action='modify' timestamp='2020-12-20T17:24:27Z' uid='6085289' user='Knoblauch13' visible='true' version='13' changeset='96147644'>
+    <nd ref='1740429345' />
+    <nd ref='313340564' />
+    <nd ref='313339866' />
+    <nd ref='313339323' />
+    <tag k='highway' v='cycleway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='30821864' action='delete' timestamp='2020-12-20T17:25:15Z' uid='6085289' user='Knoblauch13' visible='true' version='10' changeset='96147602'>
+    <tag k='foot' v='yes' />
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='12' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='32347237' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='13' changeset='105530336'>
+    <nd ref='1740456601' />
+    <nd ref='1740456640' />
+    <nd ref='2263121741' />
+    <nd ref='2263121842' />
+    <nd ref='1740456654' />
+    <nd ref='1740456619' />
+    <nd ref='2263121795' />
+    <nd ref='828129182' />
+    <nd ref='1350434530' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='32347263' action='modify' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='8' changeset='111600515'>
+    <nd ref='364125358' />
+    <nd ref='1741175379' />
+    <nd ref='364125416' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='-1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='34346542' action='modify' timestamp='2020-08-01T08:33:35Z' uid='7523217' user='OSMatthias' visible='true' version='5' changeset='88809651'>
+    <nd ref='3691017003' />
+    <nd ref='5126614369' />
+    <nd ref='7246336372' />
+    <nd ref='393959320' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='no' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='34346544' action='modify' timestamp='2020-08-01T08:30:01Z' uid='7523217' user='OSMatthias' visible='true' version='21' changeset='88809651'>
+    <nd ref='3691017016' />
+    <nd ref='3693915193' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='motor_vehicle' v='no' />
+    <tag k='name' v='Alexanderstraße' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='34346546' action='modify' timestamp='2020-12-09T19:33:20Z' uid='6085289' user='Knoblauch13' visible='true' version='7' changeset='95571741'>
+    <nd ref='257693042' />
+    <nd ref='393959318' />
+    <nd ref='5126614368' />
+    <nd ref='7246371343' />
+    <nd ref='5126614367' />
+    <nd ref='3691017003' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='35576861' action='modify' timestamp='2021-08-06T22:27:45Z' uid='1551542' user='frantzius2177' visible='true' version='18' changeset='109286211'>
+    <nd ref='1740400988' />
+    <nd ref='719549388' />
+    <nd ref='7246336366' />
+    <nd ref='7246336365' />
+    <nd ref='7246336364' />
+    <nd ref='7246336360' />
+    <nd ref='7246336361' />
+    <nd ref='7246336363' />
+    <nd ref='7246336362' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='5' />
+  </way>
+  <way id='35576863' action='modify' timestamp='2010-04-23T22:25:26Z' uid='161619' user='FvGordon' visible='true' version='3' changeset='4508198'>
+    <nd ref='393959320' />
+    <nd ref='305983056' />
+    <nd ref='704836873' />
+    <nd ref='704737779' />
+    <tag k='highway' v='service' />
+    <tag k='service' v='driveway' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='35576864' action='modify' timestamp='2021-08-03T06:22:05Z' uid='1431737' user='ma-rt-in' visible='true' version='13' changeset='109067485'>
+    <nd ref='14469672' />
+    <nd ref='3692819584' />
+    <nd ref='3838605149' />
+    <nd ref='620388581' />
+    <tag k='cycleway:right' v='lane' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxaxleload' v='10' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='turn:lanes' v='left|right' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='49618903' action='delete' timestamp='2021-10-06T05:55:42Z' uid='1213571' user='mcliquid' visible='true' version='12' changeset='112151472'>
+    <tag k='bicycle' v='use_sidepath' />
+    <tag k='highway' v='secondary' />
+    <tag k='lanes' v='3' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berlinertordamm' />
+    <tag k='oneway' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='asphalt' />
+    <tag k='turn:lanes' v='left|through|none' />
+  </way>
+  <way id='56160090' action='modify' timestamp='2021-07-24T06:35:52Z' uid='2237831' user='mark20611' visible='true' version='3' changeset='108520939'>
+    <nd ref='704737779' />
+    <nd ref='305983055' />
+    <nd ref='704737791' />
+    <nd ref='923227974' />
+    <nd ref='923228180' />
+    <nd ref='704737735' />
+    <nd ref='704737779' />
+    <tag k='highway' v='service' />
+    <tag k='service' v='parking_aisle' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='60417894' action='delete' timestamp='2021-10-06T05:55:09Z' uid='1213571' user='mcliquid' visible='true' version='7' changeset='112151494'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='60417903' action='delete' timestamp='2020-12-14T09:37:16Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='95798070'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;0' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='23' />
+    <tag k='surface' v='concrete' />
+  </way>
+  <way id='63597062' action='modify' timestamp='2021-08-18T08:00:29Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='109854223'>
+    <nd ref='704737779' />
+    <nd ref='3692819656' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='service' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='63796117' action='delete' timestamp='2019-11-09T17:46:02Z' uid='507893' user='wsoroe' visible='true' version='4' changeset='76850126'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='63796176' action='delete' timestamp='2019-11-09T17:46:02Z' uid='507893' user='wsoroe' visible='true' version='5' changeset='76850126'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='63796194' action='delete' timestamp='2016-03-01T10:48:30Z' uid='2415107' user='tklug' visible='true' version='4' changeset='37539918'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='63796196' action='delete' timestamp='2021-01-15T17:32:02Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='97575211'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='27' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='63796201' action='delete' timestamp='2020-12-18T07:44:27Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='96050657'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;0' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='25' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='63796212' action='delete' timestamp='2020-12-12T11:55:49Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='95719650'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='27' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='65189754' action='delete' timestamp='2020-12-14T09:42:59Z' uid='6085289' user='Knoblauch13' visible='true' version='7' changeset='95798070'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;0' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='25' />
+    <tag k='surface' v='concrete' />
+  </way>
+  <way id='65189780' action='delete' timestamp='2016-03-01T10:48:32Z' uid='2415107' user='tklug' visible='true' version='4' changeset='37539918'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='65189782' action='delete' timestamp='2018-01-25T00:21:17Z' uid='237555' user='deerwood' visible='true' version='4' changeset='55727813'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='lit' v='yes' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='65189807' action='delete' timestamp='2020-12-20T17:02:26Z' uid='6085289' user='Knoblauch13' visible='true' version='7' changeset='96147599'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;0' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='26' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='74200460' action='modify' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='8' changeset='102351940'>
+    <nd ref='788416436' />
+    <nd ref='8596101576' />
+    <nd ref='8596101578' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='88848025' action='delete' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='9' changeset='105530336'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='19' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='88848033' action='modify' timestamp='2021-08-06T22:26:59Z' uid='1551542' user='frantzius2177' visible='true' version='7' changeset='109286211'>
+    <nd ref='1031091948' />
+    <nd ref='2263121740' />
+    <nd ref='1740456649' />
+    <nd ref='2263121850' />
+    <nd ref='2263121882' />
+    <nd ref='1740456601' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='88848035' action='modify' timestamp='2020-12-20T17:24:36Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96147644'>
+    <nd ref='848726893' />
+    <nd ref='1740429370' />
+    <nd ref='1031091751' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='88848037' action='modify' timestamp='2020-12-20T17:25:17Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='96147602'>
+    <nd ref='1740429246' />
+    <nd ref='1031091705' />
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='23' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='88848039' action='modify' timestamp='2021-09-23T11:30:26Z' uid='6085289' user='Knoblauch13' visible='true' version='9' changeset='111587367'>
+    <nd ref='2263121887' />
+    <nd ref='8778770396' />
+    <nd ref='8778770394' />
+    <nd ref='8778770393' />
+    <nd ref='8778770395' />
+    <nd ref='248730273' />
+    <nd ref='8778770392' />
+    <nd ref='1740429426' />
+    <nd ref='2263160598' />
+    <nd ref='1031091948' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='service' />
+    <tag k='maxheight' v='3.5' />
+    <tag k='motor_vehicle' v='private' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='88848041' action='delete' timestamp='2020-12-20T17:25:18Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='96147602'>
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='lit' v='yes' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='20' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='100655870' action='modify' timestamp='2021-09-23T11:30:14Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='111587367'>
+    <nd ref='1163637991' />
+    <nd ref='2263129062' />
+    <tag k='highway' v='service' />
+    <tag k='maxheight' v='2' />
+    <tag k='motorcycle' v='no' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='143586388' action='modify' timestamp='2021-06-26T20:00:28Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='107015483'>
+    <nd ref='296049113' />
+    <nd ref='7246371279' />
+    <nd ref='380154791' />
+    <nd ref='7246371304' />
+    <nd ref='8868703184' />
+    <nd ref='7246371303' />
+    <nd ref='8778727713' />
+    <tag k='highway' v='service' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='162111113' action='modify' timestamp='2020-12-20T17:24:39Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96147644'>
+    <nd ref='2263121790' />
+    <nd ref='1031091997' />
+    <nd ref='1740429230' />
+    <nd ref='1740429354' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162111115' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='6' changeset='105530336'>
+    <nd ref='313338712' />
+    <nd ref='1740429295' />
+    <nd ref='1741175373' />
+    <nd ref='1740429368' />
+    <nd ref='848726893' />
+    <nd ref='1740429422' />
+    <tag k='bicycle' v='yes' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162111117' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336'>
+    <nd ref='1740429447' />
+    <nd ref='1740429256' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162111119' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336'>
+    <nd ref='1740429357' />
+    <nd ref='1740429345' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='162111122' action='modify' timestamp='2021-05-29T10:50:24Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105529172'>
+    <nd ref='1740429424' />
+    <nd ref='1740429428' />
+    <tag k='bicycle' v='yes' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='162111127' action='modify' timestamp='2020-12-20T17:24:47Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96147644'>
+    <nd ref='1740429307' />
+    <nd ref='1740429218' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162111129' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336'>
+    <nd ref='1740429370' />
+    <nd ref='1740429447' />
+    <nd ref='1740429278' />
+    <nd ref='1740429246' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162111132' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336'>
+    <nd ref='2263121753' />
+    <nd ref='8778770363' />
+    <nd ref='2263121762' />
+    <nd ref='1740429223' />
+    <nd ref='8778770365' />
+    <nd ref='2263121794' />
+    <tag k='highway' v='service' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='162111134' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336'>
+    <nd ref='1740429368' />
+    <nd ref='1740429357' />
+    <nd ref='1031091707' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='162111135' action='modify' timestamp='2020-12-20T17:24:52Z' uid='6085289' user='Knoblauch13' visible='true' version='5' changeset='96147644'>
+    <nd ref='1740429428' />
+    <nd ref='1740429205' />
+    <nd ref='1740429427' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='162184287' action='delete' timestamp='2020-12-20T17:24:54Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96147644'>
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162184291' action='modify' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='9' changeset='109160260'>
+    <nd ref='2263121868' />
+    <nd ref='8980700371' />
+    <nd ref='8980700372' />
+    <nd ref='1741175461' />
+    <tag k='handrail' v='yes' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='lit' v='no' />
+    <tag k='ramp' v='no' />
+    <tag k='step_count' v='30' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162184296' action='modify' timestamp='2020-12-20T17:24:55Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96147644'>
+    <nd ref='1741175439' />
+    <nd ref='1741175373' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='162184297' action='modify' timestamp='2021-06-06T08:16:09Z' uid='6085289' user='Knoblauch13' visible='true' version='5' changeset='105906989'>
+    <nd ref='1741175379' />
+    <nd ref='1741175376' />
+    <nd ref='1741175441' />
+    <nd ref='1741175375' />
+    <nd ref='1741175381' />
+    <nd ref='1741175346' />
+    <nd ref='1741175343' />
+    <nd ref='4631893943' />
+    <nd ref='1741175444' />
+    <nd ref='1741175435' />
+    <nd ref='1741175372' />
+    <nd ref='2263121839' />
+    <nd ref='1741175452' />
+    <nd ref='1741175437' />
+    <nd ref='1740456654' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='190163818' action='modify' timestamp='2021-05-04T07:12:32Z' uid='6085289' user='Knoblauch13' visible='true' version='8' changeset='104101228'>
+    <nd ref='258524139' />
+    <nd ref='364125416' />
+    <nd ref='2592351058' />
+    <nd ref='8596109047' />
+    <nd ref='8596109046' />
+    <nd ref='8596109045' />
+    <nd ref='8596101587' />
+    <tag k='cycleway:both' v='no' />
+    <tag k='highway' v='residential' />
+    <tag k='lane_markings' v='no' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='216989522' action='modify' timestamp='2021-06-06T08:16:10Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='105906989'>
+    <nd ref='2263121795' />
+    <nd ref='2263121763' />
+    <nd ref='2263121844' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='216989525' action='modify' timestamp='2021-08-06T22:27:28Z' uid='1551542' user='frantzius2177' visible='true' version='6' changeset='109286211'>
+    <nd ref='2263121721' />
+    <nd ref='2263121759' />
+    <nd ref='8778770368' />
+    <nd ref='8778770369' />
+    <nd ref='-101797' />
+    <nd ref='2263121792' />
+    <nd ref='8943371742' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='216989527' action='modify' timestamp='2020-12-13T11:31:11Z' uid='10592928' user='Ralle61' visible='true' version='4' changeset='95750313'>
+    <nd ref='2263121872' />
+    <nd ref='2263121741' />
+    <nd ref='2263121735' />
+    <nd ref='2263121839' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='216989536' action='delete' timestamp='2021-08-06T22:27:02Z' uid='1551542' user='frantzius2177' visible='true' version='4' changeset='109286211'>
+    <tag k='highway' v='steps' />
+    <tag k='lit' v='yes' />
+  </way>
+  <way id='216989537' action='modify' timestamp='2021-08-04T18:31:24Z' uid='9627921' user='hauke-stieler' visible='true' version='5' changeset='109160260'>
+    <nd ref='2263121750' />
+    <nd ref='2263121807' />
+    <nd ref='8778775638' />
+    <nd ref='8778770382' />
+    <nd ref='2263121850' />
+    <nd ref='2263121738' />
+    <nd ref='8778775637' />
+    <nd ref='8778775636' />
+    <nd ref='2263121830' />
+    <nd ref='1031091705' />
+    <nd ref='2263121863' />
+    <nd ref='2263121790' />
+    <nd ref='8778775635' />
+    <nd ref='1031091948' />
+    <nd ref='2263121750' />
+    <nd ref='2263121868' />
+    <nd ref='2263121783' />
+    <nd ref='1163637991' />
+    <tag k='access' v='destination' />
+    <tag k='highway' v='service' />
+    <tag k='service' v='parking_aisle' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='216989538' action='modify' timestamp='2021-08-06T22:27:12Z' uid='1551542' user='frantzius2177' visible='true' version='4' changeset='109286211'>
+    <nd ref='2263121721' />
+    <nd ref='2263121760' />
+    <nd ref='2263121754' />
+    <nd ref='2263121782' />
+    <nd ref='8778770405' />
+    <nd ref='2263121837' />
+    <nd ref='2263121874' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='216990535' action='modify' timestamp='2021-09-23T11:30:15Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='111587367'>
+    <nd ref='2263129062' />
+    <nd ref='1163637961' />
+    <nd ref='253263164' />
+    <tag k='highway' v='service' />
+    <tag k='maxheight' v='2' />
+    <tag k='motorcycle' v='no' />
+    <tag k='surface' v='concrete' />
+    <tag k='tunnel' v='yes' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='232013391' action='modify' timestamp='2018-08-14T20:12:40Z' uid='1830274' user='Bicycle Tourer' visible='true' version='11' changeset='61669001'>
+    <nd ref='4675037006' />
+    <nd ref='4623635470' />
+    <nd ref='258524139' />
+    <tag k='highway' v='service' />
+    <tag k='lanes' v='1' />
+    <tag k='motor_vehicle' v='private;delivery' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='232825962' action='modify' timestamp='2020-11-15T11:14:44Z' uid='10592928' user='Ralle61' visible='true' version='9' changeset='94138711'>
+    <nd ref='7246336361' />
+    <nd ref='14469674' />
+    <nd ref='7246371277' />
+    <nd ref='2411404332' />
+    <nd ref='3691017003' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lanes' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='241578883' action='modify' timestamp='2021-08-06T22:27:40Z' uid='1551542' user='frantzius2177' visible='true' version='7' changeset='109286211'>
+    <nd ref='296049113' />
+    <nd ref='719549307' />
+    <nd ref='3692819590' />
+    <nd ref='752086191' />
+    <nd ref='7246336362' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='maxspeed:conditional' v='30 @ (Mo-Sa 06:00-22:00)' />
+    <tag k='name' v='Bei der Hauptfeuerwache' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='5' />
+  </way>
+  <way id='245359007' action='delete' timestamp='2021-10-06T05:55:07Z' uid='1213571' user='mcliquid' visible='true' version='6' changeset='112151472'>
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='service' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='245359367' action='delete' timestamp='2021-10-06T05:55:14Z' uid='1213571' user='mcliquid' visible='true' version='6' changeset='112151494'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='259926540' action='modify' timestamp='2020-12-20T17:25:00Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96147644'>
+    <nd ref='1740429427' />
+    <nd ref='-101885' />
+    <nd ref='1740429295' />
+    <tag k='highway' v='footway' />
+    <tag k='layer' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='292001817' action='delete' timestamp='2020-02-26T23:24:57Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='81524159'>
+    <tag k='highway' v='service' />
+  </way>
+  <way id='338999125' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='4' changeset='105530336'>
+    <nd ref='2263121762' />
+    <nd ref='8778770406' />
+    <nd ref='1740429232' />
+    <nd ref='3461852709' />
+    <nd ref='3461852710' />
+    <nd ref='3461852707' />
+    <nd ref='2263121887' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='362949689' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='4' changeset='102351940'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='365057225' action='modify' timestamp='2020-08-01T08:31:18Z' uid='7523217' user='OSMatthias' visible='true' version='8' changeset='88809651'>
+    <nd ref='3691017003' />
+    <nd ref='3691017004' />
+    <nd ref='3693899495' />
+    <nd ref='5018571331' />
+    <nd ref='3693899460' />
+    <nd ref='3693899447' />
+    <nd ref='3693899453' />
+    <nd ref='3693899451' />
+    <nd ref='3693899448' />
+    <nd ref='3693899458' />
+    <nd ref='3693899463' />
+    <nd ref='3693899459' />
+    <nd ref='3693899457' />
+    <nd ref='3693899481' />
+    <nd ref='3691017016' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lanes' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='365244735' action='modify' timestamp='2020-08-01T08:34:51Z' uid='7523217' user='OSMatthias' visible='true' version='4' changeset='88809651'>
+    <nd ref='393959320' />
+    <nd ref='7246336371' />
+    <nd ref='3692819576' />
+    <nd ref='797447946' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='no' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='365244737' action='modify' timestamp='2021-08-06T22:27:51Z' uid='1551542' user='frantzius2177' visible='true' version='5' changeset='109286211'>
+    <nd ref='14469672' />
+    <nd ref='305983054' />
+    <tag k='cycleway:both' v='no' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='3' />
+    <tag k='lanes:backward' v='2' />
+    <tag k='lanes:forward' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='maxaxleload' v='10' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='surface' v='asphalt' />
+    <tag k='turn:lanes:backward' v='left|right' />
+    <tag k='width' v='5' />
+  </way>
+  <way id='365244749' action='modify' timestamp='2021-08-18T08:00:27Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='109854223'>
+    <nd ref='3692819656' />
+    <nd ref='3692819655' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='service' />
+    <tag k='motor_vehicle' v='no' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='365244750' action='modify' timestamp='2021-08-18T08:00:28Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='109854223'>
+    <nd ref='3692819655' />
+    <nd ref='787115243' />
+    <nd ref='787115240' />
+    <nd ref='7156477917' />
+    <nd ref='257693041' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='service' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='365244751' action='modify' timestamp='2019-10-22T17:02:21Z' uid='161619' user='FvGordon' visible='true' version='5' changeset='76061110'>
+    <nd ref='257693042' />
+    <nd ref='6906544453' />
+    <nd ref='787115243' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='365376732' action='delete' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='17' changeset='111600515'>
+    <tag k='area' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='365376734' action='delete' timestamp='2020-11-15T11:14:45Z' uid='10592928' user='Ralle61' visible='true' version='4' changeset='94138711'>
+    <tag k='area' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='sett' />
+  </way>
+  <way id='380539819' action='modify' timestamp='2020-08-01T08:35:03Z' uid='7523217' user='OSMatthias' visible='true' version='5' changeset='88809651'>
+    <nd ref='620388581' />
+    <nd ref='797447946' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='380539820' action='modify' timestamp='2021-01-27T09:17:12Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='98216063'>
+    <nd ref='3838605145' />
+    <nd ref='788416750' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='397717193' action='modify' timestamp='2021-01-27T09:17:13Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='98216063'>
+    <nd ref='704737735' />
+    <nd ref='4004950391' />
+    <nd ref='3838605145' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='no' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='400958537' action='delete' timestamp='2020-02-29T21:14:56Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='81630156'>
+    <tag k='conveying' v='reversible' />
+    <tag k='description' v='Schalterhalle beim Strohhause von/zum Eingang Lindenplatz' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;0' />
+    <tag k='lit' v='yes' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='077' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='400958538' action='delete' timestamp='2020-02-29T21:14:56Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81630156'>
+    <tag k='conveying' v='forward' />
+    <tag k='description' v='Schalterhalle Feuerwehrwache von/zum Gleis 3 und 4 der U2/U3/U4, Richtung Elbbrücken, Barmbek, Niendorf Nord' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-2;-1' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='082' />
+    <tag k='tunnel' v='yes' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='400958539' action='delete' timestamp='2020-02-29T21:14:56Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='81630156'>
+    <tag k='conveying' v='backward' />
+    <tag k='description' v='Schalterhalle Feuerwehrwache zum Gleis 1 und 2 der U2/U3/U4, Richtung Mümmelmannsberg, Wandsbek-Gartenstadt' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-1;-2' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='073' />
+    <tag k='tunnel' v='yes' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='400958540' action='delete' timestamp='2016-04-08T12:09:30Z' uid='2415107' user='tklug' visible='true' version='2' changeset='38404370'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958541' action='delete' timestamp='2018-01-18T13:52:00Z' uid='360562' user='haytigran' visible='true' version='4' changeset='55550415'>
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-2;-1' />
+    <tag k='step_count' v='21' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958542' action='delete' timestamp='2016-03-01T10:48:22Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958544' action='delete' timestamp='2020-02-29T21:14:56Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81630156'>
+    <tag k='conveying' v='backward' />
+    <tag k='description' v='Schalterhalle Feuerwehrwache von/zum Gleis 3 und 4 der U2/U3/U4, Richtung Elbbrücken, Barmbek, Niendorf Nord' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='down' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-1;-2' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='081' />
+    <tag k='tunnel' v='yes' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='400958546' action='delete' timestamp='2020-12-20T17:02:24Z' uid='6085289' user='Knoblauch13' visible='true' version='6' changeset='96147644'>
+    <tag k='conveying' v='reversible' />
+    <tag k='description' v='Schalterhalle Feuerwehrwache von/zum Eingang Berliner Tor' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;0' />
+    <tag k='lit' v='yes' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='084' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='400958551' action='delete' timestamp='2018-01-18T13:52:01Z' uid='360562' user='haytigran' visible='true' version='4' changeset='55550415'>
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-2;-1' />
+    <tag k='step_count' v='21' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958552' action='delete' timestamp='2020-02-29T21:14:56Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='81630156'>
+    <tag k='conveying' v='forward' />
+    <tag k='description' v='Vom Bahnsteig der U2/U3/U4 zur Schalterhalle Feuerwehrwache' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-2;-1' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='074' />
+    <tag k='tunnel' v='yes' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='400958554' action='delete' timestamp='2016-03-01T10:48:23Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958556' action='delete' timestamp='2018-01-25T00:21:37Z' uid='237555' user='deerwood' visible='true' version='2' changeset='55727813'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-1' />
+    <tag k='lit' v='yes' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958557' action='delete' timestamp='2016-03-01T10:48:24Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958560' action='delete' timestamp='2016-03-01T10:48:24Z' uid='2415107' user='tklug' visible='true' version='1' changeset='37539918'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='400958561' action='modify' timestamp='2020-12-20T17:02:25Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96147644'>
+    <nd ref='4034450600' />
+    <nd ref='797447946' />
+    <nd ref='4034450599' />
+    <tag k='highway' v='footway' />
+    <tag k='level' v='0' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='400958562' action='delete' timestamp='2021-10-06T05:55:03Z' uid='1213571' user='mcliquid' visible='true' version='5' changeset='112151494'>
+    <tag k='highway' v='footway' />
+    <tag k='level' v='0' />
+    <tag k='lit' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='413021489' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='6' changeset='102351940'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='413021498' action='delete' timestamp='2020-12-03T08:45:23Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='95209354'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='424901394' action='delete' timestamp='2019-11-09T17:46:02Z' uid='507893' user='wsoroe' visible='true' version='2' changeset='76850126'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='424901396' action='delete' timestamp='2020-02-29T21:14:56Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='81630156'>
+    <tag k='conveying' v='reversible' />
+    <tag k='description' v='Schalterhalle AK St. Georg von/zum Bahnsteig der U1, Richtung Norderstedt Mitte/Großhansdorf' />
+    <tag k='highway' v='steps' />
+    <tag k='indoor' v='yes' />
+    <tag k='level' v='-1;-2' />
+    <tag k='note' v='Montag-Freitag von 6:30 Uhr-10:00 Uhr und von 14:30 Uhr-20.00 Uhr aufwärts, sonst Wechselsteuerung' />
+    <tag k='operator' v='Hamburger Hochbahn AG' />
+    <tag k='ref' v='025' />
+    <tag k='tunnel' v='yes' />
+    <tag k='width' v='1.0 m' />
+  </way>
+  <way id='424901398' action='delete' timestamp='2019-11-09T17:46:02Z' uid='507893' user='wsoroe' visible='true' version='2' changeset='76850126'>
+    <tag k='highway' v='footway' />
+    <tag k='indoor' v='yes' />
+    <tag k='layer' v='-1' />
+    <tag k='level' v='-1' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='424901400' action='delete' timestamp='2021-08-06T22:09:27Z' uid='1551542' user='frantzius2177' visible='true' version='2' changeset='109286211'>
+    <tag k='access' v='customers' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='level' v='-1;-2' />
+    <tag k='lit' v='yes' />
+    <tag k='step_count' v='24' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='473382346' action='modify' timestamp='2020-08-01T08:30:08Z' uid='7523217' user='OSMatthias' visible='true' version='5' changeset='88809651'>
+    <nd ref='3693915193' />
+    <nd ref='3693915194' />
+    <nd ref='3693915195' />
+    <nd ref='3693915196' />
+    <nd ref='3693915197' />
+    <nd ref='3693915199' />
+    <nd ref='3693915198' />
+    <nd ref='5139465931' />
+    <nd ref='3693899468' />
+    <nd ref='3693898802' />
+    <nd ref='789307229' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='motor_vehicle' v='no' />
+    <tag k='name' v='Alexanderstraße' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='473382347' action='modify' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='5' changeset='102351940'>
+    <nd ref='4675037006' />
+    <nd ref='5126614372' />
+    <nd ref='5018571342' />
+    <nd ref='5018571343' />
+    <nd ref='5018571344' />
+    <nd ref='8596101575' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='513377605' action='modify' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='4' changeset='111600515'>
+    <nd ref='26678248' />
+    <nd ref='5018571326' />
+    <nd ref='5126614365' />
+    <nd ref='5018571327' />
+    <nd ref='5018571328' />
+    <nd ref='5018571329' />
+    <nd ref='5018571330' />
+    <nd ref='9117454551' />
+    <nd ref='5018571331' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='513377606' action='modify' timestamp='2021-01-15T17:31:58Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='97575105'>
+    <nd ref='5018571326' />
+    <nd ref='5126614366' />
+    <nd ref='5018571332' />
+    <nd ref='801398443' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='5' />
+  </way>
+  <way id='513377607' action='modify' timestamp='2020-12-18T07:41:29Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='96050452'>
+    <nd ref='5139452005' />
+    <nd ref='5018571334' />
+    <nd ref='5139452004' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='513377608' action='modify' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='7' changeset='103422914'>
+    <nd ref='5126614333' />
+    <nd ref='6043758128' />
+    <nd ref='6043758127' />
+    <nd ref='8656050036' />
+    <nd ref='5139465934' />
+    <nd ref='5139465935' />
+    <nd ref='5018571340' />
+    <nd ref='5126614335' />
+    <nd ref='5126614336' />
+    <nd ref='5126614337' />
+    <nd ref='5126614332' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='no' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='527299335' action='modify' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='102351940'>
+    <nd ref='5126614332' />
+    <nd ref='5018571341' />
+    <nd ref='8596122141' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='no' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='527299341' action='modify' timestamp='2020-12-13T11:31:12Z' uid='10592928' user='Ralle61' visible='true' version='3' changeset='95750313'>
+    <nd ref='5139452003' />
+    <nd ref='5018571337' />
+    <nd ref='5139452002' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='527299344' action='modify' timestamp='2021-01-27T09:17:14Z' uid='6085289' user='Knoblauch13' visible='true' version='6' changeset='98216063'>
+    <nd ref='7156477918' />
+    <nd ref='7156477919' />
+    <nd ref='826747405' />
+    <nd ref='257693042' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='528961145' action='delete' timestamp='2021-10-06T05:55:45Z' uid='1213571' user='mcliquid' visible='true' version='10' changeset='112151472'>
+    <tag k='cycleway:right' v='no' />
+    <tag k='foot' v='no' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='1' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed:type' v='DE:urban' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='oneway' v='yes' />
+    <tag k='sidewalk' v='none' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='528975062' action='modify' timestamp='2020-12-13T11:31:12Z' uid='10592928' user='Ralle61' visible='true' version='2' changeset='95750313'>
+    <nd ref='5139452002' />
+    <nd ref='5139465928' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='528975063' action='modify' timestamp='2020-12-18T07:41:30Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='96050452'>
+    <nd ref='5018571326' />
+    <nd ref='5139452003' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='528975064' action='modify' timestamp='2021-09-23T15:11:54Z' uid='1983103' user='Jorisbo' visible='true' version='4' changeset='111600515'>
+    <nd ref='5139452004' />
+    <nd ref='5018571337' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='compacted' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='528975065' action='modify' timestamp='2020-12-13T11:31:12Z' uid='10592928' user='Ralle61' visible='true' version='2' changeset='95750313'>
+    <nd ref='5139452007' />
+    <nd ref='5139452005' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='tactile_paving' v='yes' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='528975070' action='modify' timestamp='2020-12-22T14:42:53Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='96265978'>
+    <nd ref='5139465928' />
+    <nd ref='3693899488' />
+    <nd ref='3693915198' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='528975071' action='modify' timestamp='2020-12-13T11:31:12Z' uid='10592928' user='Ralle61' visible='true' version='2' changeset='95750313'>
+    <nd ref='5018571349' />
+    <nd ref='5126614333' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='incline' v='up' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='528975073' action='modify' timestamp='2020-12-13T11:31:12Z' uid='10592928' user='Ralle61' visible='true' version='2' changeset='95750313'>
+    <nd ref='3693899468' />
+    <nd ref='5018571349' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='609180626' action='delete' timestamp='2020-12-22T14:51:28Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96265978'>
+    <tag k='bicycle' v='yes' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='617018966' action='modify' timestamp='2018-08-14T20:12:39Z' uid='1830274' user='Bicycle Tourer' visible='true' version='1' changeset='61669001'>
+    <nd ref='3691017016' />
+    <nd ref='-101758' />
+    <nd ref='4675037006' />
+    <tag k='highway' v='service' />
+    <tag k='lanes' v='1' />
+    <tag k='motor_vehicle' v='private;delivery' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='617018969' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='2' changeset='105530336'>
+    <nd ref='2263121791' />
+    <nd ref='313339478' />
+    <nd ref='3693899475' />
+    <nd ref='8778770362' />
+    <nd ref='3691017016' />
+    <tag k='highway' v='service' />
+    <tag k='lanes' v='1' />
+    <tag k='motor_vehicle' v='delivery' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='617018971' action='modify' timestamp='2021-08-03T06:21:52Z' uid='1431737' user='ma-rt-in' visible='true' version='3' changeset='109067485'>
+    <nd ref='620388581' />
+    <nd ref='305286859' />
+    <tag k='cycleway:right' v='lane' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxaxleload' v='10' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='turn:lanes' v='left|right' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='737650394' action='delete' timestamp='2021-10-06T05:55:12Z' uid='1213571' user='mcliquid' visible='true' version='3' changeset='112151494'>
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='737650396' action='delete' timestamp='2021-10-06T05:55:05Z' uid='1213571' user='mcliquid' visible='true' version='3' changeset='112151494'>
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='766238460' action='modify' timestamp='2020-01-24T13:13:47Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='80034854'>
+    <nd ref='7156477918' />
+    <nd ref='7156477908' />
+    <nd ref='7156477909' />
+    <tag k='highway' v='service' />
+    <tag k='service' v='parking_aisle' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='766242172' action='modify' timestamp='2021-10-29T12:31:28Z' uid='3610826' user='km2bp' visible='true' version='4' changeset='113122814'>
+    <nd ref='7156478368' />
+    <nd ref='7156478367' />
+    <nd ref='9209924189' />
+    <tag k='footway' v='sidewalk' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='776635595' action='modify' timestamp='2021-08-06T22:27:47Z' uid='1551542' user='frantzius2177' visible='true' version='2' changeset='109286211'>
+    <nd ref='305983054' />
+    <nd ref='1740400988' />
+    <tag k='highway' v='unclassified' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berliner Tor' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='5' />
+  </way>
+  <way id='776635597' action='delete' timestamp='2020-12-21T08:23:59Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96177633'>
+    <tag k='area' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='no' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='776635603' action='modify' timestamp='2021-08-03T06:22:10Z' uid='1431737' user='ma-rt-in' visible='true' version='2' changeset='109067478'>
+    <nd ref='305983054' />
+    <nd ref='752086193' />
+    <tag k='highway' v='service' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='776635610' action='modify' timestamp='2021-08-06T22:26:51Z' uid='1551542' user='frantzius2177' visible='true' version='3' changeset='109286211'>
+    <nd ref='7246371345' />
+    <nd ref='7246371344' />
+    <nd ref='26678245' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='776635611' action='modify' timestamp='2021-08-06T22:26:47Z' uid='1551542' user='frantzius2177' visible='true' version='2' changeset='109286211'>
+    <nd ref='7246371346' />
+    <nd ref='7246371345' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='steps' />
+    <tag k='incline' v='up' />
+    <tag k='lit' v='yes' />
+    <tag k='step_count' v='3' />
+    <tag k='surface' v='concrete' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='776635612' action='modify' timestamp='2021-08-06T22:26:49Z' uid='1551542' user='frantzius2177' visible='true' version='2' changeset='109286211'>
+    <nd ref='7156477916' />
+    <nd ref='7246371347' />
+    <nd ref='7246371346' />
+    <tag k='access' v='permissive' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='879010549' action='delete' timestamp='2020-11-29T20:48:16Z' uid='1787357' user='letihu' visible='true' version='1' changeset='95000052'>
+    <tag k='highway' v='service' />
+    <tag k='tunnel' v='building_passage' />
+  </way>
+  <way id='886120390' action='modify' timestamp='2020-12-18T07:43:27Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='96050452'>
+    <nd ref='257693049' />
+    <nd ref='3346089307' />
+    <nd ref='26678248' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='1.5' />
+  </way>
+  <way id='886634007' action='delete' timestamp='2021-10-06T05:55:49Z' uid='1213571' user='mcliquid' visible='true' version='5' changeset='112151472'>
+    <tag k='bicycle' v='use_sidepath' />
+    <tag k='highway' v='secondary' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxaxleload' v='10' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Berlinertordamm' />
+    <tag k='oneway' v='yes' />
+    <tag k='smoothness' v='good' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='926311948' action='modify' timestamp='2021-05-08T12:33:22Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='104363585'>
+    <nd ref='8596101578' />
+    <nd ref='8596101575' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='926311949' action='modify' timestamp='2021-05-08T12:33:23Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='104363585'>
+    <nd ref='8596101575' />
+    <nd ref='8596101577' />
+    <nd ref='8596109045' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='926311951' action='delete' timestamp='2021-04-14T06:39:21Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='102906040'>
+    <tag k='highway' v='cycleway' />
+    <tag k='lit' v='yes' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='926311952' action='modify' timestamp='2021-05-08T12:33:25Z' uid='6085289' user='Knoblauch13' visible='true' version='4' changeset='104363588'>
+    <nd ref='8596109045' />
+    <nd ref='8596122144' />
+    <nd ref='260718734' />
+    <nd ref='8596101580' />
+    <tag k='bicycle' v='yes' />
+    <tag k='cycleway:surface' v='paving_stones' />
+    <tag k='foot' v='yes' />
+    <tag k='footway:surface' v='paving_stones' />
+    <tag k='highway' v='path' />
+    <tag k='oneway' v='yes' />
+    <tag k='oneway:bicycle' v='yes' />
+    <tag k='segregated' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='926311954' action='delete' timestamp='2021-04-05T18:23:06Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <tag k='highway' v='residential' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='maxspeed:source' v='DE:urban' />
+    <tag k='noname' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='926315048' action='delete' timestamp='2021-11-15T09:16:16Z' uid='10592928' user='Ralle61' visible='true' version='3' changeset='113795649'>
+    <tag k='cycleway:right' v='track' />
+    <tag k='highway' v='secondary' />
+    <tag k='lanes' v='2' />
+    <tag k='lit' v='yes' />
+    <tag k='maxspeed' v='50' />
+    <tag k='name' v='Steindamm' />
+    <tag k='oneway' v='yes' />
+    <tag k='sidewalk' v='right' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='926315050' action='modify' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <nd ref='8596122144' />
+    <nd ref='8596122143' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='926315054' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='926315055' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <tag k='footway' v='crossing' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='926315056' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='926315057' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='926315058' action='delete' timestamp='2021-04-05T18:35:17Z' uid='1431737' user='ma-rt-in' visible='true' version='1' changeset='102351940'>
+    <tag k='footway' v='crossing' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='933927839' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927840' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927841' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927842' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927843' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927844' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927845' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927846' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927847' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='933927848' action='delete' timestamp='2021-04-22T15:30:46Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='103422914'>
+    <tag k='access' v='private' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='948404004' action='modify' timestamp='2021-09-23T11:30:17Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='111587367'>
+    <nd ref='2263121791' />
+    <nd ref='8778770407' />
+    <nd ref='2263121748' />
+    <nd ref='3461852709' />
+    <nd ref='9116769311' />
+    <tag k='highway' v='service' />
+    <tag k='motor_vehicle' v='delivery' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='948404005' action='modify' timestamp='2021-05-29T11:23:33Z' uid='9627921' user='hauke-stieler' visible='true' version='1' changeset='105530336'>
+    <nd ref='2263121753' />
+    <nd ref='313339524' />
+    <tag k='foot' v='yes' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='948404006' action='modify' timestamp='2021-07-23T06:46:45Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='108467818'>
+    <nd ref='8778770368' />
+    <nd ref='8778770367' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='948404008' action='modify' timestamp='2021-07-23T06:34:17Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='108467818'>
+    <nd ref='2263121783' />
+    <nd ref='2263121722' />
+    <nd ref='5018571358' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='asphalt' />
+    <tag k='width' v='2' />
+  </way>
+  <way id='958505069' action='modify' timestamp='2021-08-06T22:27:30Z' uid='1551542' user='frantzius2177' visible='true' version='2' changeset='109286211'>
+    <nd ref='2263121754' />
+    <nd ref='8868703183' />
+    <nd ref='8868703185' />
+    <nd ref='8868703184' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='966660575' action='modify' timestamp='2021-08-06T22:27:09Z' uid='1551542' user='frantzius2177' visible='true' version='3' changeset='109286211'>
+    <nd ref='1740429223' />
+    <nd ref='1740429361' />
+    <nd ref='-101870' />
+    <nd ref='2263121780' />
+    <nd ref='2263121810' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='966661178' action='modify' timestamp='2021-07-23T06:46:46Z' uid='6085289' user='Knoblauch13' visible='true' version='3' changeset='108467818'>
+    <nd ref='8943371742' />
+    <nd ref='2263121810' />
+    <nd ref='8778770367' />
+    <nd ref='2263121721' />
+    <tag k='highway' v='footway' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='3' />
+  </way>
+  <way id='986217009' action='modify' timestamp='2021-09-23T11:30:18Z' uid='6085289' user='Knoblauch13' visible='true' version='2' changeset='111587367'>
+    <nd ref='9116769311' />
+    <nd ref='2263121779' />
+    <nd ref='2263121794' />
+    <tag k='highway' v='service' />
+    <tag k='motor_vehicle' v='delivery' />
+    <tag k='service' v='emergency_access' />
+    <tag k='surface' v='sett' />
+    <tag k='width' v='4' />
+  </way>
+  <way id='997428937' action='modify' timestamp='2021-10-29T12:31:28Z' uid='3610826' user='km2bp' visible='true' version='1' changeset='113122814'>
+    <nd ref='9209924189' />
+    <nd ref='775863169' />
+    <nd ref='9209924190' />
+    <tag k='crossing' v='marked' />
+    <tag k='footway' v='crossing' />
+    <tag k='highway' v='footway' />
+    <tag k='image' v='https://photos.app.goo.gl/af5QuButLGFtYdAJ9' />
+    <tag k='lit' v='yes' />
+    <tag k='surface' v='paving_stones' />
+    <tag k='width' v='2' />
+  </way>
+</osm>

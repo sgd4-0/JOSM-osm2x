@@ -79,6 +79,7 @@ public class NavWriter implements Closeable {
 				{
 					writer.write(String.format(xml_node, n.getId(), n.lat(), n.lon()));
 					writeNodeTag("barrier", n.get("barrier"), tag_node);
+					writeNodeTag("pid", n.get("pid"), tag_node);
 
 					// get all neighbours
 					List<Neighbour> neighbours = getNeighbours(n);
@@ -92,30 +93,30 @@ public class NavWriter implements Closeable {
 						writer.write(String.format(tag_nd, "highway", highway));
 						writer.write(String.format(tag_nd, "surface", surface));
 
-						if (nn.angle > -1.0)
-						{
-							writer.write(String.format(tag_nd, "angle", nn.angle));
-						}
-						else
-						{
-							LatLon p;
-							if (nn.pid > 0)
-							{
-								p = getNeighbour(neighbours, nn.pid);
-							} else
-							{
-								p = getNeighbourWithPID(neighbours, nn.id);
-							}
-							if (p != null)
-							{
-								// angle not present -> calculate angle
-								double ang1 = n.getCoor().bearing(nn.latlon);
-								double ang2 = n.getCoor().bearing(p);	// this is the base angle
-								double dang = ang2 - ang1;						// delta angle
-								dang = Math.abs(dang) > Math.PI ? 2.0*Math.PI - Math.abs(dang) : dang;
-								writer.write(String.format(tab + tab + tab + "<%s>%.6f</%1$s>\n", "angle", dang));
-							}
-						}
+						//						if (nn.angle > -1.0)
+						//						{
+						//							writer.write(String.format(tag_nd, "angle", nn.angle));
+						//						}
+						//						else
+						//						{
+						//							LatLon p;
+						//							if (nn.pid > 0)
+						//							{
+						//								p = getNeighbour(neighbours, nn.pid);
+						//							} else
+						//							{
+						//								p = getNeighbourWithPID(neighbours, nn.id);
+						//							}
+						//							if (p != null)
+						//							{
+						//								// angle not present -> calculate angle
+						//								double ang1 = n.getCoor().bearing(nn.latlon);
+						//								double ang2 = n.getCoor().bearing(p);	// this is the base angle
+						//								double dang = ang2 - ang1;						// delta angle
+						//								dang = Math.abs(dang) > Math.PI ? 2.0*Math.PI - Math.abs(dang) : dang;
+						//								writer.write(String.format(tab + tab + tab + "<%s>%.6f</%1$s>\n", "angle", dang));
+						//							}
+						//						}
 						writer.write(tab + tab + "</nd>\n");
 
 					}

@@ -75,7 +75,7 @@ public class NavWriter implements Closeable {
 			for (Node n : ds.getNodes())
 			{
 				List<Way> parentWays = n.getParentWays();
-				if (parentWays.size() > 1)
+				if (parentWays.size() >= 1)
 				{
 					writer.write(String.format(xml_node, n.getId(), n.lat(), n.lon()));
 					writeNodeTag("barrier", n.get("barrier"), tag_node);

@@ -17,6 +17,7 @@ public class NavWriter implements Closeable {
 	// define formats
 	private final String tab = "  ";
 	private final String xml_node = tab + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\">\n";
+	private final String xml_node_pid = tab + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\" pid=\"%s\">\n";
 	private final String tag_node = tab + tab + "<%s>%s</%1$s>\n";
 	private final String xml_nd = tab + tab + "<nd ref=\"%d\">\n";
 	private final String tag_nd = tab + tab + tab + "<%s>%s</%1$s>\n";
@@ -77,9 +78,15 @@ public class NavWriter implements Closeable {
 				List<Way> parentWays = n.getParentWays();
 				if (parentWays.size() >= 1)
 				{
-					writer.write(String.format(xml_node, n.getId(), n.lat(), n.lon()));
+					if (n.get("pid") != null)
+					{
+						writer.write(String.format(xml_node_pid, n.getId(), n.lat(), n.lon(), n.get("pid")));
+					}
+					else
+					{
+						writer.write(String.format(xml_node, n.getId(), n.lat(), n.lon()));
+					}
 					writeNodeTag("barrier", n.get("barrier"), tag_node);
-					writeNodeTag("pid", n.get("pid"), tag_node);
 
 					// get all neighbours
 					List<Neighbour> neighbours = getNeighbours(n);

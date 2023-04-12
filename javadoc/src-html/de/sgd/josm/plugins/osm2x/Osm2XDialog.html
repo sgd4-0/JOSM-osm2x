@@ -13,350 +13,423 @@
 <span class="sourceLineNo">005</span>import java.awt.Dimension;<a name="line.5"></a>
 <span class="sourceLineNo">006</span>import java.awt.GridLayout;<a name="line.6"></a>
 <span class="sourceLineNo">007</span>import java.awt.event.ActionEvent;<a name="line.7"></a>
-<span class="sourceLineNo">008</span>import java.io.IOException;<a name="line.8"></a>
-<span class="sourceLineNo">009</span>import java.util.Arrays;<a name="line.9"></a>
-<span class="sourceLineNo">010</span>import java.util.Collection;<a name="line.10"></a>
-<span class="sourceLineNo">011</span>import java.util.List;<a name="line.11"></a>
-<span class="sourceLineNo">012</span><a name="line.12"></a>
-<span class="sourceLineNo">013</span>import javax.swing.AbstractAction;<a name="line.13"></a>
-<span class="sourceLineNo">014</span>import javax.swing.JLabel;<a name="line.14"></a>
+<span class="sourceLineNo">008</span>import java.util.Arrays;<a name="line.8"></a>
+<span class="sourceLineNo">009</span>import java.util.Collection;<a name="line.9"></a>
+<span class="sourceLineNo">010</span>import java.util.List;<a name="line.10"></a>
+<span class="sourceLineNo">011</span><a name="line.11"></a>
+<span class="sourceLineNo">012</span>import javax.swing.AbstractAction;<a name="line.12"></a>
+<span class="sourceLineNo">013</span>import javax.swing.JLabel;<a name="line.13"></a>
+<span class="sourceLineNo">014</span>import javax.swing.JOptionPane;<a name="line.14"></a>
 <span class="sourceLineNo">015</span>import javax.swing.JPanel;<a name="line.15"></a>
 <span class="sourceLineNo">016</span><a name="line.16"></a>
 <span class="sourceLineNo">017</span>import org.openstreetmap.josm.data.osm.DataSet;<a name="line.17"></a>
 <span class="sourceLineNo">018</span>import org.openstreetmap.josm.data.osm.Filter;<a name="line.18"></a>
-<span class="sourceLineNo">019</span>import org.openstreetmap.josm.data.osm.Node;<a name="line.19"></a>
-<span class="sourceLineNo">020</span>import org.openstreetmap.josm.data.osm.Way;<a name="line.20"></a>
-<span class="sourceLineNo">021</span>import org.openstreetmap.josm.data.osm.search.SearchSetting;<a name="line.21"></a>
-<span class="sourceLineNo">022</span>import org.openstreetmap.josm.gui.MainApplication;<a name="line.22"></a>
-<span class="sourceLineNo">023</span>import org.openstreetmap.josm.gui.SideButton;<a name="line.23"></a>
-<span class="sourceLineNo">024</span>import org.openstreetmap.josm.gui.dialogs.FilterTableModel;<a name="line.24"></a>
-<span class="sourceLineNo">025</span>import org.openstreetmap.josm.gui.dialogs.ToggleDialog;<a name="line.25"></a>
-<span class="sourceLineNo">026</span>import org.openstreetmap.josm.gui.layer.Layer;<a name="line.26"></a>
-<span class="sourceLineNo">027</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerAddEvent;<a name="line.27"></a>
-<span class="sourceLineNo">028</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerChangeListener;<a name="line.28"></a>
-<span class="sourceLineNo">029</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerOrderChangeEvent;<a name="line.29"></a>
-<span class="sourceLineNo">030</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerRemoveEvent;<a name="line.30"></a>
-<span class="sourceLineNo">031</span>import org.openstreetmap.josm.gui.layer.OsmDataLayer;<a name="line.31"></a>
-<span class="sourceLineNo">032</span>import org.openstreetmap.josm.tools.ImageProvider;<a name="line.32"></a>
-<span class="sourceLineNo">033</span><a name="line.33"></a>
-<span class="sourceLineNo">034</span>import de.sgd.josm.plugins.osm2x.modules.Osm2XFilter;<a name="line.34"></a>
-<span class="sourceLineNo">035</span>import de.sgd.josm.plugins.osm2x.modules.Osm2XMesher;<a name="line.35"></a>
-<span class="sourceLineNo">036</span><a name="line.36"></a>
-<span class="sourceLineNo">037</span>public class Osm2XDialog extends ToggleDialog implements LayerChangeListener  {<a name="line.37"></a>
-<span class="sourceLineNo">038</span>        private static final long serialVersionUID = 6317484190555235261L;<a name="line.38"></a>
-<span class="sourceLineNo">039</span><a name="line.39"></a>
-<span class="sourceLineNo">040</span>        /**<a name="line.40"></a>
-<span class="sourceLineNo">041</span>         * The okay button.<a name="line.41"></a>
-<span class="sourceLineNo">042</span>         */<a name="line.42"></a>
-<span class="sourceLineNo">043</span>        private SideButton okButton;<a name="line.43"></a>
-<span class="sourceLineNo">044</span><a name="line.44"></a>
-<span class="sourceLineNo">045</span>        /**<a name="line.45"></a>
-<span class="sourceLineNo">046</span>         * The reset button<a name="line.46"></a>
-<span class="sourceLineNo">047</span>         */<a name="line.47"></a>
-<span class="sourceLineNo">048</span>        private SideButton resetButton;<a name="line.48"></a>
-<span class="sourceLineNo">049</span><a name="line.49"></a>
-<span class="sourceLineNo">050</span>        /**<a name="line.50"></a>
-<span class="sourceLineNo">051</span>         *<a name="line.51"></a>
-<span class="sourceLineNo">052</span>         */<a name="line.52"></a>
-<span class="sourceLineNo">053</span>        private SideButton meshButton;<a name="line.53"></a>
-<span class="sourceLineNo">054</span><a name="line.54"></a>
-<span class="sourceLineNo">055</span>        /**<a name="line.55"></a>
-<span class="sourceLineNo">056</span>         *<a name="line.56"></a>
-<span class="sourceLineNo">057</span>         */<a name="line.57"></a>
-<span class="sourceLineNo">058</span>        private SideButton toOsmButton;<a name="line.58"></a>
-<span class="sourceLineNo">059</span><a name="line.59"></a>
-<span class="sourceLineNo">060</span>        /**<a name="line.60"></a>
-<span class="sourceLineNo">061</span>         *<a name="line.61"></a>
-<span class="sourceLineNo">062</span>         */<a name="line.62"></a>
-<span class="sourceLineNo">063</span>        private JLabel numNodesLabel;<a name="line.63"></a>
-<span class="sourceLineNo">064</span><a name="line.64"></a>
-<span class="sourceLineNo">065</span>        /**<a name="line.65"></a>
-<span class="sourceLineNo">066</span>         *<a name="line.66"></a>
-<span class="sourceLineNo">067</span>         */<a name="line.67"></a>
-<span class="sourceLineNo">068</span>        private JLabel numWaysLabel;<a name="line.68"></a>
-<span class="sourceLineNo">069</span><a name="line.69"></a>
-<span class="sourceLineNo">070</span>        /**<a name="line.70"></a>
-<span class="sourceLineNo">071</span>         *<a name="line.71"></a>
-<span class="sourceLineNo">072</span>         */<a name="line.72"></a>
-<span class="sourceLineNo">073</span>        private JLabel numRelLabel;<a name="line.73"></a>
-<span class="sourceLineNo">074</span><a name="line.74"></a>
-<span class="sourceLineNo">075</span>        private Osm2XAttributeParser attrParser = null;<a name="line.75"></a>
-<span class="sourceLineNo">076</span><a name="line.76"></a>
-<span class="sourceLineNo">077</span>        /**<a name="line.77"></a>
-<span class="sourceLineNo">078</span>         *<a name="line.78"></a>
-<span class="sourceLineNo">079</span>         */<a name="line.79"></a>
-<span class="sourceLineNo">080</span>        public Osm2XDialog() {<a name="line.80"></a>
-<span class="sourceLineNo">081</span>                super(tr("Osm2x"), "osm2x_48", tr("Open Osm2x dialog"),<a name="line.81"></a>
-<span class="sourceLineNo">082</span>                                null, 150);<a name="line.82"></a>
-<span class="sourceLineNo">083</span><a name="line.83"></a>
-<span class="sourceLineNo">084</span>                try {<a name="line.84"></a>
-<span class="sourceLineNo">085</span>                        attrParser = new Osm2XAttributeParser();<a name="line.85"></a>
-<span class="sourceLineNo">086</span>                } catch (IOException ioe) {<a name="line.86"></a>
-<span class="sourceLineNo">087</span>                        ioe.printStackTrace();<a name="line.87"></a>
-<span class="sourceLineNo">088</span>                }<a name="line.88"></a>
-<span class="sourceLineNo">089</span><a name="line.89"></a>
-<span class="sourceLineNo">090</span>                resetButton = new SideButton(new AbstractAction() {<a name="line.90"></a>
-<span class="sourceLineNo">091</span>                        {<a name="line.91"></a>
-<span class="sourceLineNo">092</span>                                putValue(NAME, tr("Count Nodes"));<a name="line.92"></a>
-<span class="sourceLineNo">093</span>                                new ImageProvider("dialogs", "select").getResource().attachImageIcon(this, true);<a name="line.93"></a>
-<span class="sourceLineNo">094</span>                                putValue(SHORT_DESCRIPTION, tr("Do something."));<a name="line.94"></a>
-<span class="sourceLineNo">095</span>                                //putValue("help", HelpUtil.ht("/Dialog/Osm2X#OK"));<a name="line.95"></a>
-<span class="sourceLineNo">096</span>                        }<a name="line.96"></a>
-<span class="sourceLineNo">097</span>                        @Override<a name="line.97"></a>
-<span class="sourceLineNo">098</span>                        public void actionPerformed(ActionEvent e)<a name="line.98"></a>
-<span class="sourceLineNo">099</span>                        {<a name="line.99"></a>
-<span class="sourceLineNo">100</span>                                recalculate();<a name="line.100"></a>
-<span class="sourceLineNo">101</span>                        }<a name="line.101"></a>
-<span class="sourceLineNo">102</span>                });<a name="line.102"></a>
-<span class="sourceLineNo">103</span><a name="line.103"></a>
-<span class="sourceLineNo">104</span>                okButton = new SideButton(new AbstractAction() {<a name="line.104"></a>
-<span class="sourceLineNo">105</span>                        {<a name="line.105"></a>
-<span class="sourceLineNo">106</span>                                putValue(NAME, tr("Split"));<a name="line.106"></a>
-<span class="sourceLineNo">107</span>                                new ImageProvider("dialogs", "select").getResource().attachImageIcon(this, true);<a name="line.107"></a>
-<span class="sourceLineNo">108</span>                                putValue(SHORT_DESCRIPTION, tr("Split the current layer into ways and barriers."));<a name="line.108"></a>
-<span class="sourceLineNo">109</span>                                //putValue("help", HelpUtil.ht("/Dialog/Measurement#Reset"));<a name="line.109"></a>
-<span class="sourceLineNo">110</span>                        }<a name="line.110"></a>
-<span class="sourceLineNo">111</span>                        @Override<a name="line.111"></a>
-<span class="sourceLineNo">112</span>                        public void actionPerformed(ActionEvent e) {<a name="line.112"></a>
-<span class="sourceLineNo">113</span>                                splitLayer();<a name="line.113"></a>
-<span class="sourceLineNo">114</span>                        }<a name="line.114"></a>
-<span class="sourceLineNo">115</span>                });<a name="line.115"></a>
-<span class="sourceLineNo">116</span><a name="line.116"></a>
-<span class="sourceLineNo">117</span>                meshButton = new SideButton(new AbstractAction() {<a name="line.117"></a>
-<span class="sourceLineNo">118</span>                        {<a name="line.118"></a>
-<span class="sourceLineNo">119</span>                                putValue(NAME, tr("Mesh"));<a name="line.119"></a>
-<span class="sourceLineNo">120</span>                                new ImageProvider("dialogs", "select").getResource().attachImageIcon(this, true);<a name="line.120"></a>
-<span class="sourceLineNo">121</span>                                putValue(SHORT_DESCRIPTION, tr("Mesh ways."));<a name="line.121"></a>
-<span class="sourceLineNo">122</span>                                //putValue("help", HelpUtil.ht("/Dialog/Measurement#Reset"));<a name="line.122"></a>
-<span class="sourceLineNo">123</span>                        }<a name="line.123"></a>
-<span class="sourceLineNo">124</span>                        @Override<a name="line.124"></a>
-<span class="sourceLineNo">125</span>                        public void actionPerformed(ActionEvent e) {<a name="line.125"></a>
-<span class="sourceLineNo">126</span>                                meshNodes();<a name="line.126"></a>
-<span class="sourceLineNo">127</span>                        }<a name="line.127"></a>
-<span class="sourceLineNo">128</span>                });<a name="line.128"></a>
-<span class="sourceLineNo">129</span><a name="line.129"></a>
-<span class="sourceLineNo">130</span>                toOsmButton = new SideButton(new AbstractAction() {<a name="line.130"></a>
-<span class="sourceLineNo">131</span>                        {<a name="line.131"></a>
-<span class="sourceLineNo">132</span>                                putValue(NAME, tr("Shp to OSM"));<a name="line.132"></a>
-<span class="sourceLineNo">133</span>                                new ImageProvider("dialogs", "select").getResource().attachImageIcon(this, true);<a name="line.133"></a>
-<span class="sourceLineNo">134</span>                                putValue(SHORT_DESCRIPTION, tr("Convert shape layer to osm layer."));<a name="line.134"></a>
-<span class="sourceLineNo">135</span>                                //putValue("help", HelpUtil.ht("/Dialog/Measurement#Reset"));<a name="line.135"></a>
-<span class="sourceLineNo">136</span>                        }<a name="line.136"></a>
-<span class="sourceLineNo">137</span>                        @Override<a name="line.137"></a>
-<span class="sourceLineNo">138</span>                        public void actionPerformed(ActionEvent e) {<a name="line.138"></a>
-<span class="sourceLineNo">139</span>                                shpToOsm();<a name="line.139"></a>
-<span class="sourceLineNo">140</span>                        }<a name="line.140"></a>
-<span class="sourceLineNo">141</span>                });<a name="line.141"></a>
-<span class="sourceLineNo">142</span><a name="line.142"></a>
-<span class="sourceLineNo">143</span>                JPanel valuePanel = new JPanel(new GridLayout(0,2));<a name="line.143"></a>
+<span class="sourceLineNo">019</span>import org.openstreetmap.josm.data.osm.FilterMatcher;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import org.openstreetmap.josm.data.osm.Node;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import org.openstreetmap.josm.data.osm.Relation;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import org.openstreetmap.josm.data.osm.Way;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import org.openstreetmap.josm.data.osm.search.SearchParseError;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import org.openstreetmap.josm.data.osm.search.SearchSetting;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import org.openstreetmap.josm.gui.MainApplication;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import org.openstreetmap.josm.gui.SideButton;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import org.openstreetmap.josm.gui.dialogs.ToggleDialog;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import org.openstreetmap.josm.gui.layer.Layer;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerAddEvent;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerChangeListener;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerOrderChangeEvent;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import org.openstreetmap.josm.gui.layer.LayerManager.LayerRemoveEvent;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import org.openstreetmap.josm.gui.layer.OsmDataLayer;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import org.openstreetmap.josm.spi.preferences.Config;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>import org.openstreetmap.josm.tools.ImageProvider;<a name="line.35"></a>
+<span class="sourceLineNo">036</span>import org.openstreetmap.josm.tools.Logging;<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>import de.sgd.josm.plugins.osm2x.helper.Osm2XConstants;<a name="line.38"></a>
+<span class="sourceLineNo">039</span>import de.sgd.josm.plugins.osm2x.modules.Osm2XFilter;<a name="line.39"></a>
+<span class="sourceLineNo">040</span>import de.sgd.josm.plugins.osm2x.modules.Osm2XMesher;<a name="line.40"></a>
+<span class="sourceLineNo">041</span>import de.sgd.josm.plugins.osm2x.modules.Osm2XMesherChecker;<a name="line.41"></a>
+<span class="sourceLineNo">042</span><a name="line.42"></a>
+<span class="sourceLineNo">043</span>public class Osm2XDialog extends ToggleDialog implements LayerChangeListener  {<a name="line.43"></a>
+<span class="sourceLineNo">044</span>        private static final long serialVersionUID = 6317484190555235261L;<a name="line.44"></a>
+<span class="sourceLineNo">045</span><a name="line.45"></a>
+<span class="sourceLineNo">046</span>        /**<a name="line.46"></a>
+<span class="sourceLineNo">047</span>         * The button to divide the map into roads and barriers<a name="line.47"></a>
+<span class="sourceLineNo">048</span>         */<a name="line.48"></a>
+<span class="sourceLineNo">049</span>        private SideButton splitButton;<a name="line.49"></a>
+<span class="sourceLineNo">050</span><a name="line.50"></a>
+<span class="sourceLineNo">051</span>        /**<a name="line.51"></a>
+<span class="sourceLineNo">052</span>         * The reset button<a name="line.52"></a>
+<span class="sourceLineNo">053</span>         */<a name="line.53"></a>
+<span class="sourceLineNo">054</span>        private SideButton nodecountButton;<a name="line.54"></a>
+<span class="sourceLineNo">055</span><a name="line.55"></a>
+<span class="sourceLineNo">056</span>        /**<a name="line.56"></a>
+<span class="sourceLineNo">057</span>         * The create road network button<a name="line.57"></a>
+<span class="sourceLineNo">058</span>         */<a name="line.58"></a>
+<span class="sourceLineNo">059</span>        private SideButton meshButton;<a name="line.59"></a>
+<span class="sourceLineNo">060</span><a name="line.60"></a>
+<span class="sourceLineNo">061</span>        /**<a name="line.61"></a>
+<span class="sourceLineNo">062</span>         * The label to display the number of nodes<a name="line.62"></a>
+<span class="sourceLineNo">063</span>         */<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        private JLabel numNodesLabel;<a name="line.64"></a>
+<span class="sourceLineNo">065</span><a name="line.65"></a>
+<span class="sourceLineNo">066</span>        /**<a name="line.66"></a>
+<span class="sourceLineNo">067</span>         * The label to display the number of ways<a name="line.67"></a>
+<span class="sourceLineNo">068</span>         */<a name="line.68"></a>
+<span class="sourceLineNo">069</span>        private JLabel numWaysLabel;<a name="line.69"></a>
+<span class="sourceLineNo">070</span><a name="line.70"></a>
+<span class="sourceLineNo">071</span>        /**<a name="line.71"></a>
+<span class="sourceLineNo">072</span>         * The label to display the number of relations<a name="line.72"></a>
+<span class="sourceLineNo">073</span>         */<a name="line.73"></a>
+<span class="sourceLineNo">074</span>        private JLabel numRelLabel;<a name="line.74"></a>
+<span class="sourceLineNo">075</span><a name="line.75"></a>
+<span class="sourceLineNo">076</span>        /**<a name="line.76"></a>
+<span class="sourceLineNo">077</span>         * Create Osm2X dialog<a name="line.77"></a>
+<span class="sourceLineNo">078</span>         */<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        public Osm2XDialog() {<a name="line.79"></a>
+<span class="sourceLineNo">080</span>                super(tr("Shared Guide Dog 4.0 Map Creator"), "osm2x_48", tr("Open the SGD4.0 Map Creator dialog"),<a name="line.80"></a>
+<span class="sourceLineNo">081</span>                                null, 150);<a name="line.81"></a>
+<span class="sourceLineNo">082</span>                nodecountButton = new SideButton(new AbstractAction() {<a name="line.82"></a>
+<span class="sourceLineNo">083</span>                        {<a name="line.83"></a>
+<span class="sourceLineNo">084</span>                                putValue(NAME, tr("Count Nodes"));<a name="line.84"></a>
+<span class="sourceLineNo">085</span>                                new ImageProvider("dialogs/select").getResource().attachImageIcon(this, true);<a name="line.85"></a>
+<span class="sourceLineNo">086</span>                                putValue(SHORT_DESCRIPTION, tr("Count nodes."));<a name="line.86"></a>
+<span class="sourceLineNo">087</span>                        }<a name="line.87"></a>
+<span class="sourceLineNo">088</span>                        @Override<a name="line.88"></a>
+<span class="sourceLineNo">089</span>                        public void actionPerformed(ActionEvent e)<a name="line.89"></a>
+<span class="sourceLineNo">090</span>                        {<a name="line.90"></a>
+<span class="sourceLineNo">091</span>                                recalculate();<a name="line.91"></a>
+<span class="sourceLineNo">092</span>                        }<a name="line.92"></a>
+<span class="sourceLineNo">093</span>                });<a name="line.93"></a>
+<span class="sourceLineNo">094</span><a name="line.94"></a>
+<span class="sourceLineNo">095</span>                splitButton = new SideButton(new AbstractAction() {<a name="line.95"></a>
+<span class="sourceLineNo">096</span>                        {<a name="line.96"></a>
+<span class="sourceLineNo">097</span>                                putValue(NAME, tr("Split"));<a name="line.97"></a>
+<span class="sourceLineNo">098</span>                                new ImageProvider("dialogs/split").getResource().attachImageIcon(this, true);<a name="line.98"></a>
+<span class="sourceLineNo">099</span>                                putValue(SHORT_DESCRIPTION, tr("Split the current layer into ways and barriers."));<a name="line.99"></a>
+<span class="sourceLineNo">100</span>                        }<a name="line.100"></a>
+<span class="sourceLineNo">101</span>                        @Override<a name="line.101"></a>
+<span class="sourceLineNo">102</span>                        public void actionPerformed(ActionEvent e) {<a name="line.102"></a>
+<span class="sourceLineNo">103</span>                                splitLayer();<a name="line.103"></a>
+<span class="sourceLineNo">104</span>                        }<a name="line.104"></a>
+<span class="sourceLineNo">105</span>                });<a name="line.105"></a>
+<span class="sourceLineNo">106</span><a name="line.106"></a>
+<span class="sourceLineNo">107</span>                meshButton = new SideButton(new AbstractAction() {<a name="line.107"></a>
+<span class="sourceLineNo">108</span>                        {<a name="line.108"></a>
+<span class="sourceLineNo">109</span>                                putValue(NAME, tr("Mesh"));<a name="line.109"></a>
+<span class="sourceLineNo">110</span>                                new ImageProvider("dialogs/mesh").getResource().attachImageIcon(this, true);<a name="line.110"></a>
+<span class="sourceLineNo">111</span>                                putValue(SHORT_DESCRIPTION, tr("Mesh ways."));<a name="line.111"></a>
+<span class="sourceLineNo">112</span>                        }<a name="line.112"></a>
+<span class="sourceLineNo">113</span>                        @Override<a name="line.113"></a>
+<span class="sourceLineNo">114</span>                        public void actionPerformed(ActionEvent e) {<a name="line.114"></a>
+<span class="sourceLineNo">115</span><a name="line.115"></a>
+<span class="sourceLineNo">116</span>                                Osm2XMesherChecker mesherChecker = new Osm2XMesherChecker();<a name="line.116"></a>
+<span class="sourceLineNo">117</span>                                int retCode = mesherChecker.doChecks();<a name="line.117"></a>
+<span class="sourceLineNo">118</span><a name="line.118"></a>
+<span class="sourceLineNo">119</span>                                if (retCode == Osm2XMesherChecker.FAILURE)<a name="line.119"></a>
+<span class="sourceLineNo">120</span>                                {<a name="line.120"></a>
+<span class="sourceLineNo">121</span>                                        Logging.warn("Mesher checker returned failures");<a name="line.121"></a>
+<span class="sourceLineNo">122</span>                                        return;<a name="line.122"></a>
+<span class="sourceLineNo">123</span>                                }<a name="line.123"></a>
+<span class="sourceLineNo">124</span><a name="line.124"></a>
+<span class="sourceLineNo">125</span>                                Osm2XMesher mesher = new Osm2XMesher(MainApplication.getLayerManager().getEditDataSet());<a name="line.125"></a>
+<span class="sourceLineNo">126</span>                                mesher.interpolate();<a name="line.126"></a>
+<span class="sourceLineNo">127</span>                                mesher.createRoadNetwork();<a name="line.127"></a>
+<span class="sourceLineNo">128</span><a name="line.128"></a>
+<span class="sourceLineNo">129</span>                                Layer meshed = new OsmDataLayer(mesher.getModifiedDataset(), "meshed", null);<a name="line.129"></a>
+<span class="sourceLineNo">130</span>                                MainApplication.getLayerManager().addLayer(meshed);<a name="line.130"></a>
+<span class="sourceLineNo">131</span>                        }<a name="line.131"></a>
+<span class="sourceLineNo">132</span>                });<a name="line.132"></a>
+<span class="sourceLineNo">133</span><a name="line.133"></a>
+<span class="sourceLineNo">134</span>                // Create new display panel<a name="line.134"></a>
+<span class="sourceLineNo">135</span>                JPanel valuePanel = new JPanel(new GridLayout(0,2));<a name="line.135"></a>
+<span class="sourceLineNo">136</span><a name="line.136"></a>
+<span class="sourceLineNo">137</span>                valuePanel.add(new JLabel(tr("Ways with missing tags")));<a name="line.137"></a>
+<span class="sourceLineNo">138</span>                numNodesLabel = new JLabel(getNodeCount());<a name="line.138"></a>
+<span class="sourceLineNo">139</span>                valuePanel.add(numNodesLabel);<a name="line.139"></a>
+<span class="sourceLineNo">140</span><a name="line.140"></a>
+<span class="sourceLineNo">141</span>                valuePanel.add(new JLabel(tr("Addresses found")));<a name="line.141"></a>
+<span class="sourceLineNo">142</span>                numWaysLabel = new JLabel(getAddrCount());<a name="line.142"></a>
+<span class="sourceLineNo">143</span>                valuePanel.add(numWaysLabel);<a name="line.143"></a>
 <span class="sourceLineNo">144</span><a name="line.144"></a>
-<span class="sourceLineNo">145</span>                valuePanel.add(new JLabel(tr("Ways with missing tags")));<a name="line.145"></a>
-<span class="sourceLineNo">146</span><a name="line.146"></a>
-<span class="sourceLineNo">147</span>                numNodesLabel = new JLabel(getNodeCount());<a name="line.147"></a>
-<span class="sourceLineNo">148</span>                valuePanel.add(numNodesLabel);<a name="line.148"></a>
-<span class="sourceLineNo">149</span><a name="line.149"></a>
-<span class="sourceLineNo">150</span>                valuePanel.add(new JLabel(tr("Addresses found")));<a name="line.150"></a>
-<span class="sourceLineNo">151</span><a name="line.151"></a>
-<span class="sourceLineNo">152</span>                numWaysLabel = new JLabel(getAddrCount());<a name="line.152"></a>
-<span class="sourceLineNo">153</span>                valuePanel.add(numWaysLabel);<a name="line.153"></a>
-<span class="sourceLineNo">154</span><a name="line.154"></a>
-<span class="sourceLineNo">155</span>                valuePanel.add(new JLabel(tr("Missing ways to entrances")));<a name="line.155"></a>
-<span class="sourceLineNo">156</span><a name="line.156"></a>
-<span class="sourceLineNo">157</span>                numRelLabel = new JLabel(getMissingAddrLinks());<a name="line.157"></a>
-<span class="sourceLineNo">158</span>                valuePanel.add(numRelLabel);<a name="line.158"></a>
-<span class="sourceLineNo">159</span><a name="line.159"></a>
-<span class="sourceLineNo">160</span>                this.setPreferredSize(new Dimension(0, 92));<a name="line.160"></a>
+<span class="sourceLineNo">145</span>                valuePanel.add(new JLabel(tr("Missing ways to entrances")));<a name="line.145"></a>
+<span class="sourceLineNo">146</span>                numRelLabel = new JLabel(getMissingAddrLinks());<a name="line.146"></a>
+<span class="sourceLineNo">147</span>                valuePanel.add(numRelLabel);<a name="line.147"></a>
+<span class="sourceLineNo">148</span><a name="line.148"></a>
+<span class="sourceLineNo">149</span>                this.setPreferredSize(new Dimension(0, 92));<a name="line.149"></a>
+<span class="sourceLineNo">150</span><a name="line.150"></a>
+<span class="sourceLineNo">151</span>                createLayout(valuePanel, false, Arrays.asList(<a name="line.151"></a>
+<span class="sourceLineNo">152</span>                                nodecountButton, splitButton, meshButton));<a name="line.152"></a>
+<span class="sourceLineNo">153</span><a name="line.153"></a>
+<span class="sourceLineNo">154</span>                MainApplication.getLayerManager().addLayerChangeListener(this);<a name="line.154"></a>
+<span class="sourceLineNo">155</span><a name="line.155"></a>
+<span class="sourceLineNo">156</span>                /*<a name="line.156"></a>
+<span class="sourceLineNo">157</span>                 * Weitere moegliche Datenquellen:<a name="line.157"></a>
+<span class="sourceLineNo">158</span>                 * geoportal hamburg: Feinkartierung Strasse Hamburg, Kreuzungsskizzen Hamburg<a name="line.158"></a>
+<span class="sourceLineNo">159</span>                 */<a name="line.159"></a>
+<span class="sourceLineNo">160</span>        }<a name="line.160"></a>
 <span class="sourceLineNo">161</span><a name="line.161"></a>
-<span class="sourceLineNo">162</span>                createLayout(valuePanel, false, Arrays.asList(new SideButton[] {<a name="line.162"></a>
-<span class="sourceLineNo">163</span>                                resetButton, okButton, meshButton, toOsmButton<a name="line.163"></a>
-<span class="sourceLineNo">164</span>                }));<a name="line.164"></a>
-<span class="sourceLineNo">165</span><a name="line.165"></a>
-<span class="sourceLineNo">166</span>                MainApplication.getLayerManager().addLayerChangeListener(this);<a name="line.166"></a>
-<span class="sourceLineNo">167</span><a name="line.167"></a>
-<span class="sourceLineNo">168</span>                /*<a name="line.168"></a>
-<span class="sourceLineNo">169</span>                 * Weitere moegliche Datenquellen:<a name="line.169"></a>
-<span class="sourceLineNo">170</span>                 * geoportal hamburg: Feinkartierung Strasse Hamburg, Kreuzungsskizzen Hamburg<a name="line.170"></a>
-<span class="sourceLineNo">171</span>                 */<a name="line.171"></a>
-<span class="sourceLineNo">172</span><a name="line.172"></a>
-<span class="sourceLineNo">173</span>        }<a name="line.173"></a>
-<span class="sourceLineNo">174</span><a name="line.174"></a>
-<span class="sourceLineNo">175</span>        protected String getNodeCount() {<a name="line.175"></a>
-<span class="sourceLineNo">176</span>                DataSet ds;<a name="line.176"></a>
-<span class="sourceLineNo">177</span>                if ((ds = MainApplication.getLayerManager().getEditDataSet()) != null) {<a name="line.177"></a>
-<span class="sourceLineNo">178</span>                        int counter = 0;<a name="line.178"></a>
-<span class="sourceLineNo">179</span>                        for (Way w : ds.getWays())<a name="line.179"></a>
-<span class="sourceLineNo">180</span>                        {<a name="line.180"></a>
-<span class="sourceLineNo">181</span>                                if (!w.isDeleted())<a name="line.181"></a>
-<span class="sourceLineNo">182</span>                                {<a name="line.182"></a>
-<span class="sourceLineNo">183</span>                                        if (!w.hasTag("highway") || !w.hasTag("surface")<a name="line.183"></a>
-<span class="sourceLineNo">184</span>                                                        || !w.hasTag("width")) {<a name="line.184"></a>
-<span class="sourceLineNo">185</span>                                                counter++;<a name="line.185"></a>
-<span class="sourceLineNo">186</span>                                        }<a name="line.186"></a>
-<span class="sourceLineNo">187</span>                                }<a name="line.187"></a>
-<span class="sourceLineNo">188</span>                        }<a name="line.188"></a>
-<span class="sourceLineNo">189</span><a name="line.189"></a>
-<span class="sourceLineNo">190</span>                        return Integer.toString(counter);<a name="line.190"></a>
-<span class="sourceLineNo">191</span>                }<a name="line.191"></a>
-<span class="sourceLineNo">192</span>                return tr("-1");<a name="line.192"></a>
-<span class="sourceLineNo">193</span>        }<a name="line.193"></a>
-<span class="sourceLineNo">194</span><a name="line.194"></a>
-<span class="sourceLineNo">195</span>        protected String getAddrCount() {<a name="line.195"></a>
-<span class="sourceLineNo">196</span>                DataSet ds;<a name="line.196"></a>
-<span class="sourceLineNo">197</span>                if ((ds = MainApplication.getLayerManager().getEditDataSet()) != null) {<a name="line.197"></a>
-<span class="sourceLineNo">198</span>                        Collection&lt;Node&gt; nodes = ds.getNodes();<a name="line.198"></a>
-<span class="sourceLineNo">199</span><a name="line.199"></a>
-<span class="sourceLineNo">200</span>                        int numNodes = 0;<a name="line.200"></a>
-<span class="sourceLineNo">201</span>                        for (Node n : nodes)<a name="line.201"></a>
-<span class="sourceLineNo">202</span>                        {<a name="line.202"></a>
-<span class="sourceLineNo">203</span>                                if (n.hasTag("entrance") &amp;&amp; n.hasTag("addr:street") &amp;&amp; !n.isDeleted())<a name="line.203"></a>
-<span class="sourceLineNo">204</span>                                {<a name="line.204"></a>
-<span class="sourceLineNo">205</span>                                        numNodes++;<a name="line.205"></a>
-<span class="sourceLineNo">206</span>                                }<a name="line.206"></a>
-<span class="sourceLineNo">207</span>                        }<a name="line.207"></a>
-<span class="sourceLineNo">208</span><a name="line.208"></a>
-<span class="sourceLineNo">209</span>                        return Integer.toString(numNodes);<a name="line.209"></a>
-<span class="sourceLineNo">210</span>                }<a name="line.210"></a>
-<span class="sourceLineNo">211</span>                return tr("-1");<a name="line.211"></a>
-<span class="sourceLineNo">212</span>        }<a name="line.212"></a>
-<span class="sourceLineNo">213</span><a name="line.213"></a>
-<span class="sourceLineNo">214</span>        /**<a name="line.214"></a>
-<span class="sourceLineNo">215</span>         *<a name="line.215"></a>
-<span class="sourceLineNo">216</span>         * @return<a name="line.216"></a>
-<span class="sourceLineNo">217</span>         */<a name="line.217"></a>
-<span class="sourceLineNo">218</span>        protected String getMissingAddrLinks() {<a name="line.218"></a>
-<span class="sourceLineNo">219</span>                DataSet ds;<a name="line.219"></a>
-<span class="sourceLineNo">220</span>                if ((ds = MainApplication.getLayerManager().getEditDataSet()) != null) {<a name="line.220"></a>
-<span class="sourceLineNo">221</span>                        Collection&lt;Node&gt; nodes = ds.getNodes();<a name="line.221"></a>
-<span class="sourceLineNo">222</span><a name="line.222"></a>
-<span class="sourceLineNo">223</span>                        int numNodes = 0;<a name="line.223"></a>
-<span class="sourceLineNo">224</span>                        for (Node n : nodes)<a name="line.224"></a>
-<span class="sourceLineNo">225</span>                        {<a name="line.225"></a>
-<span class="sourceLineNo">226</span>                                if (n.hasTag("entrance") &amp;&amp; !n.isDeleted()) {<a name="line.226"></a>
-<span class="sourceLineNo">227</span>                                        List&lt;Way&gt; l = n.getParentWays();<a name="line.227"></a>
-<span class="sourceLineNo">228</span>                                        boolean hasWay = false;<a name="line.228"></a>
-<span class="sourceLineNo">229</span>                                        for (Way w : l) {<a name="line.229"></a>
-<span class="sourceLineNo">230</span>                                                if (w.hasTag("highway")) {<a name="line.230"></a>
-<span class="sourceLineNo">231</span>                                                        hasWay = true;<a name="line.231"></a>
-<span class="sourceLineNo">232</span>                                                        break;<a name="line.232"></a>
-<span class="sourceLineNo">233</span>                                                }<a name="line.233"></a>
-<span class="sourceLineNo">234</span>                                        }<a name="line.234"></a>
-<span class="sourceLineNo">235</span>                                        numNodes = hasWay ? numNodes : numNodes+1;<a name="line.235"></a>
-<span class="sourceLineNo">236</span>                                }<a name="line.236"></a>
-<span class="sourceLineNo">237</span>                        }<a name="line.237"></a>
-<span class="sourceLineNo">238</span><a name="line.238"></a>
-<span class="sourceLineNo">239</span>                        return Integer.toString(numNodes);<a name="line.239"></a>
-<span class="sourceLineNo">240</span>                }<a name="line.240"></a>
-<span class="sourceLineNo">241</span>                return tr("-1");<a name="line.241"></a>
-<span class="sourceLineNo">242</span>        }<a name="line.242"></a>
-<span class="sourceLineNo">243</span><a name="line.243"></a>
-<span class="sourceLineNo">244</span>        protected void recalculate() {<a name="line.244"></a>
-<span class="sourceLineNo">245</span>                numRelLabel.setText(getMissingAddrLinks());<a name="line.245"></a>
-<span class="sourceLineNo">246</span>                numWaysLabel.setText(getAddrCount());<a name="line.246"></a>
-<span class="sourceLineNo">247</span>                numNodesLabel.setText(getNodeCount());<a name="line.247"></a>
-<span class="sourceLineNo">248</span>        }<a name="line.248"></a>
-<span class="sourceLineNo">249</span><a name="line.249"></a>
-<span class="sourceLineNo">250</span>        protected void splitLayer() {<a name="line.250"></a>
-<span class="sourceLineNo">251</span>                // TODO check if layer highways and barriers is present<a name="line.251"></a>
-<span class="sourceLineNo">252</span>                // get all nodes and ways<a name="line.252"></a>
-<span class="sourceLineNo">253</span>                // add ways (including nodes) with tag highway to layer<a name="line.253"></a>
-<span class="sourceLineNo">254</span><a name="line.254"></a>
-<span class="sourceLineNo">255</span>                DataSet ds = MainApplication.getLayerManager().getEditDataSet();<a name="line.255"></a>
-<span class="sourceLineNo">256</span>                Osm2XFilter filter = new Osm2XFilter();<a name="line.256"></a>
-<span class="sourceLineNo">257</span><a name="line.257"></a>
-<span class="sourceLineNo">258</span>                // add all highway nodes to layer<a name="line.258"></a>
-<span class="sourceLineNo">259</span>                Layer highways = new OsmDataLayer(filter.getHighways(ds), "highways", null);<a name="line.259"></a>
-<span class="sourceLineNo">260</span>                MainApplication.getLayerManager().addLayer(highways);<a name="line.260"></a>
-<span class="sourceLineNo">261</span><a name="line.261"></a>
-<span class="sourceLineNo">262</span>                // add all barrier nodes to layer<a name="line.262"></a>
-<span class="sourceLineNo">263</span>                Layer barriers = new OsmDataLayer(filter.getBarriers(ds), "barriers", null);<a name="line.263"></a>
-<span class="sourceLineNo">264</span>                MainApplication.getLayerManager().addLayer(barriers);<a name="line.264"></a>
-<span class="sourceLineNo">265</span>        }<a name="line.265"></a>
-<span class="sourceLineNo">266</span><a name="line.266"></a>
-<span class="sourceLineNo">267</span>        protected void meshNodes() {<a name="line.267"></a>
-<span class="sourceLineNo">268</span>                // TODO check missing tags and missing ways to entrances<a name="line.268"></a>
-<span class="sourceLineNo">269</span>                System.out.println("Interpolate nodes");<a name="line.269"></a>
-<span class="sourceLineNo">270</span>                Osm2XMesher mesher = new Osm2XMesher(MainApplication.getLayerManager().getEditDataSet());<a name="line.270"></a>
-<span class="sourceLineNo">271</span><a name="line.271"></a>
-<span class="sourceLineNo">272</span>                if (!mesher.isDatasetComplete()) {<a name="line.272"></a>
-<span class="sourceLineNo">273</span>                        FilterTableModel ftm = MainApplication.getMap().filterDialog.getFilterModel();<a name="line.273"></a>
-<span class="sourceLineNo">274</span>                        ftm.addFilter(new Filter(SearchSetting.readFromString("C width:")));<a name="line.274"></a>
-<span class="sourceLineNo">275</span>                        ftm.executeFilters();<a name="line.275"></a>
-<span class="sourceLineNo">276</span>                        return;<a name="line.276"></a>
-<span class="sourceLineNo">277</span>                }<a name="line.277"></a>
-<span class="sourceLineNo">278</span><a name="line.278"></a>
-<span class="sourceLineNo">279</span>                mesher.interpolate();<a name="line.279"></a>
-<span class="sourceLineNo">280</span>                mesher.createRoadNetwork();<a name="line.280"></a>
-<span class="sourceLineNo">281</span><a name="line.281"></a>
-<span class="sourceLineNo">282</span>                Layer meshed = new OsmDataLayer(mesher.getModifiedDataset(), "meshed", null);<a name="line.282"></a>
-<span class="sourceLineNo">283</span>                MainApplication.getLayerManager().addLayer(meshed);<a name="line.283"></a>
-<span class="sourceLineNo">284</span>        }<a name="line.284"></a>
+<span class="sourceLineNo">162</span>        /**<a name="line.162"></a>
+<span class="sourceLineNo">163</span>         * Count nodes without 'highway', 'surface' and 'width' attribute<a name="line.163"></a>
+<span class="sourceLineNo">164</span>         * @return number of nodes as string<a name="line.164"></a>
+<span class="sourceLineNo">165</span>         */<a name="line.165"></a>
+<span class="sourceLineNo">166</span>        protected String getNodeCount() {<a name="line.166"></a>
+<span class="sourceLineNo">167</span>                DataSet ds;<a name="line.167"></a>
+<span class="sourceLineNo">168</span>                if ((ds = MainApplication.getLayerManager().getEditDataSet()) != null) {<a name="line.168"></a>
+<span class="sourceLineNo">169</span>                        int counter = 0;<a name="line.169"></a>
+<span class="sourceLineNo">170</span>                        for (Way w : ds.getWays())<a name="line.170"></a>
+<span class="sourceLineNo">171</span>                        {<a name="line.171"></a>
+<span class="sourceLineNo">172</span>                                if (!w.isDeleted() &amp;&amp; (!w.hasTag("highway") || !w.hasTag("surface")<a name="line.172"></a>
+<span class="sourceLineNo">173</span>                                                || !w.hasTag("width")))<a name="line.173"></a>
+<span class="sourceLineNo">174</span>                                {<a name="line.174"></a>
+<span class="sourceLineNo">175</span>                                        counter++;<a name="line.175"></a>
+<span class="sourceLineNo">176</span>                                }<a name="line.176"></a>
+<span class="sourceLineNo">177</span>                        }<a name="line.177"></a>
+<span class="sourceLineNo">178</span><a name="line.178"></a>
+<span class="sourceLineNo">179</span>                        return Integer.toString(counter);<a name="line.179"></a>
+<span class="sourceLineNo">180</span>                }<a name="line.180"></a>
+<span class="sourceLineNo">181</span>                return tr("-1");<a name="line.181"></a>
+<span class="sourceLineNo">182</span>        }<a name="line.182"></a>
+<span class="sourceLineNo">183</span><a name="line.183"></a>
+<span class="sourceLineNo">184</span>        /**<a name="line.184"></a>
+<span class="sourceLineNo">185</span>         * Count nodes with tag 'entrance' and 'addr:street'<a name="line.185"></a>
+<span class="sourceLineNo">186</span>         * @return<a name="line.186"></a>
+<span class="sourceLineNo">187</span>         */<a name="line.187"></a>
+<span class="sourceLineNo">188</span>        protected String getAddrCount() {<a name="line.188"></a>
+<span class="sourceLineNo">189</span>                DataSet ds;<a name="line.189"></a>
+<span class="sourceLineNo">190</span>                if ((ds = MainApplication.getLayerManager().getEditDataSet()) != null) {<a name="line.190"></a>
+<span class="sourceLineNo">191</span>                        Collection&lt;Node&gt; nodes = ds.getNodes();<a name="line.191"></a>
+<span class="sourceLineNo">192</span><a name="line.192"></a>
+<span class="sourceLineNo">193</span>                        int numNodes = 0;<a name="line.193"></a>
+<span class="sourceLineNo">194</span>                        for (Node n : nodes)<a name="line.194"></a>
+<span class="sourceLineNo">195</span>                        {<a name="line.195"></a>
+<span class="sourceLineNo">196</span>                                if (n.hasTag("entrance") &amp;&amp; n.hasTag("addr:street") &amp;&amp; !n.isDeleted())<a name="line.196"></a>
+<span class="sourceLineNo">197</span>                                {<a name="line.197"></a>
+<span class="sourceLineNo">198</span>                                        numNodes++;<a name="line.198"></a>
+<span class="sourceLineNo">199</span>                                }<a name="line.199"></a>
+<span class="sourceLineNo">200</span>                        }<a name="line.200"></a>
+<span class="sourceLineNo">201</span><a name="line.201"></a>
+<span class="sourceLineNo">202</span>                        return Integer.toString(numNodes);<a name="line.202"></a>
+<span class="sourceLineNo">203</span>                }<a name="line.203"></a>
+<span class="sourceLineNo">204</span>                return tr("-1");<a name="line.204"></a>
+<span class="sourceLineNo">205</span>        }<a name="line.205"></a>
+<span class="sourceLineNo">206</span><a name="line.206"></a>
+<span class="sourceLineNo">207</span>        /**<a name="line.207"></a>
+<span class="sourceLineNo">208</span>         *<a name="line.208"></a>
+<span class="sourceLineNo">209</span>         * @return<a name="line.209"></a>
+<span class="sourceLineNo">210</span>         */<a name="line.210"></a>
+<span class="sourceLineNo">211</span>        protected String getMissingAddrLinks() {<a name="line.211"></a>
+<span class="sourceLineNo">212</span>                DataSet ds;<a name="line.212"></a>
+<span class="sourceLineNo">213</span>                if ((ds = MainApplication.getLayerManager().getEditDataSet()) != null) {<a name="line.213"></a>
+<span class="sourceLineNo">214</span>                        Collection&lt;Node&gt; nodes = ds.getNodes();<a name="line.214"></a>
+<span class="sourceLineNo">215</span><a name="line.215"></a>
+<span class="sourceLineNo">216</span>                        int numNodes = 0;<a name="line.216"></a>
+<span class="sourceLineNo">217</span>                        for (Node n : nodes)<a name="line.217"></a>
+<span class="sourceLineNo">218</span>                        {<a name="line.218"></a>
+<span class="sourceLineNo">219</span>                                if (n.hasTag("entrance") &amp;&amp; !n.isDeleted()) {<a name="line.219"></a>
+<span class="sourceLineNo">220</span>                                        boolean hasWay = false;<a name="line.220"></a>
+<span class="sourceLineNo">221</span>                                        for (Way w : n.getParentWays()) {<a name="line.221"></a>
+<span class="sourceLineNo">222</span>                                                if (w.hasTag("highway")) {<a name="line.222"></a>
+<span class="sourceLineNo">223</span>                                                        hasWay = true;<a name="line.223"></a>
+<span class="sourceLineNo">224</span>                                                        break;<a name="line.224"></a>
+<span class="sourceLineNo">225</span>                                                }<a name="line.225"></a>
+<span class="sourceLineNo">226</span>                                        }<a name="line.226"></a>
+<span class="sourceLineNo">227</span>                                        numNodes = hasWay ? numNodes : numNodes+1;<a name="line.227"></a>
+<span class="sourceLineNo">228</span>                                }<a name="line.228"></a>
+<span class="sourceLineNo">229</span>                        }<a name="line.229"></a>
+<span class="sourceLineNo">230</span><a name="line.230"></a>
+<span class="sourceLineNo">231</span>                        return Integer.toString(numNodes);<a name="line.231"></a>
+<span class="sourceLineNo">232</span>                }<a name="line.232"></a>
+<span class="sourceLineNo">233</span>                return tr("-1");<a name="line.233"></a>
+<span class="sourceLineNo">234</span>        }<a name="line.234"></a>
+<span class="sourceLineNo">235</span><a name="line.235"></a>
+<span class="sourceLineNo">236</span>        /**<a name="line.236"></a>
+<span class="sourceLineNo">237</span>         * Recalculate all labels<a name="line.237"></a>
+<span class="sourceLineNo">238</span>         */<a name="line.238"></a>
+<span class="sourceLineNo">239</span>        protected void recalculate() {<a name="line.239"></a>
+<span class="sourceLineNo">240</span>                numRelLabel.setText(getMissingAddrLinks());<a name="line.240"></a>
+<span class="sourceLineNo">241</span>                numWaysLabel.setText(getAddrCount());<a name="line.241"></a>
+<span class="sourceLineNo">242</span>                numNodesLabel.setText(getNodeCount());<a name="line.242"></a>
+<span class="sourceLineNo">243</span>        }<a name="line.243"></a>
+<span class="sourceLineNo">244</span><a name="line.244"></a>
+<span class="sourceLineNo">245</span>        /**<a name="line.245"></a>
+<span class="sourceLineNo">246</span>         * Create barriers and highways layer<a name="line.246"></a>
+<span class="sourceLineNo">247</span>         */<a name="line.247"></a>
+<span class="sourceLineNo">248</span>        protected void splitLayer() {<a name="line.248"></a>
+<span class="sourceLineNo">249</span>                // check if layer highways and barriers is present<a name="line.249"></a>
+<span class="sourceLineNo">250</span>                int answer = -1;<a name="line.250"></a>
+<span class="sourceLineNo">251</span>                List&lt;Layer&gt; layers = MainApplication.getLayerManager().getLayers();<a name="line.251"></a>
+<span class="sourceLineNo">252</span>                for (Layer l : layers)<a name="line.252"></a>
+<span class="sourceLineNo">253</span>                {<a name="line.253"></a>
+<span class="sourceLineNo">254</span>                        if (l.getName().equalsIgnoreCase("barriers") || l.getName().equalsIgnoreCase("highways"))<a name="line.254"></a>
+<span class="sourceLineNo">255</span>                        {<a name="line.255"></a>
+<span class="sourceLineNo">256</span>                                if (answer &lt; 0)<a name="line.256"></a>
+<span class="sourceLineNo">257</span>                                {<a name="line.257"></a>
+<span class="sourceLineNo">258</span>                                        answer = JOptionPane.showConfirmDialog(MainApplication.getMainFrame(),<a name="line.258"></a>
+<span class="sourceLineNo">259</span>                                                        "Layer with name 'barriers' or 'highways' detected. Do you want to continue and delete these layers?",<a name="line.259"></a>
+<span class="sourceLineNo">260</span>                                                        "Confirm to delete layer", JOptionPane.YES_NO_OPTION);<a name="line.260"></a>
+<span class="sourceLineNo">261</span>                                }<a name="line.261"></a>
+<span class="sourceLineNo">262</span>                                if (answer == JOptionPane.YES_OPTION)<a name="line.262"></a>
+<span class="sourceLineNo">263</span>                                {<a name="line.263"></a>
+<span class="sourceLineNo">264</span>                                        MainApplication.getLayerManager().removeLayer(l);<a name="line.264"></a>
+<span class="sourceLineNo">265</span>                                }<a name="line.265"></a>
+<span class="sourceLineNo">266</span>                                else<a name="line.266"></a>
+<span class="sourceLineNo">267</span>                                {<a name="line.267"></a>
+<span class="sourceLineNo">268</span>                                        return;<a name="line.268"></a>
+<span class="sourceLineNo">269</span>                                }<a name="line.269"></a>
+<span class="sourceLineNo">270</span>                        }<a name="line.270"></a>
+<span class="sourceLineNo">271</span>                }<a name="line.271"></a>
+<span class="sourceLineNo">272</span><a name="line.272"></a>
+<span class="sourceLineNo">273</span>                // get current active dataset<a name="line.273"></a>
+<span class="sourceLineNo">274</span>                DataSet ds = MainApplication.getLayerManager().getEditDataSet();<a name="line.274"></a>
+<span class="sourceLineNo">275</span>                if (ds != null)<a name="line.275"></a>
+<span class="sourceLineNo">276</span>                {<a name="line.276"></a>
+<span class="sourceLineNo">277</span>                        // create ds_new as a copy from ds<a name="line.277"></a>
+<span class="sourceLineNo">278</span>                        DataSet ds_new = new DataSet(ds);<a name="line.278"></a>
+<span class="sourceLineNo">279</span>                        ds_new.beginUpdate();<a name="line.279"></a>
+<span class="sourceLineNo">280</span>                        try {<a name="line.280"></a>
+<span class="sourceLineNo">281</span>                                // remove all relations<a name="line.281"></a>
+<span class="sourceLineNo">282</span>                                for (Relation r : ds_new.getRelations()) {<a name="line.282"></a>
+<span class="sourceLineNo">283</span>                                        ds_new.removePrimitive(r.getPrimitiveId());<a name="line.283"></a>
+<span class="sourceLineNo">284</span>                                }<a name="line.284"></a>
 <span class="sourceLineNo">285</span><a name="line.285"></a>
-<span class="sourceLineNo">286</span>        protected void shpToOsm() {<a name="line.286"></a>
-<span class="sourceLineNo">287</span>                // translate selected layer to osm<a name="line.287"></a>
-<span class="sourceLineNo">288</span>                DataSet ds = MainApplication.getLayerManager().getEditDataSet();<a name="line.288"></a>
-<span class="sourceLineNo">289</span><a name="line.289"></a>
-<span class="sourceLineNo">290</span>                if (ds != null &amp;&amp; attrParser != null) {<a name="line.290"></a>
-<span class="sourceLineNo">291</span>                        ds.getReadLock().lock();<a name="line.291"></a>
-<span class="sourceLineNo">292</span>                        try {<a name="line.292"></a>
-<span class="sourceLineNo">293</span>                                DataSet ds_new;<a name="line.293"></a>
-<span class="sourceLineNo">294</span>                                // if something is selected parse only selected<a name="line.294"></a>
-<span class="sourceLineNo">295</span>                                Collection&lt;Way&gt; ways = ds.getSelectedWays();<a name="line.295"></a>
-<span class="sourceLineNo">296</span>                                Collection&lt;Node&gt; nodes = ds.getSelectedNodes();<a name="line.296"></a>
-<span class="sourceLineNo">297</span><a name="line.297"></a>
-<span class="sourceLineNo">298</span>                                if (ways.size() &gt; 0) {<a name="line.298"></a>
-<span class="sourceLineNo">299</span>                                        System.out.println("Parse selected ways");<a name="line.299"></a>
-<span class="sourceLineNo">300</span>                                        ds_new = attrParser.parseWays(ways);<a name="line.300"></a>
-<span class="sourceLineNo">301</span>                                } else if (nodes.size() &gt; 0) {<a name="line.301"></a>
-<span class="sourceLineNo">302</span>                                        System.out.println("Parse selected nodes");<a name="line.302"></a>
-<span class="sourceLineNo">303</span>                                        ds_new = attrParser.parseNodes(nodes);<a name="line.303"></a>
-<span class="sourceLineNo">304</span>                                } else if ((ways = ds.getWays()).size() &gt; 0) {<a name="line.304"></a>
-<span class="sourceLineNo">305</span>                                        System.out.println("Parse ways");<a name="line.305"></a>
-<span class="sourceLineNo">306</span>                                        ds_new = attrParser.parseWays(ways);<a name="line.306"></a>
-<span class="sourceLineNo">307</span>                                } else {<a name="line.307"></a>
-<span class="sourceLineNo">308</span>                                        System.out.println("Parse nodes");<a name="line.308"></a>
-<span class="sourceLineNo">309</span>                                        ds_new = attrParser.parseNodes(ds.getNodes());<a name="line.309"></a>
-<span class="sourceLineNo">310</span>                                }<a name="line.310"></a>
+<span class="sourceLineNo">286</span>                                // copy address tags from building to entrance node<a name="line.286"></a>
+<span class="sourceLineNo">287</span>                                if (Config.getPref().getBoolean(Osm2XConstants.PREF_COPY_ADDRESS, Osm2XConstants.DEFAULT_COPY_ADDRESS))<a name="line.287"></a>
+<span class="sourceLineNo">288</span>                                {<a name="line.288"></a>
+<span class="sourceLineNo">289</span>                                        for (Node n : ds_new.getNodes())<a name="line.289"></a>
+<span class="sourceLineNo">290</span>                                        {<a name="line.290"></a>
+<span class="sourceLineNo">291</span>                                                if (n.hasTag("entrance") &amp;&amp; !n.hasTag("addr:street"))<a name="line.291"></a>
+<span class="sourceLineNo">292</span>                                                {<a name="line.292"></a>
+<span class="sourceLineNo">293</span>                                                        List&lt;Way&gt; refs = n.getParentWays();<a name="line.293"></a>
+<span class="sourceLineNo">294</span>                                                        for (Way p : refs) {<a name="line.294"></a>
+<span class="sourceLineNo">295</span>                                                                if (p.hasTag("addr:street") &amp;&amp; p.hasTag("building")) {<a name="line.295"></a>
+<span class="sourceLineNo">296</span>                                                                        n.put("addr:street", p.get("addr:street"));<a name="line.296"></a>
+<span class="sourceLineNo">297</span>                                                                        n.put("addr:housenumber", p.get("addr:housenumber"));<a name="line.297"></a>
+<span class="sourceLineNo">298</span>                                                                        n.put("addr:city", p.get("addr:city"));<a name="line.298"></a>
+<span class="sourceLineNo">299</span>                                                                        n.put("addr:postcode", p.get("addr:postcode"));<a name="line.299"></a>
+<span class="sourceLineNo">300</span>                                                                        break;<a name="line.300"></a>
+<span class="sourceLineNo">301</span>                                                                }<a name="line.301"></a>
+<span class="sourceLineNo">302</span>                                                        }<a name="line.302"></a>
+<span class="sourceLineNo">303</span>                                                }<a name="line.303"></a>
+<span class="sourceLineNo">304</span>                                        }<a name="line.304"></a>
+<span class="sourceLineNo">305</span>                                }<a name="line.305"></a>
+<span class="sourceLineNo">306</span><a name="line.306"></a>
+<span class="sourceLineNo">307</span>                                // create filter from preferences<a name="line.307"></a>
+<span class="sourceLineNo">308</span>                                Filter f = new Filter(SearchSetting.readFromString("C " + Config.getPref().get(Osm2XConstants.PREF_HIGHWAY_FILTER, Osm2XConstants.DEFAULT_HIGHWAY_FILTER)));<a name="line.308"></a>
+<span class="sourceLineNo">309</span>                                f.inverted = true;                                              // set inverted to true to get matching primitives<a name="line.309"></a>
+<span class="sourceLineNo">310</span>                                FilterMatcher matcher = FilterMatcher.of(f);<a name="line.310"></a>
 <span class="sourceLineNo">311</span><a name="line.311"></a>
-<span class="sourceLineNo">312</span>                                String name = MainApplication.getLayerManager().getEditLayer().getName();<a name="line.312"></a>
-<span class="sourceLineNo">313</span>                                name = name.substring(0, name.lastIndexOf("."));<a name="line.313"></a>
-<span class="sourceLineNo">314</span><a name="line.314"></a>
-<span class="sourceLineNo">315</span>                                boolean isLayerPresent = false;<a name="line.315"></a>
-<span class="sourceLineNo">316</span>                                Layer newLayer = new OsmDataLayer(ds_new, name, null);<a name="line.316"></a>
-<span class="sourceLineNo">317</span>                                for (Layer l : MainApplication.getLayerManager().getLayers()) {<a name="line.317"></a>
-<span class="sourceLineNo">318</span>                                        if (l.getName().equalsIgnoreCase(name)) {<a name="line.318"></a>
-<span class="sourceLineNo">319</span>                                                // merge layer<a name="line.319"></a>
-<span class="sourceLineNo">320</span>                                                isLayerPresent = true;<a name="line.320"></a>
-<span class="sourceLineNo">321</span>                                                l.mergeFrom(newLayer);<a name="line.321"></a>
-<span class="sourceLineNo">322</span>                                                break;<a name="line.322"></a>
-<span class="sourceLineNo">323</span>                                        }<a name="line.323"></a>
-<span class="sourceLineNo">324</span>                                }<a name="line.324"></a>
-<span class="sourceLineNo">325</span><a name="line.325"></a>
-<span class="sourceLineNo">326</span>                                if (!isLayerPresent) {<a name="line.326"></a>
-<span class="sourceLineNo">327</span>                                        MainApplication.getLayerManager().addLayer(newLayer);<a name="line.327"></a>
-<span class="sourceLineNo">328</span>                                }<a name="line.328"></a>
-<span class="sourceLineNo">329</span>                        } finally {<a name="line.329"></a>
-<span class="sourceLineNo">330</span>                                ds.getReadLock().unlock();<a name="line.330"></a>
-<span class="sourceLineNo">331</span>                        }<a name="line.331"></a>
-<span class="sourceLineNo">332</span>                }<a name="line.332"></a>
-<span class="sourceLineNo">333</span>        }<a name="line.333"></a>
-<span class="sourceLineNo">334</span><a name="line.334"></a>
-<span class="sourceLineNo">335</span>        @Override<a name="line.335"></a>
-<span class="sourceLineNo">336</span>        public void layerAdded(LayerAddEvent e) {<a name="line.336"></a>
-<span class="sourceLineNo">337</span>                recalculate();<a name="line.337"></a>
-<span class="sourceLineNo">338</span>        }<a name="line.338"></a>
+<span class="sourceLineNo">312</span>                                // remove all ways that do not match the specified tags<a name="line.312"></a>
+<span class="sourceLineNo">313</span>                                Osm2XFilter.executeMatching(ds_new, matcher, Way.class::isInstance);<a name="line.313"></a>
+<span class="sourceLineNo">314</span>                                // remove all nodes that do not match the filter<a name="line.314"></a>
+<span class="sourceLineNo">315</span>                                Osm2XFilter.executeMatching(ds_new, matcher, Node.class::isInstance);<a name="line.315"></a>
+<span class="sourceLineNo">316</span><a name="line.316"></a>
+<span class="sourceLineNo">317</span>                                matcher.reset();<a name="line.317"></a>
+<span class="sourceLineNo">318</span>                        } catch (SearchParseError e) {<a name="line.318"></a>
+<span class="sourceLineNo">319</span>                                // display warning<a name="line.319"></a>
+<span class="sourceLineNo">320</span>                                JOptionPane.showMessageDialog(MainApplication.getMainFrame(), "SearchParseError: Check highway filtering and try again.", "SearchParseError", JOptionPane.WARNING_MESSAGE);<a name="line.320"></a>
+<span class="sourceLineNo">321</span>                                e.printStackTrace();<a name="line.321"></a>
+<span class="sourceLineNo">322</span>                                return;<a name="line.322"></a>
+<span class="sourceLineNo">323</span>                        } finally {<a name="line.323"></a>
+<span class="sourceLineNo">324</span>                                ds_new.endUpdate();<a name="line.324"></a>
+<span class="sourceLineNo">325</span>                        }<a name="line.325"></a>
+<span class="sourceLineNo">326</span><a name="line.326"></a>
+<span class="sourceLineNo">327</span>                        Layer highways = new OsmDataLayer(ds_new, "highways", null);<a name="line.327"></a>
+<span class="sourceLineNo">328</span>                        MainApplication.getLayerManager().addLayer(highways);<a name="line.328"></a>
+<span class="sourceLineNo">329</span><a name="line.329"></a>
+<span class="sourceLineNo">330</span>                        // create barrier layer<a name="line.330"></a>
+<span class="sourceLineNo">331</span>                        // copy current dataset to ds_new<a name="line.331"></a>
+<span class="sourceLineNo">332</span>                        ds_new = new DataSet(ds);<a name="line.332"></a>
+<span class="sourceLineNo">333</span>                        ds_new.beginUpdate();<a name="line.333"></a>
+<span class="sourceLineNo">334</span>                        try {<a name="line.334"></a>
+<span class="sourceLineNo">335</span>                                // remove all relations<a name="line.335"></a>
+<span class="sourceLineNo">336</span>                                for (Relation r : ds_new.getRelations()) {<a name="line.336"></a>
+<span class="sourceLineNo">337</span>                                        ds_new.removePrimitive(r.getPrimitiveId());<a name="line.337"></a>
+<span class="sourceLineNo">338</span>                                }<a name="line.338"></a>
 <span class="sourceLineNo">339</span><a name="line.339"></a>
-<span class="sourceLineNo">340</span>        @Override<a name="line.340"></a>
-<span class="sourceLineNo">341</span>        public void layerOrderChanged(LayerOrderChangeEvent e) {<a name="line.341"></a>
-<span class="sourceLineNo">342</span>                recalculate();<a name="line.342"></a>
-<span class="sourceLineNo">343</span>        }<a name="line.343"></a>
+<span class="sourceLineNo">340</span>                                // create filter<a name="line.340"></a>
+<span class="sourceLineNo">341</span>                                Filter f = new Filter(SearchSetting.readFromString("C " + Config.getPref().get(Osm2XConstants.PREF_BARRIER_FILTER, Osm2XConstants.DEFAULT_BARRIER_FILTER)));<a name="line.341"></a>
+<span class="sourceLineNo">342</span>                                f.inverted = true;<a name="line.342"></a>
+<span class="sourceLineNo">343</span>                                FilterMatcher matcher = FilterMatcher.of(f);<a name="line.343"></a>
 <span class="sourceLineNo">344</span><a name="line.344"></a>
-<span class="sourceLineNo">345</span>        @Override<a name="line.345"></a>
-<span class="sourceLineNo">346</span>        public void layerRemoving(LayerRemoveEvent e) {<a name="line.346"></a>
-<span class="sourceLineNo">347</span>                if (MainApplication.getLayerManager().getLayers().size() &gt; 0) {<a name="line.347"></a>
-<span class="sourceLineNo">348</span>                        recalculate();<a name="line.348"></a>
-<span class="sourceLineNo">349</span>                }<a name="line.349"></a>
-<span class="sourceLineNo">350</span>        }<a name="line.350"></a>
-<span class="sourceLineNo">351</span>}<a name="line.351"></a>
+<span class="sourceLineNo">345</span>                                // remove all ways that do not match the specified tags<a name="line.345"></a>
+<span class="sourceLineNo">346</span>                                Osm2XFilter.executeMatching(ds_new, matcher, Way.class::isInstance);<a name="line.346"></a>
+<span class="sourceLineNo">347</span>                                // remove all nodes that do not match the filter<a name="line.347"></a>
+<span class="sourceLineNo">348</span>                                Osm2XFilter.executeMatching(ds_new, matcher, Node.class::isInstance);<a name="line.348"></a>
+<span class="sourceLineNo">349</span><a name="line.349"></a>
+<span class="sourceLineNo">350</span>                                matcher.reset();<a name="line.350"></a>
+<span class="sourceLineNo">351</span>                        } catch (SearchParseError e) {<a name="line.351"></a>
+<span class="sourceLineNo">352</span>                                JOptionPane.showMessageDialog(MainApplication.getMainFrame(), "SearchParseError: Check barrier filtering and try again.", "SearchParseError", JOptionPane.WARNING_MESSAGE);<a name="line.352"></a>
+<span class="sourceLineNo">353</span>                                e.printStackTrace();<a name="line.353"></a>
+<span class="sourceLineNo">354</span>                                return;<a name="line.354"></a>
+<span class="sourceLineNo">355</span>                        } finally {<a name="line.355"></a>
+<span class="sourceLineNo">356</span>                                ds_new.endUpdate();<a name="line.356"></a>
+<span class="sourceLineNo">357</span>                        }<a name="line.357"></a>
+<span class="sourceLineNo">358</span>                        Layer barrier = new OsmDataLayer(ds_new, "barriers", null);<a name="line.358"></a>
+<span class="sourceLineNo">359</span>                        MainApplication.getLayerManager().addLayer(barrier);<a name="line.359"></a>
+<span class="sourceLineNo">360</span>                }<a name="line.360"></a>
+<span class="sourceLineNo">361</span>        }<a name="line.361"></a>
+<span class="sourceLineNo">362</span><a name="line.362"></a>
+<span class="sourceLineNo">363</span>        protected void shpToOsm() {<a name="line.363"></a>
+<span class="sourceLineNo">364</span>                // translate selected layer to osm<a name="line.364"></a>
+<span class="sourceLineNo">365</span>                DataSet ds = MainApplication.getLayerManager().getEditDataSet();<a name="line.365"></a>
+<span class="sourceLineNo">366</span><a name="line.366"></a>
+<span class="sourceLineNo">367</span>                //              if (ds != null &amp;&amp; attrParser != null) {<a name="line.367"></a>
+<span class="sourceLineNo">368</span>                //                      ds.getReadLock().lock();<a name="line.368"></a>
+<span class="sourceLineNo">369</span>                //                      try {<a name="line.369"></a>
+<span class="sourceLineNo">370</span>                //                              DataSet newDs;<a name="line.370"></a>
+<span class="sourceLineNo">371</span>                //                              // if something is selected parse only selected<a name="line.371"></a>
+<span class="sourceLineNo">372</span>                //                              Collection&lt;Way&gt; ways = ds.getSelectedWays();<a name="line.372"></a>
+<span class="sourceLineNo">373</span>                //                              Collection&lt;Node&gt; nodes = ds.getSelectedNodes();<a name="line.373"></a>
+<span class="sourceLineNo">374</span>                //<a name="line.374"></a>
+<span class="sourceLineNo">375</span>                //                              if (!ways.isEmpty()) {<a name="line.375"></a>
+<span class="sourceLineNo">376</span>                //                                      newDs = attrParser.parseWays(ways);<a name="line.376"></a>
+<span class="sourceLineNo">377</span>                //                              } else if (!nodes.isEmpty()) {<a name="line.377"></a>
+<span class="sourceLineNo">378</span>                //                                      newDs = attrParser.parseNodes(nodes);<a name="line.378"></a>
+<span class="sourceLineNo">379</span>                //                              } else if (!(ways = ds.getWays()).isEmpty()) {<a name="line.379"></a>
+<span class="sourceLineNo">380</span>                //                                      newDs = attrParser.parseWays(ways);<a name="line.380"></a>
+<span class="sourceLineNo">381</span>                //                              } else {<a name="line.381"></a>
+<span class="sourceLineNo">382</span>                //                                      newDs = attrParser.parseNodes(ds.getNodes());<a name="line.382"></a>
+<span class="sourceLineNo">383</span>                //                              }<a name="line.383"></a>
+<span class="sourceLineNo">384</span>                //<a name="line.384"></a>
+<span class="sourceLineNo">385</span>                //                              String name = MainApplication.getLayerManager().getEditLayer().getName();<a name="line.385"></a>
+<span class="sourceLineNo">386</span>                //                              name = name.substring(0, name.lastIndexOf("."));<a name="line.386"></a>
+<span class="sourceLineNo">387</span>                //<a name="line.387"></a>
+<span class="sourceLineNo">388</span>                //                              boolean isLayerPresent = false;<a name="line.388"></a>
+<span class="sourceLineNo">389</span>                //                              Layer newLayer = new OsmDataLayer(newDs, name, null);<a name="line.389"></a>
+<span class="sourceLineNo">390</span>                //                              for (Layer l : MainApplication.getLayerManager().getLayers()) {<a name="line.390"></a>
+<span class="sourceLineNo">391</span>                //                                      if (l.getName().equalsIgnoreCase(name)) {<a name="line.391"></a>
+<span class="sourceLineNo">392</span>                //                                              // merge layer<a name="line.392"></a>
+<span class="sourceLineNo">393</span>                //                                              isLayerPresent = true;<a name="line.393"></a>
+<span class="sourceLineNo">394</span>                //                                              l.mergeFrom(newLayer);<a name="line.394"></a>
+<span class="sourceLineNo">395</span>                //                                              break;<a name="line.395"></a>
+<span class="sourceLineNo">396</span>                //                                      }<a name="line.396"></a>
+<span class="sourceLineNo">397</span>                //                              }<a name="line.397"></a>
+<span class="sourceLineNo">398</span>                //<a name="line.398"></a>
+<span class="sourceLineNo">399</span>                //                              if (!isLayerPresent) {<a name="line.399"></a>
+<span class="sourceLineNo">400</span>                //                                      MainApplication.getLayerManager().addLayer(newLayer);<a name="line.400"></a>
+<span class="sourceLineNo">401</span>                //                              }<a name="line.401"></a>
+<span class="sourceLineNo">402</span>                //                      } finally {<a name="line.402"></a>
+<span class="sourceLineNo">403</span>                //                              ds.getReadLock().unlock();<a name="line.403"></a>
+<span class="sourceLineNo">404</span>                //                      }<a name="line.404"></a>
+<span class="sourceLineNo">405</span>                //              }<a name="line.405"></a>
+<span class="sourceLineNo">406</span>        }<a name="line.406"></a>
+<span class="sourceLineNo">407</span><a name="line.407"></a>
+<span class="sourceLineNo">408</span>        @Override<a name="line.408"></a>
+<span class="sourceLineNo">409</span>        public void layerAdded(LayerAddEvent e) {<a name="line.409"></a>
+<span class="sourceLineNo">410</span>                recalculate();<a name="line.410"></a>
+<span class="sourceLineNo">411</span>        }<a name="line.411"></a>
+<span class="sourceLineNo">412</span><a name="line.412"></a>
+<span class="sourceLineNo">413</span>        @Override<a name="line.413"></a>
+<span class="sourceLineNo">414</span>        public void layerOrderChanged(LayerOrderChangeEvent e) {<a name="line.414"></a>
+<span class="sourceLineNo">415</span>                recalculate();<a name="line.415"></a>
+<span class="sourceLineNo">416</span>        }<a name="line.416"></a>
+<span class="sourceLineNo">417</span><a name="line.417"></a>
+<span class="sourceLineNo">418</span>        @Override<a name="line.418"></a>
+<span class="sourceLineNo">419</span>        public void layerRemoving(LayerRemoveEvent e) {<a name="line.419"></a>
+<span class="sourceLineNo">420</span>                if (!MainApplication.getLayerManager().getLayers().isEmpty()) {<a name="line.420"></a>
+<span class="sourceLineNo">421</span>                        recalculate();<a name="line.421"></a>
+<span class="sourceLineNo">422</span>                }<a name="line.422"></a>
+<span class="sourceLineNo">423</span>        }<a name="line.423"></a>
+<span class="sourceLineNo">424</span>}<a name="line.424"></a>
 
 
 

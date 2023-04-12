@@ -21,30 +21,18 @@ public class SvgCircle extends SvgShape {
 	 *
 	 * @param center
 	 * @param radius in meters
+	 * @param clss class of this shape
 	 */
-	public SvgCircle(SvgPoint center, double radius, String fill) {
+	public SvgCircle(SvgPoint center, double radius, String clss) {
 		this(center, radius);
-		this.fill = fill;
-	}
-
-	/**
-	 *
-	 * @param center
-	 * @param radius in meters
-	 */
-	public SvgCircle(SvgPoint center, double radius, String stroke, double stroke_width) {
-		this(center, radius);
+		this.clss = clss;
 	}
 
 	@Override
 	public String toSvg(SvgPoint documentOrigin) {
 		double[] c = center.getLocalCoordinates(documentOrigin);
-
-		String svg = String.format("<circle cx=\"%.3f\" cy=\"%.3f\" r=\"%.3f\" ", c[0], c[1], radius);
-
-		svg = svg.concat(String.format("fill=\"%s\" stroke=\"%s\" stroke-width=\"%.3f\"", fill, stroke, stroke_width));
-
-		return svg.concat("/>\n");
+		return String.format("<circle cx=\"%.3f\" cy=\"%.3f\" r=\"%.3f\" class=\"%s\"/>\n",
+				c[0], c[1], radius, clss);
 	}
 
 	@Override

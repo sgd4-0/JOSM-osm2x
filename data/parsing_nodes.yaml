@@ -1,0 +1,4 @@
+# Unterscheidung zwischen node und way??
+barrier:
+   bollard: "fill: #ff0000; stroke: none"
+   lift_gate: "fill: #ff0000; stroke: none"

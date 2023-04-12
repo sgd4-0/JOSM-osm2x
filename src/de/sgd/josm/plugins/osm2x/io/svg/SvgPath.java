@@ -14,17 +14,15 @@ public class SvgPath extends SvgShape {
 		isClosed = points.get(0).equalsEps(points.get(points.size()-1), 1E-3);
 	}
 
-	public SvgPath(List<SvgPoint> points, String fill) {
+	/**
+	 *
+	 * @param points
+	 * @param clss
+	 */
+	public SvgPath(List<SvgPoint> points, String clss, boolean isClosed) {
 		this(points);
-
-		this.fill = fill;
-	}
-
-	public SvgPath(List<SvgPoint> points, String stroke, double stroke_width) {
-		this(points);
-
-		this.stroke = stroke;
-		this.stroke_width = stroke_width;
+		this.isClosed = isClosed;
+		this.clss = clss;
 	}
 
 	@Override
@@ -38,7 +36,7 @@ public class SvgPath extends SvgShape {
 		}
 
 		svg = isClosed ? svg.concat("z\" ") : svg.concat("\" ");
-		svg = svg.concat(String.format("fill=\"%s\" stroke=\"%s\" stroke-width=\"%.3f\"/>\n", fill, stroke, stroke_width));
+		svg = svg.concat(String.format("class=\"%s\"/>\n", clss));
 
 		return svg;
 	}

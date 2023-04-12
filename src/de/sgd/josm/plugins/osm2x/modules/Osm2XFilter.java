@@ -1,19 +1,57 @@
 package de.sgd.josm.plugins.osm2x.modules;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.openstreetmap.josm.data.osm.DataSet;
+import org.openstreetmap.josm.data.osm.FilterMatcher;
+import org.openstreetmap.josm.data.osm.FilterMatcher.FilterType;
 import org.openstreetmap.josm.data.osm.Node;
+import org.openstreetmap.josm.data.osm.OsmPrimitive;
 import org.openstreetmap.josm.data.osm.Relation;
 import org.openstreetmap.josm.data.osm.Way;
 
 public class Osm2XFilter {
 	public Osm2XFilter() {
-
+		// this constructor is empty
 	}
 
 	/**
-	 *
+	 * Remove all OsmPrimitives matching the predicate and the specified FilterMatcher
+	 * @param ds the dataset to edit
+	 * @param matcher FilterMatcher to filter tags
+	 * @param predicate used to filter the dataset based on the given predicate
+	 */
+	public static void executeMatching(DataSet ds, FilterMatcher matcher, Predicate<? super OsmPrimitive> predicate)
+	{
+		// remove all primitives that do not match the filter
+		for (OsmPrimitive w : ds.getPrimitives(predicate)) {
+			FilterType hiddenType = matcher.isHidden(w);
+			if (hiddenType != FilterType.NOT_FILTERED)
+			{
+				// not clear what is happening here -> how can we reach this block??
+				w.setDisabledState(true);
+				w.setHiddenType(hiddenType == FilterType.EXPLICIT);
+			}
+			else
+			{
+				FilterType disabledType = matcher.isDisabled(w);
+				if (disabledType != FilterType.NOT_FILTERED)
+				{
+					// Filter applies -> remove primitive
+					ds.removePrimitive(w);
+				}
+				else
+				{
+					// unset disabled state to show ways
+					w.unsetDisabledState();
+				}
+			}
+		}
+	}
+
+	/**
+	 * Create a new dataset which contains all ways and streets
 	 * @param ds_orig
 	 * @return
 	 */
@@ -82,7 +120,7 @@ public class Osm2XFilter {
 	}
 
 	/**
-	 *
+	 * Create a new dataset which contains only barriers, walls, buildings, etc.
 	 * @param ds_orig
 	 * @return
 	 */

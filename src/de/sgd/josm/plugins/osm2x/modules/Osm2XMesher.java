@@ -1,5 +1,7 @@
 package de.sgd.josm.plugins.osm2x.modules;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,35 +13,47 @@ import java.util.regex.Pattern;
 
 import org.openstreetmap.josm.data.coor.LatLon;
 import org.openstreetmap.josm.data.osm.DataSet;
+import org.openstreetmap.josm.data.osm.Filter;
+import org.openstreetmap.josm.data.osm.FilterMatcher;
 import org.openstreetmap.josm.data.osm.Node;
 import org.openstreetmap.josm.data.osm.Way;
+import org.openstreetmap.josm.data.osm.search.SearchParseError;
+import org.openstreetmap.josm.data.osm.search.SearchSetting;
+import org.openstreetmap.josm.gui.MainApplication;
+import org.openstreetmap.josm.spi.preferences.Config;
+import org.openstreetmap.josm.tools.Logging;
 
 import de.sgd.josm.plugins.osm2x.helper.IdGenerator;
+import de.sgd.josm.plugins.osm2x.helper.Osm2XConstants;
 import de.sgd.josm.plugins.osm2x.helper.Osm2XConversions;
 import de.sgd.josm.plugins.osm2x.helper.Osm2XNodeList;
+import de.sgd.josm.plugins.osm2x.io.ExportPrefIO;
+import de.sgd.josm.plugins.osm2x.preferences.ExportRuleEntry;
 
 public class Osm2XMesher {
 
-	private Pattern str_to_double;
+	private Pattern strToDouble;
 
 	private IdGenerator idGen;
 
-	private DataSet original_ds;
-	private DataSet interpolated_ds;
+	private DataSet originalDS;
+	private DataSet interpolatedDS;
 	private DataSet ds = null;
 
 	/**
-	 *
+	 * Create a new Osm2XMesher object
 	 * @param ds the dataset to edit
 	 */
 	public Osm2XMesher(DataSet ds) {
-		this.original_ds = ds;
-		this.str_to_double = Pattern.compile("(\\d+\\.?\\d*)");
+		this.originalDS = ds;
+		this.strToDouble = Pattern.compile("(\\d+\\.?\\d*)");
+		this.idGen = new IdGenerator(originalDS);
 
 		// Check if all paths have the width attribute
 		boolean width_present = true;
 		for (Way w : ds.getWays()) {
 			if (!w.hasTag("width")) {
+				// highlight paths without width attribute
 				w.setHighlighted(true);
 				width_present = false;
 			}
@@ -51,66 +65,81 @@ public class Osm2XMesher {
 	}
 
 	/**
-	 * Check if the dataset contains all required attributes.
-	 * @return true if all required attributes are present
+	 * Prepares the dataset for interpolation and meshing
 	 */
-	public boolean isDatasetComplete() {
-		// Check if all paths have the width attribute
-		boolean width_present = true;
-		for (Way w : ds.getWays()) {
-			if (!w.hasTag("width") && !w.isDeleted()) {
-				width_present = false;
-			}
+	public void correctDataset()
+	{
+		// 1. read xml with export rules
+		// read settings from file
+		ExportPrefIO prefIO = new ExportPrefIO(new File(Config.getPref().get(Osm2XConstants.PREF_EXPORT_PREF_FILE)));
+		List<ExportRuleEntry> exportRules = new ArrayList<>();
+
+		try {
+			exportRules = prefIO.readFromFile();
+
+			// create filter from preferences
+			Filter f = new Filter(SearchSetting.readFromString("C " + Config.getPref().get(Osm2XConstants.PREF_HIGHWAY_FILTER, Osm2XConstants.DEFAULT_HIGHWAY_FILTER)));
+			f.inverted = true;						// set inverted to true to get matching primitives
+			FilterMatcher matcher = FilterMatcher.of(f);
+
+			DataSet ds = MainApplication.getLayerManager().getActiveDataSet();
+			// remove all ways that do not match the specified tags
+			Osm2XFilter.executeMatching(ds, matcher, Way.class::isInstance);
+
+		} catch (IOException ioe)
+		{
+			Logging.error(ioe);
+		} catch (SearchParseError spe)
+		{
+			Logging.error(spe);
 		}
-		return width_present;
+
+		// 2. apply export rules to dataset
+
 	}
 
 	/**
 	 * To allow changing the path in short intervals, ways with a length greater than a threshold are linearly interpolated.
 	 */
 	public void interpolate() {
-		DataSet ds = new DataSet(this.original_ds);
-		this.idGen = new IdGenerator(ds);
+		DataSet newDS = new DataSet(this.originalDS);
 
-		System.out.println("Start interpolation");
+		Logging.info("Start interpolation");
 
-		ds.beginUpdate();
+		newDS.beginUpdate();
 		try
 		{
-			if (ds != null) {
-				for (Way w : ds.getWays()) {
+			for (Way w : newDS.getWays()) {
+				for (int i = 1; i < w.getRealNodesCount(); i++) {
+					Node lastNode = w.getNode(i-1);
+					Node currNode = w.getNode(i);
 
-					for (int i = 1; i < w.getRealNodesCount(); i++) {
-						Node last_node = w.getNode(i-1);
-						Node curr_node = w.getNode(i);
+					double dist = lastNode.getCoor().greatCircleDistance(currNode.getCoor());
 
-						double dist = last_node.getCoor().greatCircleDistance(curr_node.getCoor());
+					double interpDist = Config.getPref().getDouble(Osm2XConstants.PREF_INTERP_DIST, Osm2XConstants.DEFAULT_INTERP_DIST);
+					if (dist > interpDist)
+					{
+						int addNodes = (int) Math.ceil(dist / interpDist);
 
-						if (dist > 5.0) {	// TODO threshold from properties
-							int add_nodes = (int) Math.ceil(dist / 5);
-
-							int k = 0;
-							for (k = 1; k < add_nodes; k++) {
-								// Calculate new latlon and node
-								LatLon ll = last_node.getCoor().interpolate(curr_node.getCoor(), (double)k/add_nodes);
-								Node nn = new Node(ll);
-								nn.setOsmId(this.idGen.generateID(), 1);
-								// add new node to dataset and way
-								ds.addPrimitive(nn);
-								w.addNode(i+k-1, nn);
-							}
-							i += k-1;
+						int k = 0;
+						for (k = 1; k < addNodes; k++) {
+							// Calculate new latlon and node
+							LatLon ll = lastNode.getCoor().interpolate(currNode.getCoor(), (double)k/addNodes);
+							Node nn = new Node(ll);
+							nn.setOsmId(this.idGen.generateID(), 1);
+							// add new node to dataset and way
+							newDS.addPrimitive(nn);
+							w.addNode(i+k-1, nn);
 						}
+						i += k-1;
 					}
 				}
 			}
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
 		} finally
 		{
-			ds.endUpdate();
+			newDS.endUpdate();
 		}
-		this.interpolated_ds = ds;
+		this.interpolatedDS = newDS;
 	}
 
 	/**
@@ -120,8 +149,7 @@ public class Osm2XMesher {
 		// get all ways -> ignore areas, but with warning
 		// ignore ways without width attribute
 		// ignore ways with attribute mesh=false
-		DataSet ds = (this.interpolated_ds == null) ? new DataSet(original_ds) : new DataSet(interpolated_ds);
-		this.idGen = new IdGenerator(ds);
+		DataSet ds = (this.interpolatedDS == null) ? new DataSet(originalDS) : new DataSet(interpolatedDS);
 
 		System.out.println("Start meshing");
 
@@ -349,10 +377,19 @@ public class Osm2XMesher {
 		this.ds = ds;
 	}
 
+	/**
+	 * Returns the dataset we are currently working on
+	 * @return
+	 */
 	public DataSet getModifiedDataset() {
-		return (this.ds == null) ? this.original_ds : ds;
+		return (this.ds == null) ? this.originalDS : ds;
 	}
 
+	/**
+	 * Get all neighbour nodes to node with an angle
+	 * @param node
+	 * @return
+	 */
 	private TreeMap<Double, Way> getNeighbourNodes(Node node) {
 		TreeMap<Double, Way> neighbours = new TreeMap<>();
 
@@ -375,13 +412,13 @@ public class Osm2XMesher {
 		// calculate distance in meters
 		double b1 = parseDouble(way1.getValue().get("width"));
 		double b2 = parseDouble(way2.getValue().get("width"));
-		double ang_diff = way2.getKey() - way1.getKey();
+		double deltaAng = way2.getKey() - way1.getKey();
 
 		double x = (b1 * Math.sin(way2.getKey()) + b2 * Math.sin(way1.getKey()))
-				/ 3.0 / Math.sin(ang_diff);
+				/ 3.0 / Math.sin(deltaAng);
 
 		double y = (b1 * Math.cos(way2.getKey()) + b2 * Math.cos(way1.getKey()))
-				/ 3.0 / Math.sin(ang_diff);
+				/ 3.0 / Math.sin(deltaAng);
 
 		x = origin.lon() + x*Osm2XConversions.METER_TO_LATLON/Math.cos(origin.lat()/180*Math.PI);
 		y = origin.lat() + y*Osm2XConversions.METER_TO_LATLON;
@@ -390,7 +427,7 @@ public class Osm2XMesher {
 	}
 
 	/**
-	 *
+	 * Convert string to double without throwing an exception
 	 * @param s the string to parse
 	 * @return the number
 	 */
@@ -401,12 +438,12 @@ public class Osm2XMesher {
 			d = Double.valueOf(s);
 		} catch (NumberFormatException nfe) {
 			// try to parse with regex
-			Matcher matcher = str_to_double.matcher(s);
+			Matcher matcher = strToDouble.matcher(s);
 			if (matcher.find()) {
 				try {
 					d = Double.valueOf(matcher.group());
 				} catch (NumberFormatException nfe1) {
-					System.err.println(nfe1.getMessage());
+					Logging.error(nfe1);
 				}
 			}
 		}

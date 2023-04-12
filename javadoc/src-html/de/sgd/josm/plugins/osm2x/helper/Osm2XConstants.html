@@ -9,19 +9,42 @@
 <pre><span class="sourceLineNo">001</span>package de.sgd.josm.plugins.osm2x.helper;<a name="line.1"></a>
 <span class="sourceLineNo">002</span><a name="line.2"></a>
 <span class="sourceLineNo">003</span>public class Osm2XConstants {<a name="line.3"></a>
-<span class="sourceLineNo">004</span><a name="line.4"></a>
-<span class="sourceLineNo">005</span>        /**<a name="line.5"></a>
-<span class="sourceLineNo">006</span>         * Icons<a name="line.6"></a>
-<span class="sourceLineNo">007</span>         */<a name="line.7"></a>
-<span class="sourceLineNo">008</span>        public static final String ICON_PREF_48 = "osm2x_48.png";<a name="line.8"></a>
-<span class="sourceLineNo">009</span><a name="line.9"></a>
+<span class="sourceLineNo">004</span>        private Osm2XConstants() {}<a name="line.4"></a>
+<span class="sourceLineNo">005</span><a name="line.5"></a>
+<span class="sourceLineNo">006</span>        /**<a name="line.6"></a>
+<span class="sourceLineNo">007</span>         * Icons<a name="line.7"></a>
+<span class="sourceLineNo">008</span>         */<a name="line.8"></a>
+<span class="sourceLineNo">009</span>        public static final String ICON_PREF_48 = "osm2x_48.png";<a name="line.9"></a>
 <span class="sourceLineNo">010</span><a name="line.10"></a>
 <span class="sourceLineNo">011</span>        /**<a name="line.11"></a>
-<span class="sourceLineNo">012</span>         * Preferences<a name="line.12"></a>
+<span class="sourceLineNo">012</span>         * Path to file with export settings<a name="line.12"></a>
 <span class="sourceLineNo">013</span>         */<a name="line.13"></a>
-<span class="sourceLineNo">014</span>        public static final String PREF_INTERP_DIST = "osm2x.interpdist";<a name="line.14"></a>
+<span class="sourceLineNo">014</span>        public static final String PREF_EXPORT_PREF_FILE = "osm2x.exportpreffile";<a name="line.14"></a>
 <span class="sourceLineNo">015</span><a name="line.15"></a>
-<span class="sourceLineNo">016</span>}<a name="line.16"></a>
+<span class="sourceLineNo">016</span>        /**<a name="line.16"></a>
+<span class="sourceLineNo">017</span>         * Interpolation distance<a name="line.17"></a>
+<span class="sourceLineNo">018</span>         */<a name="line.18"></a>
+<span class="sourceLineNo">019</span>        public static final String PREF_INTERP_DIST = "osm2x.interpdist";<a name="line.19"></a>
+<span class="sourceLineNo">020</span>        public static final double DEFAULT_INTERP_DIST = 5.0;<a name="line.20"></a>
+<span class="sourceLineNo">021</span><a name="line.21"></a>
+<span class="sourceLineNo">022</span>        /**<a name="line.22"></a>
+<span class="sourceLineNo">023</span>         * Filter for barrier dataset<a name="line.23"></a>
+<span class="sourceLineNo">024</span>         */<a name="line.24"></a>
+<span class="sourceLineNo">025</span>        public static final String PREF_BARRIER_FILTER = "osm2x.barrierfilter";<a name="line.25"></a>
+<span class="sourceLineNo">026</span>        public static final String DEFAULT_BARRIER_FILTER = "barrier=* | natural=* | building=*";<a name="line.26"></a>
+<span class="sourceLineNo">027</span><a name="line.27"></a>
+<span class="sourceLineNo">028</span>        /**<a name="line.28"></a>
+<span class="sourceLineNo">029</span>         * Whether to copy address to node or not<a name="line.29"></a>
+<span class="sourceLineNo">030</span>         */<a name="line.30"></a>
+<span class="sourceLineNo">031</span>        public static final String PREF_COPY_ADDRESS = "osm2x.copyaddr";<a name="line.31"></a>
+<span class="sourceLineNo">032</span>        public static final boolean DEFAULT_COPY_ADDRESS = true;<a name="line.32"></a>
+<span class="sourceLineNo">033</span><a name="line.33"></a>
+<span class="sourceLineNo">034</span>        /**<a name="line.34"></a>
+<span class="sourceLineNo">035</span>         * Filter for highway dataset<a name="line.35"></a>
+<span class="sourceLineNo">036</span>         */<a name="line.36"></a>
+<span class="sourceLineNo">037</span>        public static final String PREF_HIGHWAY_FILTER = "osm2x.highwayfilter";<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        public static final String DEFAULT_HIGHWAY_FILTER = "highway=*";<a name="line.38"></a>
+<span class="sourceLineNo">039</span>}<a name="line.39"></a>
 
 
 

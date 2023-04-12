@@ -1,5 +1,7 @@
 de.sgd.josm.plugins.osm2x
+de.sgd.josm.plugins.osm2x.gui
 de.sgd.josm.plugins.osm2x.helper
 de.sgd.josm.plugins.osm2x.io
 de.sgd.josm.plugins.osm2x.io.svg
 de.sgd.josm.plugins.osm2x.modules
+de.sgd.josm.plugins.osm2x.preferences

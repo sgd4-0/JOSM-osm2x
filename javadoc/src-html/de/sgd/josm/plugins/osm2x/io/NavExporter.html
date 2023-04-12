@@ -27,13 +27,13 @@
 <span class="sourceLineNo">019</span>        @Override<a name="line.19"></a>
 <span class="sourceLineNo">020</span>        protected void doSave(File file, OsmDataLayer layer) throws IOException {<a name="line.20"></a>
 <span class="sourceLineNo">021</span>                // Save map data to *.nav file and adresses to *.adr file<a name="line.21"></a>
-<span class="sourceLineNo">022</span>                String nav_path = file.getAbsolutePath();<a name="line.22"></a>
-<span class="sourceLineNo">023</span>                if (!nav_path.endsWith(".nav"))<a name="line.23"></a>
+<span class="sourceLineNo">022</span>                String navPath = file.getAbsolutePath();<a name="line.22"></a>
+<span class="sourceLineNo">023</span>                if (!navPath.endsWith(".nav"))<a name="line.23"></a>
 <span class="sourceLineNo">024</span>                {<a name="line.24"></a>
-<span class="sourceLineNo">025</span>                        nav_path = nav_path.concat(".nav");<a name="line.25"></a>
+<span class="sourceLineNo">025</span>                        navPath = navPath.concat(".nav");<a name="line.25"></a>
 <span class="sourceLineNo">026</span>                }<a name="line.26"></a>
 <span class="sourceLineNo">027</span><a name="line.27"></a>
-<span class="sourceLineNo">028</span>                try (FileWriter navWriter = new FileWriter(nav_path);<a name="line.28"></a>
+<span class="sourceLineNo">028</span>                try (FileWriter navWriter = new FileWriter(navPath);<a name="line.28"></a>
 <span class="sourceLineNo">029</span>                                NavWriter w = new NavWriter(navWriter);)<a name="line.29"></a>
 <span class="sourceLineNo">030</span>                {<a name="line.30"></a>
 <span class="sourceLineNo">031</span>                        layer.data.getReadLock().lock();<a name="line.31"></a>
@@ -44,9 +44,9 @@
 <span class="sourceLineNo">036</span>                        }<a name="line.36"></a>
 <span class="sourceLineNo">037</span>                }<a name="line.37"></a>
 <span class="sourceLineNo">038</span><a name="line.38"></a>
-<span class="sourceLineNo">039</span>                String adr_path = nav_path.replaceFirst(".nav", ".json");<a name="line.39"></a>
-<span class="sourceLineNo">040</span>                File adr_file = new File(adr_path);<a name="line.40"></a>
-<span class="sourceLineNo">041</span>                try (FileWriter adrWriter = new FileWriter(adr_file);<a name="line.41"></a>
+<span class="sourceLineNo">039</span>                String adrPath = navPath.replaceFirst(".nav", ".json");<a name="line.39"></a>
+<span class="sourceLineNo">040</span>                File adrFile = new File(adrPath);<a name="line.40"></a>
+<span class="sourceLineNo">041</span>                try (FileWriter adrWriter = new FileWriter(adrFile);<a name="line.41"></a>
 <span class="sourceLineNo">042</span>                                AdrWriter w = new AdrWriter(adrWriter);)<a name="line.42"></a>
 <span class="sourceLineNo">043</span>                {<a name="line.43"></a>
 <span class="sourceLineNo">044</span>                        layer.data.getReadLock().lock();<a name="line.44"></a>

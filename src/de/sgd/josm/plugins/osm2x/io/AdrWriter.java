@@ -13,8 +13,8 @@ import org.openstreetmap.josm.data.osm.Node;
 public class AdrWriter implements Closeable {
 
 	// define some formattings
-	private final String tab = "    ";
-	private final String node_format = tab + tab + "{\"address\": \"%s\", \"nodes\": [%s]}";
+	private static final String TAB = "    ";
+	private static final String NODE_FORMAT = TAB + TAB + "{\"address\": \"%s\", \"nodes\": [%s]}";
 
 	FileWriter writer;
 
@@ -44,17 +44,17 @@ public class AdrWriter implements Closeable {
 
 			// write json to file
 			writer.write("{\n");
-			writer.write(tab + "\"addresslist\": [\n");
-			boolean is_first = true;
+			writer.write(TAB + "\"addresslist\": [\n");
+			boolean isFirst = true;
 			for (String key : adresses.keySet()) {
-				if (!is_first)
+				if (!isFirst)
 				{
 					writer.write(",\n");
 				}
-				writer.write(String.format(node_format, key, arrToString(adresses.get(key))));
-				is_first = false;
+				writer.write(String.format(NODE_FORMAT, key, arrToString(adresses.get(key))));
+				isFirst = false;
 			}
-			writer.write("\n" + tab + "]\n");
+			writer.write("\n" + TAB + "]\n");
 			writer.write("}\n");
 		}
 	}

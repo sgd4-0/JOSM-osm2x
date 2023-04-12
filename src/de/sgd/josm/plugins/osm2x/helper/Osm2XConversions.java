@@ -3,21 +3,23 @@ package de.sgd.josm.plugins.osm2x.helper;
 import org.openstreetmap.josm.data.coor.LatLon;
 
 public class Osm2XConversions {
+	private Osm2XConversions() {}
+
 	/**
 	 * Factor to convert meters to lat/lon. To get lat/lon from meters write
 	 * <code>latlon = meters * METER_TO_LATLON</code>.
 	 */
-	public static double METER_TO_LATLON = 1/(Math.PI/180 * 6378137.0);
+	public static final double METER_TO_LATLON = 1/(Math.PI/180 * 6378137.0);
 
 	/**
 	 * Factor to convert lat/lon to meters. To get meters from lat/lon write
 	 * <code>meters = latlon * LATLON_TO_METER</code>.
 	 */
-	public static double LATLON_TO_METER = (Math.PI/180 * 6378137.0);
+	public static final double LATLON_TO_METER = (Math.PI/180 * 6378137.0);
 
 
 	/**
-	 *
+	 * Calculate node position from origin in distance with angle
 	 * @param origin
 	 * @param angle
 	 * @param distance

@@ -10,68 +10,225 @@
 <span class="sourceLineNo">002</span><a name="line.2"></a>
 <span class="sourceLineNo">003</span>import static org.openstreetmap.josm.tools.I18n.tr;<a name="line.3"></a>
 <span class="sourceLineNo">004</span><a name="line.4"></a>
-<span class="sourceLineNo">005</span>import java.awt.GridBagLayout;<a name="line.5"></a>
-<span class="sourceLineNo">006</span><a name="line.6"></a>
-<span class="sourceLineNo">007</span>import javax.swing.BorderFactory;<a name="line.7"></a>
-<span class="sourceLineNo">008</span>import javax.swing.Box;<a name="line.8"></a>
-<span class="sourceLineNo">009</span>import javax.swing.JLabel;<a name="line.9"></a>
-<span class="sourceLineNo">010</span>import javax.swing.JPanel;<a name="line.10"></a>
-<span class="sourceLineNo">011</span>import javax.swing.JScrollPane;<a name="line.11"></a>
-<span class="sourceLineNo">012</span>import javax.swing.JSpinner;<a name="line.12"></a>
-<span class="sourceLineNo">013</span>import javax.swing.SpinnerNumberModel;<a name="line.13"></a>
-<span class="sourceLineNo">014</span><a name="line.14"></a>
-<span class="sourceLineNo">015</span>import org.openstreetmap.josm.gui.preferences.DefaultTabPreferenceSetting;<a name="line.15"></a>
-<span class="sourceLineNo">016</span>import org.openstreetmap.josm.gui.preferences.PreferenceTabbedPane;<a name="line.16"></a>
-<span class="sourceLineNo">017</span>import org.openstreetmap.josm.spi.preferences.Config;<a name="line.17"></a>
-<span class="sourceLineNo">018</span>import org.openstreetmap.josm.tools.GBC;<a name="line.18"></a>
-<span class="sourceLineNo">019</span><a name="line.19"></a>
-<span class="sourceLineNo">020</span>import de.sgd.josm.plugins.osm2x.helper.Osm2XConstants;<a name="line.20"></a>
-<span class="sourceLineNo">021</span><a name="line.21"></a>
-<span class="sourceLineNo">022</span>public class Osm2XPreferenceSetting extends DefaultTabPreferenceSetting {<a name="line.22"></a>
-<span class="sourceLineNo">023</span><a name="line.23"></a>
-<span class="sourceLineNo">024</span>        public JPanel prefPanel;<a name="line.24"></a>
-<span class="sourceLineNo">025</span><a name="line.25"></a>
-<span class="sourceLineNo">026</span>        private final JSpinner spinner = new JSpinner(new SpinnerNumberModel(5.0, 2.0, null, 0.1));<a name="line.26"></a>
+<span class="sourceLineNo">005</span>import java.awt.Dimension;<a name="line.5"></a>
+<span class="sourceLineNo">006</span>import java.awt.GridBagConstraints;<a name="line.6"></a>
+<span class="sourceLineNo">007</span>import java.awt.GridBagLayout;<a name="line.7"></a>
+<span class="sourceLineNo">008</span>import java.awt.GridLayout;<a name="line.8"></a>
+<span class="sourceLineNo">009</span>import java.io.File;<a name="line.9"></a>
+<span class="sourceLineNo">010</span>import java.io.IOException;<a name="line.10"></a>
+<span class="sourceLineNo">011</span>import java.util.ArrayList;<a name="line.11"></a>
+<span class="sourceLineNo">012</span>import java.util.List;<a name="line.12"></a>
+<span class="sourceLineNo">013</span><a name="line.13"></a>
+<span class="sourceLineNo">014</span>import javax.swing.BorderFactory;<a name="line.14"></a>
+<span class="sourceLineNo">015</span>import javax.swing.Box;<a name="line.15"></a>
+<span class="sourceLineNo">016</span>import javax.swing.JButton;<a name="line.16"></a>
+<span class="sourceLineNo">017</span>import javax.swing.JCheckBox;<a name="line.17"></a>
+<span class="sourceLineNo">018</span>import javax.swing.JLabel;<a name="line.18"></a>
+<span class="sourceLineNo">019</span>import javax.swing.JPanel;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import javax.swing.JScrollPane;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import javax.swing.JSeparator;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import javax.swing.JSpinner;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import javax.swing.JTabbedPane;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import javax.swing.JTextField;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import javax.swing.SpinnerNumberModel;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import javax.swing.SwingConstants;<a name="line.26"></a>
 <span class="sourceLineNo">027</span><a name="line.27"></a>
-<span class="sourceLineNo">028</span>        public Osm2XPreferenceSetting() {<a name="line.28"></a>
-<span class="sourceLineNo">029</span>                super(Osm2XConstants.ICON_PREF_48,<a name="line.29"></a>
-<span class="sourceLineNo">030</span>                                tr("Osm2X Preferences"),<a name="line.30"></a>
-<span class="sourceLineNo">031</span>                                tr("Convert and export OSM data to be used on the Shared Guide Dog 4.0"));<a name="line.31"></a>
-<span class="sourceLineNo">032</span>        }<a name="line.32"></a>
-<span class="sourceLineNo">033</span><a name="line.33"></a>
-<span class="sourceLineNo">034</span>        protected JPanel createSettings() {<a name="line.34"></a>
-<span class="sourceLineNo">035</span>                JPanel general = new JPanel(new GridBagLayout());<a name="line.35"></a>
-<span class="sourceLineNo">036</span>                general.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));<a name="line.36"></a>
-<span class="sourceLineNo">037</span>                general.setName(tr("Osm2X preferences"));<a name="line.37"></a>
-<span class="sourceLineNo">038</span><a name="line.38"></a>
-<span class="sourceLineNo">039</span>                // options for interpolation<a name="line.39"></a>
-<span class="sourceLineNo">040</span>                JLabel jLabelSpinner = new JLabel(tr("Maximum way length:"));<a name="line.40"></a>
-<span class="sourceLineNo">041</span>                spinner.getModel().setValue(Config.getPref().getDouble(Osm2XConstants.PREF_INTERP_DIST, 5.0));<a name="line.41"></a>
-<span class="sourceLineNo">042</span>                general.add(jLabelSpinner, GBC.std().insets(0, 5, 10, 0));<a name="line.42"></a>
-<span class="sourceLineNo">043</span>                general.add(spinner, GBC.eol().fill(GBC.HORIZONTAL).insets(5, 5, 200, 5));<a name="line.43"></a>
-<span class="sourceLineNo">044</span><a name="line.44"></a>
-<span class="sourceLineNo">045</span>                // end of dialog, scroll bar<a name="line.45"></a>
-<span class="sourceLineNo">046</span>                general.add(Box.createVerticalGlue(), GBC.eol().fill(GBC.VERTICAL));<a name="line.46"></a>
-<span class="sourceLineNo">047</span><a name="line.47"></a>
-<span class="sourceLineNo">048</span>                return general;<a name="line.48"></a>
-<span class="sourceLineNo">049</span>        }<a name="line.49"></a>
+<span class="sourceLineNo">028</span>import org.openstreetmap.josm.gui.preferences.DefaultTabPreferenceSetting;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import org.openstreetmap.josm.gui.preferences.PreferenceTabbedPane;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import org.openstreetmap.josm.spi.preferences.Config;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import org.openstreetmap.josm.tools.GBC;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import org.openstreetmap.josm.tools.ImageProvider;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import org.openstreetmap.josm.tools.Logging;<a name="line.33"></a>
+<span class="sourceLineNo">034</span><a name="line.34"></a>
+<span class="sourceLineNo">035</span>import de.sgd.josm.plugins.osm2x.helper.Osm2XConstants;<a name="line.35"></a>
+<span class="sourceLineNo">036</span>import de.sgd.josm.plugins.osm2x.io.ExportPrefIO;<a name="line.36"></a>
+<span class="sourceLineNo">037</span>import de.sgd.josm.plugins.osm2x.preferences.ExportRuleEntry;<a name="line.37"></a>
+<span class="sourceLineNo">038</span>import de.sgd.josm.plugins.osm2x.preferences.ExportRuleTable;<a name="line.38"></a>
+<span class="sourceLineNo">039</span><a name="line.39"></a>
+<span class="sourceLineNo">040</span>/**<a name="line.40"></a>
+<span class="sourceLineNo">041</span> * Preference dialog<a name="line.41"></a>
+<span class="sourceLineNo">042</span> *<a name="line.42"></a>
+<span class="sourceLineNo">043</span> */<a name="line.43"></a>
+<span class="sourceLineNo">044</span>public class Osm2XPreferenceSetting extends DefaultTabPreferenceSetting {<a name="line.44"></a>
+<span class="sourceLineNo">045</span><a name="line.45"></a>
+<span class="sourceLineNo">046</span>        /**<a name="line.46"></a>
+<span class="sourceLineNo">047</span>         * Main panel with tabs for general and export settings<a name="line.47"></a>
+<span class="sourceLineNo">048</span>         */<a name="line.48"></a>
+<span class="sourceLineNo">049</span>        public final JTabbedPane tabPane = new JTabbedPane();<a name="line.49"></a>
 <span class="sourceLineNo">050</span><a name="line.50"></a>
-<span class="sourceLineNo">051</span>        @Override<a name="line.51"></a>
-<span class="sourceLineNo">052</span>        public void addGui(PreferenceTabbedPane gui) {<a name="line.52"></a>
-<span class="sourceLineNo">053</span>                prefPanel = gui.createPreferenceTab(this);<a name="line.53"></a>
+<span class="sourceLineNo">051</span>        private ExportPrefIO prefIO;<a name="line.51"></a>
+<span class="sourceLineNo">052</span><a name="line.52"></a>
+<span class="sourceLineNo">053</span>        private ExportRuleTable exportRuleTable;<a name="line.53"></a>
 <span class="sourceLineNo">054</span><a name="line.54"></a>
-<span class="sourceLineNo">055</span>                JScrollPane scrollpane = new JScrollPane(createSettings());<a name="line.55"></a>
-<span class="sourceLineNo">056</span>                scrollpane.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));<a name="line.56"></a>
-<span class="sourceLineNo">057</span>                prefPanel.add(scrollpane, GBC.eol().fill(GBC.BOTH));<a name="line.57"></a>
-<span class="sourceLineNo">058</span>        }<a name="line.58"></a>
+<span class="sourceLineNo">055</span>        private final JSpinner spinner = new JSpinner(new SpinnerNumberModel(5.0, 2.0, null, 0.1));<a name="line.55"></a>
+<span class="sourceLineNo">056</span>        private final JTextField tagsBarrier = new JTextField();<a name="line.56"></a>
+<span class="sourceLineNo">057</span>        private final JCheckBox checkCopyAdr = new JCheckBox("Copy address to node");<a name="line.57"></a>
+<span class="sourceLineNo">058</span>        private final JTextField tagsHighway = new JTextField();<a name="line.58"></a>
 <span class="sourceLineNo">059</span><a name="line.59"></a>
-<span class="sourceLineNo">060</span>        @Override<a name="line.60"></a>
-<span class="sourceLineNo">061</span>        public boolean ok() {<a name="line.61"></a>
-<span class="sourceLineNo">062</span>                Config.getPref().putDouble(Osm2XConstants.PREF_INTERP_DIST, (Double)spinner.getModel().getValue());<a name="line.62"></a>
-<span class="sourceLineNo">063</span>                return false;<a name="line.63"></a>
-<span class="sourceLineNo">064</span>        }<a name="line.64"></a>
+<span class="sourceLineNo">060</span>        public Osm2XPreferenceSetting() {<a name="line.60"></a>
+<span class="sourceLineNo">061</span>                super(Osm2XConstants.ICON_PREF_48,<a name="line.61"></a>
+<span class="sourceLineNo">062</span>                                tr("Shared Guide Dog 4.0 Map Creator Preferences"),<a name="line.62"></a>
+<span class="sourceLineNo">063</span>                                tr("Convert and export OSM data to be used on the Shared Guide Dog 4.0&lt;br&gt;&lt;br&gt;"<a name="line.63"></a>
+<span class="sourceLineNo">064</span>                                                + "This is an experimental version. Be careful when using it."));<a name="line.64"></a>
 <span class="sourceLineNo">065</span><a name="line.65"></a>
-<span class="sourceLineNo">066</span>}<a name="line.66"></a>
+<span class="sourceLineNo">066</span>                prefIO = new ExportPrefIO(new File(Config.getPref().get(Osm2XConstants.PREF_EXPORT_PREF_FILE)));<a name="line.66"></a>
+<span class="sourceLineNo">067</span>        }<a name="line.67"></a>
+<span class="sourceLineNo">068</span><a name="line.68"></a>
+<span class="sourceLineNo">069</span>        /**<a name="line.69"></a>
+<span class="sourceLineNo">070</span>         * Create settings tab with general settings<a name="line.70"></a>
+<span class="sourceLineNo">071</span>         * @return JPanel<a name="line.71"></a>
+<span class="sourceLineNo">072</span>         */<a name="line.72"></a>
+<span class="sourceLineNo">073</span>        protected JPanel createSettings() {<a name="line.73"></a>
+<span class="sourceLineNo">074</span>                JPanel general = new JPanel(new GridBagLayout());<a name="line.74"></a>
+<span class="sourceLineNo">075</span>                general.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));<a name="line.75"></a>
+<span class="sourceLineNo">076</span>                general.setName(tr("SGD4.0 Map Creator"));<a name="line.76"></a>
+<span class="sourceLineNo">077</span><a name="line.77"></a>
+<span class="sourceLineNo">078</span>                // options for interpolation<a name="line.78"></a>
+<span class="sourceLineNo">079</span>                JLabel jLabelSpinner = new JLabel(tr("Interpolation: Maximum way length:"));<a name="line.79"></a>
+<span class="sourceLineNo">080</span>                spinner.getModel().setValue(Config.getPref().getDouble(Osm2XConstants.PREF_INTERP_DIST, Osm2XConstants.DEFAULT_INTERP_DIST));<a name="line.80"></a>
+<span class="sourceLineNo">081</span>                general.add(jLabelSpinner, GBC.std().insets(0, 5, 10, 0));<a name="line.81"></a>
+<span class="sourceLineNo">082</span>                general.add(spinner, GBC.eol().fill(GridBagConstraints.HORIZONTAL).insets(5, 5, 400, 5));<a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span>                // tags to use for barriers dataset (filter like syntax)<a name="line.84"></a>
+<span class="sourceLineNo">085</span>                general.add(new JSeparator(SwingConstants.HORIZONTAL), GBC.eol().fill(GridBagConstraints.HORIZONTAL));<a name="line.85"></a>
+<span class="sourceLineNo">086</span><a name="line.86"></a>
+<span class="sourceLineNo">087</span>                tagsBarrier.setText(Config.getPref().get(Osm2XConstants.PREF_BARRIER_FILTER, Osm2XConstants.DEFAULT_BARRIER_FILTER));<a name="line.87"></a>
+<span class="sourceLineNo">088</span>                tagsBarrier.setToolTipText("Search expression for creating the barrier dataset. Please refer to filter dialog for examples.");<a name="line.88"></a>
+<span class="sourceLineNo">089</span>                general.add(new JLabel(tr("Tags to include in barrier dataset:")), GBC.std().insets(0, 5, 10, 0));<a name="line.89"></a>
+<span class="sourceLineNo">090</span>                general.add(tagsBarrier, GBC.eol().fill(GridBagConstraints.HORIZONTAL).insets(5, 5, 200, 5));<a name="line.90"></a>
+<span class="sourceLineNo">091</span><a name="line.91"></a>
+<span class="sourceLineNo">092</span>                checkCopyAdr.setSelected(true);<a name="line.92"></a>
+<span class="sourceLineNo">093</span>                checkCopyAdr.setToolTipText("Choose whether to copy the addresses of buildings to the entrance nodes");<a name="line.93"></a>
+<span class="sourceLineNo">094</span>                general.add(checkCopyAdr, GBC.eol().insets(0, 0, 0, 0));<a name="line.94"></a>
+<span class="sourceLineNo">095</span><a name="line.95"></a>
+<span class="sourceLineNo">096</span>                // tags to use for highways dataset<a name="line.96"></a>
+<span class="sourceLineNo">097</span>                general.add(new JSeparator(SwingConstants.HORIZONTAL), GBC.eol().fill(GridBagConstraints.HORIZONTAL));<a name="line.97"></a>
+<span class="sourceLineNo">098</span>                JLabel jLabelHighwayTags = new JLabel(tr("Tags to include in highway dataset:"));<a name="line.98"></a>
+<span class="sourceLineNo">099</span>                tagsHighway.setText(Config.getPref().get(Osm2XConstants.PREF_HIGHWAY_FILTER, Osm2XConstants.DEFAULT_HIGHWAY_FILTER));<a name="line.99"></a>
+<span class="sourceLineNo">100</span>                tagsHighway.setToolTipText("Search expression for creating the barrier dataset. Please refer to filter dialog for examples.");<a name="line.100"></a>
+<span class="sourceLineNo">101</span>                general.add(jLabelHighwayTags, GBC.std().insets(0, 5, 10, 0));<a name="line.101"></a>
+<span class="sourceLineNo">102</span>                general.add(tagsHighway, GBC.eop().fill(GridBagConstraints.HORIZONTAL).insets(5, 5, 200, 5));<a name="line.102"></a>
+<span class="sourceLineNo">103</span><a name="line.103"></a>
+<span class="sourceLineNo">104</span>                // end of dialog, scroll bar<a name="line.104"></a>
+<span class="sourceLineNo">105</span>                general.add(Box.createVerticalGlue(), GBC.eol().fill(GridBagConstraints.VERTICAL));<a name="line.105"></a>
+<span class="sourceLineNo">106</span><a name="line.106"></a>
+<span class="sourceLineNo">107</span>                return general;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>        }<a name="line.108"></a>
+<span class="sourceLineNo">109</span><a name="line.109"></a>
+<span class="sourceLineNo">110</span>        /**<a name="line.110"></a>
+<span class="sourceLineNo">111</span>         * Creates a tab with all export settings<a name="line.111"></a>
+<span class="sourceLineNo">112</span>         * @param gui preferences tab pane<a name="line.112"></a>
+<span class="sourceLineNo">113</span>         * @return JPanel<a name="line.113"></a>
+<span class="sourceLineNo">114</span>         */<a name="line.114"></a>
+<span class="sourceLineNo">115</span>        protected JPanel createExportSettings(PreferenceTabbedPane gui)<a name="line.115"></a>
+<span class="sourceLineNo">116</span>        {<a name="line.116"></a>
+<span class="sourceLineNo">117</span>                JPanel general = new JPanel();<a name="line.117"></a>
+<span class="sourceLineNo">118</span>                general.setName("Export");<a name="line.118"></a>
+<span class="sourceLineNo">119</span><a name="line.119"></a>
+<span class="sourceLineNo">120</span>                // read settings from file<a name="line.120"></a>
+<span class="sourceLineNo">121</span>                List&lt;ExportRuleEntry&gt; displayData = new ArrayList&lt;&gt;();<a name="line.121"></a>
+<span class="sourceLineNo">122</span><a name="line.122"></a>
+<span class="sourceLineNo">123</span>                try {<a name="line.123"></a>
+<span class="sourceLineNo">124</span>                        displayData = prefIO.readFromFile();<a name="line.124"></a>
+<span class="sourceLineNo">125</span>                } catch (IOException ioe) {<a name="line.125"></a>
+<span class="sourceLineNo">126</span>                        Logging.error(ioe);<a name="line.126"></a>
+<span class="sourceLineNo">127</span>                        displayData.add(new ExportRuleEntry("&lt;empty&gt;", "&lt;empty"));      // add empty entry<a name="line.127"></a>
+<span class="sourceLineNo">128</span>                }<a name="line.128"></a>
+<span class="sourceLineNo">129</span><a name="line.129"></a>
+<span class="sourceLineNo">130</span>                // create table and add to scrollpane<a name="line.130"></a>
+<span class="sourceLineNo">131</span>                exportRuleTable = new ExportRuleTable(displayData);<a name="line.131"></a>
+<span class="sourceLineNo">132</span>                JScrollPane scroll = new JScrollPane(exportRuleTable);<a name="line.132"></a>
+<span class="sourceLineNo">133</span>                general.add(scroll, GBC.eol().fill(GridBagConstraints.BOTH));<a name="line.133"></a>
+<span class="sourceLineNo">134</span>                scroll.setPreferredSize(new Dimension(400, 300));<a name="line.134"></a>
+<span class="sourceLineNo">135</span><a name="line.135"></a>
+<span class="sourceLineNo">136</span>                JPanel buttonPanel = new JPanel(new GridLayout(1, 6));  // up, down, add, remove, save, load<a name="line.136"></a>
+<span class="sourceLineNo">137</span>                // add button to shift row up<a name="line.137"></a>
+<span class="sourceLineNo">138</span>                JButton up = new JButton(tr("Up"), ImageProvider.get("dialogs/up", ImageProvider.ImageSizes.SMALLICON));<a name="line.138"></a>
+<span class="sourceLineNo">139</span>                buttonPanel.add(up, GBC.eol().fill(GridBagConstraints.HORIZONTAL));<a name="line.139"></a>
+<span class="sourceLineNo">140</span>                exportRuleTable.getSelectionModel().addListSelectionListener(event -&gt; up.setEnabled(exportRuleTable.getSelectedRowCount() == 1 &amp;&amp; exportRuleTable.getSelectedRow() &gt; 0));<a name="line.140"></a>
+<span class="sourceLineNo">141</span>                up.addActionListener(e -&gt;<a name="line.141"></a>
+<span class="sourceLineNo">142</span>                {<a name="line.142"></a>
+<span class="sourceLineNo">143</span>                        int nextRow = exportRuleTable.getSelectedRow()-1;<a name="line.143"></a>
+<span class="sourceLineNo">144</span>                        exportRuleTable.switchRows(exportRuleTable.getSelectedRow(), nextRow);<a name="line.144"></a>
+<span class="sourceLineNo">145</span>                        exportRuleTable.changeSelection(nextRow, 0, false, false);<a name="line.145"></a>
+<span class="sourceLineNo">146</span>                });<a name="line.146"></a>
+<span class="sourceLineNo">147</span><a name="line.147"></a>
+<span class="sourceLineNo">148</span>                // add button to shift row down<a name="line.148"></a>
+<span class="sourceLineNo">149</span>                JButton down = new JButton(tr("Down"), ImageProvider.get("dialogs/down", ImageProvider.ImageSizes.SMALLICON));<a name="line.149"></a>
+<span class="sourceLineNo">150</span>                buttonPanel.add(down, GBC.eol().fill(GridBagConstraints.HORIZONTAL));<a name="line.150"></a>
+<span class="sourceLineNo">151</span>                exportRuleTable.getSelectionModel().addListSelectionListener(event -&gt; down.setEnabled(exportRuleTable.getSelectedRowCount() == 1<a name="line.151"></a>
+<span class="sourceLineNo">152</span>                                &amp;&amp; exportRuleTable.getSelectedRow() &lt; (exportRuleTable.getRowCount()-1)));<a name="line.152"></a>
+<span class="sourceLineNo">153</span>                down.addActionListener(e -&gt;<a name="line.153"></a>
+<span class="sourceLineNo">154</span>                {<a name="line.154"></a>
+<span class="sourceLineNo">155</span>                        int nextRow = exportRuleTable.getSelectedRow()+1;<a name="line.155"></a>
+<span class="sourceLineNo">156</span>                        exportRuleTable.switchRows(exportRuleTable.getSelectedRow(), nextRow);<a name="line.156"></a>
+<span class="sourceLineNo">157</span>                        exportRuleTable.changeSelection(nextRow, 0, false, false);<a name="line.157"></a>
+<span class="sourceLineNo">158</span>                });<a name="line.158"></a>
+<span class="sourceLineNo">159</span><a name="line.159"></a>
+<span class="sourceLineNo">160</span>                // add button to add row<a name="line.160"></a>
+<span class="sourceLineNo">161</span>                JButton add = new JButton(tr("Add"), ImageProvider.get("dialogs/add", ImageProvider.ImageSizes.SMALLICON));<a name="line.161"></a>
+<span class="sourceLineNo">162</span>                buttonPanel.add(add, GBC.eol().fill(GridBagConstraints.HORIZONTAL));<a name="line.162"></a>
+<span class="sourceLineNo">163</span>                add.setToolTipText("Add new entry");<a name="line.163"></a>
+<span class="sourceLineNo">164</span>                add.addActionListener(e -&gt;<a name="line.164"></a>
+<span class="sourceLineNo">165</span>                {<a name="line.165"></a>
+<span class="sourceLineNo">166</span>                        exportRuleTable.addRow();<a name="line.166"></a>
+<span class="sourceLineNo">167</span>                        exportRuleTable.changeSelection(exportRuleTable.getRowCount()-1, 0, false, false);<a name="line.167"></a>
+<span class="sourceLineNo">168</span>                });<a name="line.168"></a>
+<span class="sourceLineNo">169</span><a name="line.169"></a>
+<span class="sourceLineNo">170</span>                // add button to remove row<a name="line.170"></a>
+<span class="sourceLineNo">171</span>                JButton remove = new JButton(tr("Remove"), ImageProvider.get("dialogs/delete", ImageProvider.ImageSizes.SMALLICON));<a name="line.171"></a>
+<span class="sourceLineNo">172</span>                buttonPanel.add(remove);<a name="line.172"></a>
+<span class="sourceLineNo">173</span>                remove.setToolTipText("Remove selected items");<a name="line.173"></a>
+<span class="sourceLineNo">174</span>                remove.addActionListener(e -&gt; exportRuleTable.removeRow(exportRuleTable.getSelectedItems()));<a name="line.174"></a>
+<span class="sourceLineNo">175</span><a name="line.175"></a>
+<span class="sourceLineNo">176</span>                // add button to export table<a name="line.176"></a>
+<span class="sourceLineNo">177</span>                JButton export = new JButton(tr("Export"), ImageProvider.get("save", ImageProvider.ImageSizes.SMALLICON));<a name="line.177"></a>
+<span class="sourceLineNo">178</span>                buttonPanel.add(export);<a name="line.178"></a>
+<span class="sourceLineNo">179</span>                export.setToolTipText("Export table");<a name="line.179"></a>
+<span class="sourceLineNo">180</span>                //              export.addActionListener(e -&gt; exportSelectedToXML());<a name="line.180"></a>
+<span class="sourceLineNo">181</span><a name="line.181"></a>
+<span class="sourceLineNo">182</span>                // add button to import table from file<a name="line.182"></a>
+<span class="sourceLineNo">183</span>                JButton read = new JButton(tr("Read from file"), ImageProvider.get("open", ImageProvider.ImageSizes.SMALLICON));<a name="line.183"></a>
+<span class="sourceLineNo">184</span>                buttonPanel.add(read);<a name="line.184"></a>
+<span class="sourceLineNo">185</span>                read.setToolTipText("Read table from file");<a name="line.185"></a>
+<span class="sourceLineNo">186</span>                //              read.addActionListener(e -&gt; readPreferencesFromXML());<a name="line.186"></a>
+<span class="sourceLineNo">187</span><a name="line.187"></a>
+<span class="sourceLineNo">188</span>                exportRuleTable.setRowSelectionInterval(0, 0); // select first row in table<a name="line.188"></a>
+<span class="sourceLineNo">189</span>                general.add(buttonPanel, GBC.eol());    // add all buttons to panel<a name="line.189"></a>
+<span class="sourceLineNo">190</span>                return general;<a name="line.190"></a>
+<span class="sourceLineNo">191</span>        }<a name="line.191"></a>
+<span class="sourceLineNo">192</span><a name="line.192"></a>
+<span class="sourceLineNo">193</span>        @Override<a name="line.193"></a>
+<span class="sourceLineNo">194</span>        public void addGui(PreferenceTabbedPane gui) {<a name="line.194"></a>
+<span class="sourceLineNo">195</span>                JPanel prefPanel = gui.createPreferenceTab(this);<a name="line.195"></a>
+<span class="sourceLineNo">196</span><a name="line.196"></a>
+<span class="sourceLineNo">197</span>                tabPane.add("General", createSettings());<a name="line.197"></a>
+<span class="sourceLineNo">198</span>                tabPane.add(createExportSettings(gui), GBC.eol().fill(GridBagConstraints.BOTH));<a name="line.198"></a>
+<span class="sourceLineNo">199</span><a name="line.199"></a>
+<span class="sourceLineNo">200</span>                prefPanel.add(tabPane, GBC.eol().fill(GridBagConstraints.BOTH));<a name="line.200"></a>
+<span class="sourceLineNo">201</span>        }<a name="line.201"></a>
+<span class="sourceLineNo">202</span><a name="line.202"></a>
+<span class="sourceLineNo">203</span>        @Override<a name="line.203"></a>
+<span class="sourceLineNo">204</span>        public boolean ok() {<a name="line.204"></a>
+<span class="sourceLineNo">205</span>                Config.getPref().putDouble(Osm2XConstants.PREF_INTERP_DIST, (Double)spinner.getModel().getValue());<a name="line.205"></a>
+<span class="sourceLineNo">206</span>                Config.getPref().put(Osm2XConstants.PREF_BARRIER_FILTER, tagsBarrier.getText());<a name="line.206"></a>
+<span class="sourceLineNo">207</span>                Config.getPref().putBoolean(Osm2XConstants.PREF_COPY_ADDRESS, checkCopyAdr.isSelected());<a name="line.207"></a>
+<span class="sourceLineNo">208</span>                Config.getPref().put(Osm2XConstants.PREF_HIGHWAY_FILTER, tagsHighway.getText());<a name="line.208"></a>
+<span class="sourceLineNo">209</span><a name="line.209"></a>
+<span class="sourceLineNo">210</span>                // save table to file<a name="line.210"></a>
+<span class="sourceLineNo">211</span>                try<a name="line.211"></a>
+<span class="sourceLineNo">212</span>                {<a name="line.212"></a>
+<span class="sourceLineNo">213</span>                        prefIO.saveToFile(exportRuleTable.getItems());<a name="line.213"></a>
+<span class="sourceLineNo">214</span>                } catch (IOException e) {<a name="line.214"></a>
+<span class="sourceLineNo">215</span>                        Logging.error(e);<a name="line.215"></a>
+<span class="sourceLineNo">216</span><a name="line.216"></a>
+<span class="sourceLineNo">217</span>                        // warning dialog??<a name="line.217"></a>
+<span class="sourceLineNo">218</span><a name="line.218"></a>
+<span class="sourceLineNo">219</span>                }<a name="line.219"></a>
+<span class="sourceLineNo">220</span>                return false;<a name="line.220"></a>
+<span class="sourceLineNo">221</span>        }<a name="line.221"></a>
+<span class="sourceLineNo">222</span><a name="line.222"></a>
+<span class="sourceLineNo">223</span>}<a name="line.223"></a>
 
 
 

@@ -15,12 +15,12 @@ import org.openstreetmap.josm.data.osm.Way;
 public class NavWriter implements Closeable {
 
 	// define formats
-	private final String tab = "  ";
-	private final String xml_node = tab + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\">\n";
-	private final String xml_node_pid = tab + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\" pid=\"%s\">\n";
-	private final String tag_node = tab + tab + "<%s>%s</%1$s>\n";
-	private final String xml_nd = tab + tab + "<nd ref=\"%d\">\n";
-	private final String tag_nd = tab + tab + tab + "<%s>%s</%1$s>\n";
+	private static final String TAB = "  ";
+	private static final String XML_NODE = TAB + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\">\n";
+	private static final String XML_NODE_PID = TAB + "<node id=\"%d\" lat=\"%.7f\" lon=\"%.7f\" pid=\"%s\">\n";
+	private static final String TAG_NODE = TAB + TAB + "<%s>%s</%1$s>\n";
+	private static final String XML_ND = TAB + TAB + "<nd ref=\"%d\">\n";
+	private static final String TAG_ND = TAB + TAB + TAB + "<%s>%s</%1$s>\n";
 
 	FileWriter writer;
 
@@ -76,17 +76,17 @@ public class NavWriter implements Closeable {
 			for (Node n : ds.getNodes())
 			{
 				List<Way> parentWays = n.getParentWays();
-				if (parentWays.size() >= 1)
+				if (!parentWays.isEmpty())
 				{
 					if (n.get("pid") != null)
 					{
-						writer.write(String.format(xml_node_pid, n.getId(), n.lat(), n.lon(), n.get("pid")));
+						writer.write(String.format(XML_NODE_PID, n.getId(), n.lat(), n.lon(), n.get("pid")));
 					}
 					else
 					{
-						writer.write(String.format(xml_node, n.getId(), n.lat(), n.lon()));
+						writer.write(String.format(XML_NODE, n.getId(), n.lat(), n.lon()));
 					}
-					writeNodeTag("barrier", n.get("barrier"), tag_node);
+					writeNodeTag("barrier", n.get("barrier"), TAG_NODE);
 
 					// get all neighbours
 					List<Neighbour> neighbours = getNeighbours(n);
@@ -96,39 +96,12 @@ public class NavWriter implements Closeable {
 						String highway = nn.tags.get("highway");
 						String surface = nn.tags.get("surface");
 
-						writer.write(String.format(xml_nd, nn.id));
-						writer.write(String.format(tag_nd, "highway", highway));
-						writer.write(String.format(tag_nd, "surface", surface));
-
-						//						if (nn.angle > -1.0)
-						//						{
-						//							writer.write(String.format(tag_nd, "angle", nn.angle));
-						//						}
-						//						else
-						//						{
-						//							LatLon p;
-						//							if (nn.pid > 0)
-						//							{
-						//								p = getNeighbour(neighbours, nn.pid);
-						//							} else
-						//							{
-						//								p = getNeighbourWithPID(neighbours, nn.id);
-						//							}
-						//							if (p != null)
-						//							{
-						//								// angle not present -> calculate angle
-						//								double ang1 = n.getCoor().bearing(nn.latlon);
-						//								double ang2 = n.getCoor().bearing(p);	// this is the base angle
-						//								double dang = ang2 - ang1;						// delta angle
-						//								dang = Math.abs(dang) > Math.PI ? 2.0*Math.PI - Math.abs(dang) : dang;
-						//								writer.write(String.format(tab + tab + tab + "<%s>%.6f</%1$s>\n", "angle", dang));
-						//							}
-						//						}
-						writer.write(tab + tab + "</nd>\n");
-
+						writer.write(String.format(XML_ND, nn.id));
+						writer.write(String.format(TAG_ND, "highway", highway));
+						writer.write(String.format(TAG_ND, "surface", surface));
+						writer.write(TAB + TAB + "</nd>\n");
 					}
-
-					writer.write(tab + "</node>\n");
+					writer.write(TAB + "</node>\n");
 				}
 			}
 
@@ -176,58 +149,53 @@ public class NavWriter implements Closeable {
 				}
 
 				// check if neighbour already exists
-				if (neighbours.contains(nb))
+				if (neighbours.contains(nb) && (nb.angle > -1.0))
 				{
-					// check if nb has angle property set
-					if (nb.angle > -1.0)
-					{
-						neighbours.remove(nb);
-					}
+					neighbours.remove(nb);
 				}
-
 				neighbours.add(nb);
 			}
 		}
 		return neighbours;
 	}
 
-	/**
-	 * Search for node with id in set.
-	 * @param neighbours the set to search in
-	 * @param id the id of the node
-	 * @return the node if one is found, otherwise null
-	 */
-	private LatLon getNeighbour(List<Neighbour> neighbours, long id)
-	{
-		for (Neighbour n : neighbours)
-		{
-			if (n.id == id)
-			{
-				return n.latlon;
-			}
-		}
-		//System.out.println("Could not find a node with id " + id);
-		return null;
-	}
-
-	/**
-	 *
-	 * @param neighbours
-	 * @param pid
-	 * @return
-	 */
-	private LatLon getNeighbourWithPID(List<Neighbour> neighbours, long pid)
-	{
-		for (Neighbour n : neighbours)
-		{
-			if (n.pid == pid)
-			{
-				return n.latlon;
-			}
-		}
-		//System.out.println("Could not find a node with pid " + pid);
-		return null;
-	}
+	//	/**
+	//	 * Search for node with id in set.
+	//	 * @param neighbours the set to search in
+	//	 * @param id the id of the node
+	//	 * @return the node if one is found, otherwise null
+	//	 */
+	//	private LatLon getNeighbour(List<Neighbour> neighbours, long id)
+	//	{
+	//		for (Neighbour n : neighbours)
+	//		{
+	//			if (n.id == id)
+	//			{
+	//				return n.latlon;
+	//			}
+	//		}
+	//		//System.out.println("Could not find a node with id " + id);
+	//		return null;
+	//	}
+	//
+	//	/**
+	//	 *
+	//	 * @param neighbours
+	//	 * @param pid
+	//	 * @return
+	//	 */
+	//	private LatLon getNeighbourWithPID(List<Neighbour> neighbours, long pid)
+	//	{
+	//		for (Neighbour n : neighbours)
+	//		{
+	//			if (n.pid == pid)
+	//			{
+	//				return n.latlon;
+	//			}
+	//		}
+	//		//System.out.println("Could not find a node with pid " + pid);
+	//		return null;
+	//	}
 
 	@Override
 	public void close() throws IOException {

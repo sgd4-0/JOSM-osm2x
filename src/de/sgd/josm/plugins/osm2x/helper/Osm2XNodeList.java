@@ -10,8 +10,6 @@ import org.openstreetmap.josm.data.osm.Node;
 
 /**
  * Wrapper for josm node
- * @author pasca
- *
  */
 public class Osm2XNodeList {
 
@@ -25,31 +23,30 @@ public class Osm2XNodeList {
 		nodes.put(angle, node);
 	}
 
-	public List<Node> getLeftNodesWithinAngle(double front_ang, double back_ang) {
+	public List<Node> getLeftNodesWithinAngle(double frontAng, double backAng) {
 		List<Node> nodelist = new ArrayList<>();
-		double key = back_ang;
-		if (front_ang < back_ang) {
-			while (key >= back_ang || key <= front_ang) {
+		double key = backAng;
+		if (frontAng < backAng) {
+			while (key >= backAng || key <= frontAng) {
 				Entry<Double, Node> e = nodes.higherEntry(key);
 				if (e == null) {
 					e = nodes.ceilingEntry(0.0);
 				}
 
 				key = e.getKey();
-				if (key >= back_ang || key <= front_ang)	nodelist.add(e.getValue());
+				if (key >= backAng || key <= frontAng)	nodelist.add(e.getValue());
 			}
 		} else {
-			while (key >= back_ang && key <= front_ang) {
+			while (key >= backAng && key <= frontAng) {
 				Entry<Double, Node> e = nodes.higherEntry(key);
 				if (e == null) {
 					break;
 				}
 
 				key = e.getKey();
-				if (key >= back_ang && key <= front_ang)	nodelist.add(e.getValue());
+				if (key >= backAng && key <= frontAng)	nodelist.add(e.getValue());
 			}
 		}
-
 		return nodelist;
 	}
 
@@ -78,6 +75,10 @@ public class Osm2XNodeList {
 		return nodelist;
 	}
 
+	/**
+	 * Return the nodelist
+	 * @return nodelist
+	 */
 	public Collection<Node> getNodelist() {
 		return this.nodes.values();
 	}

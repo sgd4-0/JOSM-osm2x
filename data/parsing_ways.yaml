@@ -1,0 +1,5 @@
+# Unterscheidung zwischen node und way??
+barrier:
+   wall: "fill: #000000; stroke: none"
+building:
+   default: "fill: #000000; stroke: none"
